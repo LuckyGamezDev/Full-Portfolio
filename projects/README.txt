@@ -1,0 +1,1 @@
+This directory includes all the projects I have worked on. These all were/are initial assignments I have completed/am working on from my roadmap. This is basically the proof of all the stuff I will be/am learning. Take a look around if you're interested!

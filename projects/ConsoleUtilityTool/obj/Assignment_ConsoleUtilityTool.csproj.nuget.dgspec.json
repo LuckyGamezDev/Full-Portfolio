@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Programming\\VisualStudio Projects\\CS\\Programming_Roadmap_Assignments\\Assignment_ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj": {}
+    "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj": {}
   },
   "projects": {
-    "Z:\\Programming\\VisualStudio Projects\\CS\\Programming_Roadmap_Assignments\\Assignment_ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj": {
+    "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Programming\\VisualStudio Projects\\CS\\Programming_Roadmap_Assignments\\Assignment_ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj",
+        "projectUniqueName": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj",
         "projectName": "Assignment_ConsoleUtilityTool",
-        "projectPath": "Z:\\Programming\\VisualStudio Projects\\CS\\Programming_Roadmap_Assignments\\Assignment_ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj",
+        "projectPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "Z:\\Programming\\VisualStudio Projects\\CS\\Programming_Roadmap_Assignments\\Assignment_ConsoleUtilityTool\\obj\\",
+        "outputPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

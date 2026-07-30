@@ -2,18 +2,21 @@ This is my daily study log that will contain all my notes and logs of the workin
 
 ### FND-01
 
-27-07-26:
+27-07-2026:
 
 I learned how to create an issue template, how to set up a nice looking readme, and how to work with markup in text files to make the layout nicer.
 
 ### FND-02
 
-28-07-26:
+28-07-2026:
 
 I learned how to retrieve an element in an enum from its set value (eg. ElementName = 1. Where 1 is the value). I also learned how to check each individual char of a string with the .Any extension function to then check if the string contains any numbers.
 
+29-07-2026
 
-29-07-26
+I learned that when returning a static list (in a static class), it returns a reference to that list instead of a copy.
 
-I learned that when returning a static list (in a static class), it returns a reference to that list instead of a copy. 
+30-07-2026:
+
+Today I didn’t necesarilly learn much, but I did make a bunch of progress in my 2 hours of working time. I’m nearing the end of this project, exactly as planned on schedule!
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Assignment_ConsoleUtilityTool")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8092d79860a9b8400625cd77949c23b48017f0f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e8dd59dd865b788ec9b2f442b2e86681ac281a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Assignment_ConsoleUtilityTool")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Assignment_ConsoleUtilityTool")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

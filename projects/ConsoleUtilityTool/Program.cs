@@ -2,6 +2,9 @@
 
 namespace MainProgram {
     public class Program {
+
+        private static UserInformation userInformation;
+
         public static void Main(string[] args) {
             // Register a new user since this is the first time starting the program
             RegisterUser();
@@ -20,7 +23,7 @@ namespace MainProgram {
             Console.WriteLine("Welcome!\n");
 
             // Ask the user for his information
-            UserInformation userInformation = GetUserInformation();
+            userInformation = GetNewUserInformation();
 
             Console.WriteLine("Got user information. Information:");
             PrintUserInformation(userInformation);
@@ -66,7 +69,7 @@ namespace MainProgram {
             Console.WriteLine("\nYou can start creating TODOs and this program will store them all in a nice, organized file");
         }
 
-        public static UserInformation GetUserInformation() {
+        public static UserInformation GetNewUserInformation() {
             string? userName = "";
             string? userEmail = "";
             int userAge = -1;
@@ -113,21 +116,23 @@ namespace MainProgram {
             return new UserInformation(userName, userEmail, userAge);
         }
 
-        public static void GetUserInput(out string? userInput, string userInputQuestion, string invalidInputMessage = "Input invalid, please try again!") {
+        public static bool GetUserInput(out string? userInput, string userInputQuestion, string invalidInputMessage = "Input invalid, please try again!", bool cancelWhenNull = false) {
             while (true) {
                 Console.WriteLine(userInputQuestion);
 
                 userInput = Console.ReadLine();
 
                 if (!string.IsNullOrEmpty(userInput)) {
-                    return;
+                    return true;
                 } else {
+                    if (cancelWhenNull) return false;
+
                     Console.WriteLine(invalidInputMessage);
                 }
             }
         }
 
-        public static void GetUserInput(out int userInput, string userInputQuestion, string invalidInputMessage = "Input invalid, please try again!") {
+        public static bool GetUserInput(out int userInput, string userInputQuestion, string invalidInputMessage = "Input invalid, please try again!", bool cancelWhenNull = false) {
             while (true) {
                 // Get the user inputted number
                 Console.WriteLine(userInputQuestion);
@@ -136,11 +141,19 @@ namespace MainProgram {
 
                 if (!string.IsNullOrEmpty(input)) {
                     if (int.TryParse(input, out userInput)) {
-                        return;
+                        return true;
                     } else {
+                        if (cancelWhenNull) return false;
+
                         Console.WriteLine(invalidInputMessage);
                     }
                 } else {
+                    if (cancelWhenNull) {
+                        userInput = -1;
+
+                        return false;
+                    }
+
                     Console.WriteLine(invalidInputMessage);
                 }
             }
@@ -219,6 +232,11 @@ namespace MainProgram {
                     break;
                 case ProgramOptions.Edit:
 
+                    if (todosList.Count <= 0) {
+                        Console.WriteLine("There are no todos to be edited, please create a new todo to enable this functionality!");
+                        return;
+                    }
+
                     Console.WriteLine("Please specify the number of the todo you would like to edit: ");
                     TodosSystem.PrintAllTodosFromList(todosList);
 
@@ -246,11 +264,11 @@ namespace MainProgram {
 
                     Console.WriteLine("Please fill in all the information to edit the todo accordingly: ");
 
-                    Todo editedTodo = TodosSystem.CreateNewTodoFromUserInput();
+                    Todo editedTodo = TodosSystem.CreateNewTodoFromUserInput(todoToEdit);
 
                     Console.WriteLine("Are you sure?");
                     while (true) {
-                        GetUserInput(out string? userResponse, "Y/N");
+                        GetUserInput(out string? userResponse, "y/n");
 
                         userResponse = userResponse.ToLower();
                         if (userResponse == "y") {
@@ -266,6 +284,11 @@ namespace MainProgram {
                     Console.WriteLine("Successfully edited the todo!");
                     break;
                 case ProgramOptions.Remove:
+                    if (todosList.Count <= 0) {
+                        Console.WriteLine("There are no todos to be deleted, please create a new todo to enable this functionality!");
+                        return;
+                    }
+
                     Console.WriteLine("Please specify the number of the according todo of which you want to remove: ");
                     TodosSystem.PrintAllTodosFromList(todosList);
 
@@ -298,9 +321,19 @@ namespace MainProgram {
                     Console.WriteLine("Removed TODO succesfully!");
                     break;
                 case ProgramOptions.ViewAll:
+                    if (todosList.Count <= 0) {
+                        Console.WriteLine("There are no todos to be viewed, please create a new todo to enable this functionality!");
+                        return;
+                    }
+
                     TodosSystem.PrintAllTodosFromList(todosList);
                     break;
                 case ProgramOptions.Export:
+                    if (todosList.Count <= 0) {
+                        Console.WriteLine("There are no todos to be exported, please create a new todo to enable this functionality!");
+                        return;
+                    }
+
                     TodoHandler.ExportTodosToFile();
                     break;
             }
@@ -313,6 +346,10 @@ namespace MainProgram {
                 $"\nEmail: {userInformation.email}" +
                 $"\nAge: {userInformation.age}"
             );
+        }
+
+        public static UserInformation GetUserInformation() {
+            return userInformation;
         }
 
         public static void PrintAllProgramOptions() {
@@ -355,9 +392,7 @@ namespace MainProgram {
 }
 
 // TODO:
-// Add exporting logic in the TodoHandler class
-// Create a function for fetching an index from the user input since there's a lot of code that is being copied
-// Add tons of try catches to catch exceptions when the user for example tries to edit/remove a todo eventhough he hasn't created one.
+// Make it possible for the user to press 'enter' to an empty input field when editing a note to use its old value to avoid the need of copy pasting
 
 // STUFF THAT CONSFUSED ME:
 
@@ -367,5 +402,7 @@ namespace MainProgram {
 // I couldn't figure out how to convert an index to the value of the UserChangeInformationType to then pass into the GetUserChangeInformationInput() function.
 // Took me about 20 minutes to figure out. Got the answer from this article: https://stackoverflow.com/questions/23563960/how-to-get-enum-value-by-string-or-int
 
+// Markdown files can't be written directly by string in C#? You need to use an external method for compatiblity with markdown?
 
-// WORKED DURATION: 6 hours
+
+// WORKED DURATION: 8 hours

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|Assignment_ConsoleUtilityTool.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\consoleutilitytool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|Assignment_ConsoleUtilityTool.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|ConsoleUtilityTool.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\consoleutilitytool\\mainprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|ConsoleUtilityTool.csproj|solutionrelative:mainprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|Assignment_ConsoleUtilityTool.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\consoleutilitytool\\todossystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|Assignment_ConsoleUtilityTool.csproj|solutionrelative:todossystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|ConsoleUtilityTool.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\consoleutilitytool\\todossystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EBD070C-09DE-4FE2-8CE9-CB5202FE2FEF}|ConsoleUtilityTool.csproj|solutionrelative:todossystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,20 +40,19 @@
               "RelativeDocumentMoniker": "TodosSystem.cs",
               "ToolTip": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\TodosSystem.cs",
               "RelativeToolTip": "TodosSystem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALUAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAMsBAAAAAAAAAAAAANYBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-30T15:52:06.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-30T15:52:06.909Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAIQBAAAAAAAAAAAAAJQBAAADAAAAAAAAAA==",
+              "Title": "MainProgram.cs",
+              "DocumentMoniker": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\MainProgram.cs",
+              "RelativeDocumentMoniker": "MainProgram.cs",
+              "ToolTip": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\MainProgram.cs",
+              "RelativeToolTip": "MainProgram.cs",
+              "ViewState": "AgIAAKsBAAAAAAAAAAAAALQBAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-28T14:21:54.529Z",
               "EditorCaption": ""

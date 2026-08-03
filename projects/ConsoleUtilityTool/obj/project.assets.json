@@ -657,9 +657,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj",
-      "projectName": "Assignment_ConsoleUtilityTool",
-      "projectPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\Assignment_ConsoleUtilityTool.csproj",
+      "projectUniqueName": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\ConsoleUtilityTool.csproj",
+      "projectName": "ConsoleUtilityTool",
+      "projectPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\ConsoleUtilityTool.csproj",
       "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
       "outputPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\ConsoleUtilityTool\\obj\\",
       "projectStyle": "PackageReference",

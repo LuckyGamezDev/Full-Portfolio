@@ -20,7 +20,11 @@ I learned that when returning a static list (in a static class), it returns a re
 
 Today I didn’t necesarilly learn much, but I did make a bunch of progress in my 2 hours of working time. I’m nearing the end of this project, exactly as planned on schedule!
 
-
 31-07-2026:
 
 I learned that when you want to create/write markdown files in C\#, that you can’t just do that within a normal string and write that to a file with the .md extension and syntax. Instead, you need to use an external library (in my case I used Aspose) to be able to configure and create markdown files, which honestly seems very overcomplicated in my opinion, C\# should have the functionality built-in natively. I made nice progress on the project and am near my deadline. My next (and last) session of this project will be polishing everything, mostly the markdown file. The main program is basically fully done and functioning!
+
+
+03-08-2026:
+
+I finished the project with 2 things I was unable to resolve in time. I was unable to implement the markdown file as intended, which I thought was only possible with an external library, but apperantly you can also create markdown files with the StringBuilder class. Secondly I was unable to resolve the bug which shows the index of the todo’s importancy instead of its name.

@@ -4,48 +4,46 @@ Age: 15
 
 
 
-## TODOs #### 
 
-second todo ##
+# TODOs #
 
+###### Last Todo ######
+Description:
+this is my last todo (:
+Due: 27/09/2010
+Importancy: 3
+
+
+###### second todo ######
 Description:
 second todo
-
 Due: 28/09/2013
-Importancy:High
-## 
+Importancy: High
 
-third todo ##
 
+###### third todo ######
 Description:
 third todo
-
 Due: 27/04/2015
-Importancy:High
-## 
+Importancy: High
 
-first todo ##
 
+###### first todo (edited) ######
 Description:
-first todo YAY
-
+this todo was edited.
 Due: 27/09/2020
-Importancy:High
-## 
+Importancy: High
 
-fourth todo ##
 
+###### fourth todo ######
 Description:
 fourth todo
-
 Due: 27/12/2023
-Importancy:High
-## 
+Importancy: High
 
-fifth todo ##
 
+###### fifth todo ######
 Description:
 fifth todo
-
 Due: 21/02/2024
-Importancy:High
+Importancy: High

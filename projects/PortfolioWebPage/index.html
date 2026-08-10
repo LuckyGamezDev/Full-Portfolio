@@ -15,7 +15,17 @@
                 body {
                     font-family: Arial, Helvetica, sans-serif;
 
-                    background-color: rgb(148, 141, 148);
+                    background-color: rgb(187, 178, 187);
+
+                    padding: 0;
+                    margin: 0;
+                }
+                
+                article {
+                    float: left;
+                    padding: 20px;
+                    width: 70%;
+                    background-color: #2c6da9;
                 }
 
                 .top-bar-container {
@@ -27,7 +37,7 @@
 
                 /*Specify the color of each other element*/
                 tr:nth-child(even) {
-                    background-color:#42145b;
+                    background-color:#6b1e95;
                 }
 
                 .top-bar-container div {
@@ -50,11 +60,17 @@
 
                 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
                 @media (max-width: 600px) {
-                    nav, article {
-                    width: 100%;
-                    height: auto;
+                    #best-projects-overview, #best-projects-table {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
-}
+
+                section::after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
 
                 <!--IDs-->
                 #navigation-bar {
@@ -77,30 +93,56 @@
                 }
 
                 #about-me {
-                    background-color: rgba(120, 119, 119, 0.699);
+                    background-color: rgba(142, 140, 140, 0.699);
                 }
 
                 #about-me-text {
-                    color: rgb(45, 37, 52);
+                    color: rgb(80, 66, 92);
                 }
 
                 #portfolio {
-                    background-color: rgb(102, 19, 102);
+                    background-color: rgb(132, 26, 132);
                     height: 600px;
                     overflow: hidden;
                 }
 
                 #best-projects-overview {
-                    float: right;
+                    float: left;
+                    padding: 20px;
+                    width: 70%;
+                    background-color: #6995ca;
+                }
+
+                #best-projects-table {
+                    float: left;
+                    width: 30%;
+                    background: #a919a9;
+                    padding: 20px;
                 }
 
                 #logo-portfolio {
-                    transform: translate(350px, -300px);
+                    float: left;
+                    padding: 5px;
+                    width: 30%;
+                    height: 5%;
+                }
+
+                #contact-info {
+                    float: left;
+                    padding: 10px;
+                    width: 25%;
+                }
+
+                #contact-info-section {
+                    height: 31%;
                 }
             </style>
         </head>
 
         <body>
+            <!--Site header-->
+            <h1>Portfolio - Denzel Mombarg</h1>
+
             <!--Site Top Bar-->
             <ul id="navigation-bar">
                 <li id="navigation-bar-element"><a id="navigation-bar-link", href="#portfolio">Portfolio</a></li>
@@ -134,6 +176,7 @@
                     since this repo will include <em>TONS</em> of different projects. Feel free to expand upon projects if you want as well, just let me know and show me what you've built, since I'm genuinely curious!
                 </p>
             </section>
+
             <section id="portfolio">
                 <h2>Portfolio</h2>
                     <!--Welcome Paragraph-->
@@ -145,45 +188,50 @@
 
                     <h2 id="portfolio-best-projects-header">My Best Projects</h2>
                         <table id="best-projects-table">
-                            <tr>
-                                <th id="best-project-name"><a href="#">Project 1</a></th>
-                                <th id="best-project-description"><p>Project Description</p></th>
-                            </tr>
-                            <tr>
-                                <th id="best-project-name"><a href="#">Project 2</a></th>
-                                <th id="best-project-description"><p>Project Description</p></th>
-                            </tr>
-                            <tr>
-                                <th id="best-project-name"><a href="#">Project 3</a></th>
-                                <th id="best-project-description"><p>Project Description</p></th>
-                            </tr>
-                            <tr>
-                                <th id="best-project-name"><a href="#">Project 4</a></th>
-                                <th id="best-project-description"><p>Project Description</p></th>
-                            </tr>
-                            <tr>
-                                <th id="best-project-name"><a href="#">Project 5</a></th>
-                                <th id="best-project-description"><p>Project Description</p></th>
-                            </tr>
+                            <nav>
+                                <tr>
+                                    <th id="best-project-name"><a href="#">Project 1</a></th>
+                                    <th id="best-project-description"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#">Project 2</a></th>
+                                    <th id="best-project-description"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#">Project 3</a></th>
+                                    <th id="best-project-description"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#">Project 4</a></th>
+                                    <th id="best-project-description"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#">Project 5</a></th>
+                                    <th id="best-project-description"><p>Project Description</p></th>
+                                </tr>
+                            </nav>
                         </table>
 
-                        <p id="best-projects-overview">
-                            On the left-hand side, you can see a table of my top 5 projects, at least, according to me that is. These are the projects I feel most proud of. <br>
-                            I'll tell you about them briefly, if you're interested in knowing more about them, feel free to visit the entire project to view the entire project!
-                        </p>
-                        <p>
-                            ...
-                        </p>
+                        <article>
+                            <p id="best-projects-overview">
+                                On the left-hand side, you can see a table of my top 5 projects, at least, according to me that is. These are the projects I feel most proud of. <br>
+                                I'll tell you about them briefly, if you're interested in knowing more about them, feel free to visit the entire project to view the entire project!
+                                <br><br><br><br><br><br><br><br><br><br>
+                            </p>
+                        </article>
 
-                    <img src="sources/LuckyGamez_Logo.png", alt="LuckyGamez Logo", style="width:400px;height:400px;", id="logo-portfolio">
+                    
                 </aside>
             </section>
-            <section id="contact-info">
+            <section id="contact-info-section">
                 <h2>Contact Information</h2>
-                    <address>
-                        <p>Email (Business Enquiries):<br>luckygamezdev@gmail.com</p>
-                        <p>Email (Personal Enquiries):<br>denzel.mombarg.2010@gmail.com</p>
+                    <address id="contact-info">
+                        <p>Email (Business Enquiries):<br><a href="mailto:luckygamezdev@gmail.com">luckygamezdev@gmail.com</a></p>
+                        <p>Email (Personal Enquiries):<br><a href="mailto:denzel.mombarg.2010@gmail.com">denzel.mombarg.2010@gmail.com</a></p>
                     </address>
+
+                    <!--Temporarily comment out the image logo-->
+                    <!-- <img src="sources/LuckyGamez_Logo.png", alt="LuckyGamez Logo", style="width:300px;height:300px;", id="logo-portfolio"> -->
             </section>
 
             <section>
@@ -199,13 +247,9 @@
 
 <!--TODO-->
 <!--
-Find a way to stretch the banner accordingly so that it fits all device resolutions
+Find a way to stretch the banner accordingly so that it fits all device resolutions?
 
-Add some sort of overview that enables navigation anchors
-
-Figure out how the <address> tag works within the contact info section
-
-Make every section have the correct layout
+Make every section have the correct layout - Find a way to push the footer and sources section up whilst the image is visible (basically making them ignore the 'collider' of the image box)
 
 ...
 -->
@@ -217,4 +261,4 @@ https://www.w3schools.com/html/html_images.asp
 https://www.w3schools.com/html/html_lists.asp
 -->
 
-<!--WORKING HOURS: 4-->
+<!--WORKING HOURS: 8-->

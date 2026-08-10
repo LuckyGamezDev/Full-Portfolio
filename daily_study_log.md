@@ -43,3 +43,8 @@ I’ve added a lot of text to fill up the website more as preperation for the im
 07-08-2026:
 
 I was able to add a (functioning) menu bar on the top of the website, though I wasn’t able to make it horizontal for some reason. I’m still very much struggling with layouts, I just can’t figure it out, having led to frustration. I currently want the portfolio section to have a left and right side, with the left side displaying the projects tabel, and the right side some text.
+
+10-08-2026:
+
+I was finally able to find out on how to make the portfolio section have a section on the left, and one on the right. I’m nearly done with this assignment, and the only thing currently holding me back is properly implementing the image (logo). I’ve relocated the image to be at the bottom of the page since that is in my opinion a more fitting position, but when it is put there, the ‘sources’ and footer section(s) get pushed down because of the image ‘collider’ box. I need to find a way on how to fix this issue, and essentially make the two bottom sections ignore the box of the image.
+

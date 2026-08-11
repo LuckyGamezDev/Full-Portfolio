@@ -58,6 +58,10 @@
                    text-align: left;
                 }
 
+                footer {
+                   background-color: rgb(91, 113, 133);
+                }
+
                 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
                 @media (max-width: 600px) {
                     #best-projects-overview, #best-projects-table {
@@ -92,16 +96,12 @@
                     background-color: #888787;
                 }
 
-                #about-me {
-                    background-color: rgba(142, 140, 140, 0.699);
-                }
-
                 #about-me-text {
                     color: rgb(80, 66, 92);
                 }
 
                 #portfolio {
-                    background-color: rgb(132, 26, 132);
+                    background-color: rgb(146, 16, 141);
                     height: 600px;
                     overflow: hidden;
                 }
@@ -125,16 +125,34 @@
                     padding: 5px;
                     width: 30%;
                     height: 5%;
+                    margin-bottom: 0;
+                    margin-left: 0;
                 }
 
                 #contact-info {
                     float: left;
-                    padding: 10px;
                     width: 25%;
+                    margin-top: 0;
+                    margin-bottom: 0;
                 }
 
-                #contact-info-section {
-                    height: 31%;
+                #contact-info-text {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                #contact-info-header {
+                    margin-bottom: 0;
+                }
+
+                #sources {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-right: 0;
+                }
+
+                #sources-source {
+                    margin-top: 0;
                 }
             </style>
         </head>
@@ -145,13 +163,13 @@
 
             <!--Site Top Bar-->
             <ul id="navigation-bar">
-                <li id="navigation-bar-element"><a id="navigation-bar-link", href="#portfolio">Portfolio</a></li>
-                <li id="navigation-bar-element"><a id="navigation-bar-link", href="#blog-posts">Blog Posts</a></li>
                 <li id="navigation-bar-element"><a id="navigation-bar-link", href="#about-me">About Me</a></li>
+                <li id="navigation-bar-element"><a id="navigation-bar-link", href="#portfolio">Portfolio</a></li>
+                <li id="navigation-bar-element"><a id="navigation-bar-link", href="blogposts_page.html">Blog Posts</a></li>
                 <li id="navigation-bar-element"><a id="navigation-bar-link", href="#contact-info">Contact</a></li>
             </ul>
 
-            <section id="about-me">
+            <section style="background-color: #888787;">
                 <h2>About Me</h2>
 
                 <p id="about-me-text">
@@ -190,24 +208,24 @@
                         <table id="best-projects-table">
                             <nav>
                                 <tr>
-                                    <th id="best-project-name"><a href="#">Project 1</a></th>
-                                    <th id="best-project-description"><p>Project Description</p></th>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 1</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
                                 </tr>
                                 <tr>
-                                    <th id="best-project-name"><a href="#">Project 2</a></th>
-                                    <th id="best-project-description"><p>Project Description</p></th>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 2</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
                                 </tr>
                                 <tr>
-                                    <th id="best-project-name"><a href="#">Project 3</a></th>
-                                    <th id="best-project-description"><p>Project Description</p></th>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 3</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
                                 </tr>
                                 <tr>
-                                    <th id="best-project-name"><a href="#">Project 4</a></th>
-                                    <th id="best-project-description"><p>Project Description</p></th>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 4</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
                                 </tr>
                                 <tr>
-                                    <th id="best-project-name"><a href="#">Project 5</a></th>
-                                    <th id="best-project-description"><p>Project Description</p></th>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 5</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
                                 </tr>
                             </nav>
                         </table>
@@ -215,7 +233,7 @@
                         <article>
                             <p id="best-projects-overview">
                                 On the left-hand side, you can see a table of my top 5 projects, at least, according to me that is. These are the projects I feel most proud of. <br>
-                                I'll tell you about them briefly, if you're interested in knowing more about them, feel free to visit the entire project to view the entire project!
+                                I'll tell you about them briefly, if you're interested in knowing more about them, feel free to visit my <a href="https://github.com/LuckyGamezDev/Full-Portfolio">github</a> to view the entire project(s)!
                                 <br><br><br><br><br><br><br><br><br><br>
                             </p>
                         </article>
@@ -223,22 +241,22 @@
                     
                 </aside>
             </section>
-            <section id="contact-info-section">
-                <h2>Contact Information</h2>
+            <section>
+                <h3 id="contact-info-header">Contact Information</h3>
                     <address id="contact-info">
-                        <p>Email (Business Enquiries):<br><a href="mailto:luckygamezdev@gmail.com">luckygamezdev@gmail.com</a></p>
-                        <p>Email (Personal Enquiries):<br><a href="mailto:denzel.mombarg.2010@gmail.com">denzel.mombarg.2010@gmail.com</a></p>
+                        <p>Email (Business Enquiries):<br><a href="mailto:luckygamezdev@gmail.com", id="contact-info-text">luckygamezdev@gmail.com</a></p>
+                        <p>Email (Personal Enquiries):<br><a href="mailto:denzel.mombarg.2010@gmail.com", id="contact-info-text">denzel.mombarg.2010@gmail.com</a></p>
                     </address>
 
-                    <!--Temporarily comment out the image logo-->
-                    <!-- <img src="sources/LuckyGamez_Logo.png", alt="LuckyGamez Logo", style="width:300px;height:300px;", id="logo-portfolio"> -->
+                    <img src="sources/LuckyGamez_Logo.png", alt="LuckyGamez Logo", style="width:300px;height:300px;", id="logo-portfolio">
             </section>
 
             <section>
-                <h3>Sources</h3>
-                    <a href="https://github.com/LuckyGamezDev/Full-Portfolio">My Github</a>
+                <h3 id="sources">Sources</h3>
+                    <a href="https://github.com/LuckyGamezDev/Full-Portfolio", id="sources-source">My Github</a>
             </section>
 
+            <br> 
             <footer>
                 &copy; Denzel Mombarg - Portfolio 
             </footer>
@@ -247,10 +265,6 @@
 
 <!--TODO-->
 <!--
-Find a way to stretch the banner accordingly so that it fits all device resolutions?
-
-Make every section have the correct layout - Find a way to push the footer and sources section up whilst the image is visible (basically making them ignore the 'collider' of the image box)
-
 ...
 -->
 
@@ -261,4 +275,4 @@ https://www.w3schools.com/html/html_images.asp
 https://www.w3schools.com/html/html_lists.asp
 -->
 
-<!--WORKING HOURS: 8-->
+<!--WORKING HOURS: 9-->

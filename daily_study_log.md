@@ -48,3 +48,7 @@ I was able to add a (functioning) menu bar on the top of the website, though I w
 
 I was finally able to find out on how to make the portfolio section have a section on the left, and one on the right. I’m nearly done with this assignment, and the only thing currently holding me back is properly implementing the image (logo). I’ve relocated the image to be at the bottom of the page since that is in my opinion a more fitting position, but when it is put there, the ‘sources’ and footer section(s) get pushed down because of the image ‘collider’ box. I need to find a way on how to fix this issue, and essentially make the two bottom sections ignore the box of the image.
 
+11-08-2026:
+
+I learned that you can controll the closeness of the next element by adjusting the (bottom) margin of the element above it, which basically acts like a collider. Despite this discovery, I didn’t manage to get the “Sources” section to be pushed up. I don’t bother, because it still looks good the way it looks now. I also wasn’t able to get the top navigation bar to be horizontal, but again, I find it okay the way it is right now. I’ve finished this assignment now and will be moving onto the next one!
+

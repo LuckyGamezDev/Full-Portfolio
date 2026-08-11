@@ -24,7 +24,31 @@ Today I didn’t necesarilly learn much, but I did make a bunch of progress in m
 
 I learned that when you want to create/write markdown files in C\#, that you can’t just do that within a normal string and write that to a file with the .md extension and syntax. Instead, you need to use an external library (in my case I used Aspose) to be able to configure and create markdown files, which honestly seems very overcomplicated in my opinion, C\# should have the functionality built-in natively. I made nice progress on the project and am near my deadline. My next (and last) session of this project will be polishing everything, mostly the markdown file. The main program is basically fully done and functioning!
 
-
 03-08-2026:
 
 I finished the project with 2 things I was unable to resolve in time. I was unable to implement the markdown file as intended, which I thought was only possible with an external library, but apperantly you can also create markdown files with the StringBuilder class. Secondly I was unable to resolve the bug which shows the index of the todo’s importancy instead of its name.
+
+### WEB-01
+
+04-08-2026:
+
+I started working on my webpage portfolio project assignment. I actually find it pretty fun and satisfying to create a webpage of mine! I learned how to use various tags with the help of the official W3Schools.com docs. I found out that, at least creating fairly simple webpages, is pretty simple and easy to do. I will definitely try to make something nice out of this to showcase my portfolio properly! I didn’t encounter problems that made me get stuck yet, so nothing to report.
+
+05-08-2026:
+
+I’ve added a lot of text to fill up the website more as preperation for the implementation of the required navigation anchoring. I’m not done yet, since it still isn’t yet scrollable (at least not in fullscreen), but it’s getting close. I’ve learned how to implement tables and got a significantly deeper understanding in how styling works, especially styling elements, like tables, etc. It’s really starting to come clear that HTML is not the thing that’s hard about programming a website, it is actually thinking about how you even want it to look like in the first place and then try to find a way on how to implement exactly that, which, most of the time, requires extensive searching to figure out what element you’re looking for that does that. I did get a little stuck today. I was trying to figure out how to properly implement some layouts, that seperate each section appropriately, I haven’t yet figured out how to do this the way I want to, thus at the top of the site there is an attempt at a ‘top navigation bar’ which resulted in having useless buttons sitting at the top of the page. I definitely need to deepen my research a bit on how to implement verticale and horizontal layouts. I also had a bit of trouble getting the text formatted correctly, for now I’ve put the headers outside of their segments to mostly resolve this issue. I’ve come to a conclusion that this webpage won’t only be for my portfolio, but instead basically everything, basically my personal archive that includes blog posts that I can read in the future to refresh my memory on a certain topic. I think this will be a very worthwhile investment!
+
+06-08-2026: abscent
+
+07-08-2026:
+
+I was able to add a (functioning) menu bar on the top of the website, though I wasn’t able to make it horizontal for some reason. I’m still very much struggling with layouts, I just can’t figure it out, having led to frustration. I currently want the portfolio section to have a left and right side, with the left side displaying the projects tabel, and the right side some text.
+
+10-08-2026:
+
+I was finally able to find out on how to make the portfolio section have a section on the left, and one on the right. I’m nearly done with this assignment, and the only thing currently holding me back is properly implementing the image (logo). I’ve relocated the image to be at the bottom of the page since that is in my opinion a more fitting position, but when it is put there, the ‘sources’ and footer section(s) get pushed down because of the image ‘collider’ box. I need to find a way on how to fix this issue, and essentially make the two bottom sections ignore the box of the image.
+
+11-08-2026:
+
+I learned that you can controll the closeness of the next element by adjusting the (bottom) margin of the element above it, which basically acts like a collider. Despite this discovery, I didn’t manage to get the “Sources” section to be pushed up. I don’t bother, because it still looks good the way it looks now. I also wasn’t able to get the top navigation bar to be horizontal, but again, I find it okay the way it is right now. I’ve finished this assignment now and will be moving onto the next one!
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+   <html>
+        <head>
+            <title>Denzel Mombarg - Portfolio</title>
+            <!--Metadata-->
+            <meta charset="utf-8">
+
+
+            <!--Website styling-->
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+
+                    background-color: rgb(187, 178, 187);
+
+                    padding: 0;
+                    margin: 0;
+                }
+                
+                article {
+                    float: left;
+                    padding: 20px;
+                    width: 70%;
+                    background-color: #2c6da9;
+                }
+
+                .top-bar-container {
+                    display: flex;
+                    flex-direction: row;
+                    background-color: darkslategray;
+                    padding: 8px
+                }
+
+                /*Specify the color of each other element*/
+                tr:nth-child(even) {
+                    background-color:#6b1e95;
+                }
+
+                .top-bar-container div {
+                    margin: 20px;
+                    padding: 20px;
+                    font-size: 20px;
+                }
+
+                <!--Tables-->
+                table {
+                    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                td, #best-project-name, #best-project-description {
+                   border: 1px solid #aaaaaa;
+                   text-align: left;
+                }
+
+                footer {
+                   background-color: rgb(91, 113, 133);
+                }
+
+                /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+                @media (max-width: 600px) {
+                    #best-projects-overview, #best-projects-table {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                section::after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                <!--IDs-->
+                #navigation-bar {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #e4e4e4;
+                    display: flex;
+                }
+
+                #navigation-bar, #navigation-bar-element, #navigation-bar-link {
+                    display: block;
+                    color:white;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                #navigation-bar #navigation-bar-element #navigation-bar-link:hover {
+                    background-color: #888787;
+                }
+
+                #about-me-text {
+                    color: rgb(80, 66, 92);
+                }
+
+                #portfolio {
+                    background-color: rgb(146, 16, 141);
+                    height: 600px;
+                    overflow: hidden;
+                }
+
+                #best-projects-overview {
+                    float: left;
+                    padding: 20px;
+                    width: 70%;
+                    background-color: #6995ca;
+                }
+
+                #best-projects-table {
+                    float: left;
+                    width: 30%;
+                    background: #a919a9;
+                    padding: 20px;
+                }
+
+                #logo-portfolio {
+                    float: left;
+                    padding: 5px;
+                    width: 30%;
+                    height: 5%;
+                    margin-bottom: 0;
+                    margin-left: 0;
+                }
+
+                #contact-info {
+                    float: left;
+                    width: 25%;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                #contact-info-text {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+
+                #contact-info-header {
+                    margin-bottom: 0;
+                }
+
+                #sources {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-right: 0;
+                }
+
+                #sources-source {
+                    margin-top: 0;
+                }
+            </style>
+        </head>
+
+        <body>
+            <!--Site header-->
+            <h1>Portfolio - Denzel Mombarg</h1>
+
+            <!--Site Top Bar-->
+            <ul id="navigation-bar">
+                <li id="navigation-bar-element"><a id="navigation-bar-link", href="#about-me">About Me</a></li>
+                <li id="navigation-bar-element"><a id="navigation-bar-link", href="#portfolio">Portfolio</a></li>
+                <li id="navigation-bar-element"><a id="navigation-bar-link", href="blogposts_page.html">Blog Posts</a></li>
+                <li id="navigation-bar-element"><a id="navigation-bar-link", href="#contact-info">Contact</a></li>
+            </ul>
+
+            <section style="background-color: #888787;">
+                <h2>About Me</h2>
+
+                <p id="about-me-text">
+                    Hey there! 
+                </p>
+                <p id="about-me-text">
+                    I'm Denzel. I'm 15 years old and this is my webpage that represents my portfolio and other upcoming projects.
+                    There's also a section that will include some <a href="#">blogposts</a> about my new findings and discoveries, you should defintely check that out!
+                </p>
+                <p id="about-me-text">
+                    This is actually this first webpage I've ever made, so please don't mind the layout and art desiscions I've made, I'm a programmer after all :}
+                    Anyway, enough about me. There are probably enough other things you're wanting to attend to, so feel free to take a look around and continue doing what you're supposed to do!
+                </p>
+                <p id="about-me-text">
+                    For the people who need/want some guidance in where you should being first, I'd suggest you go take a look at the list present in the <a href="#">Portfolio</a> section.
+                    If you're interested in more of my projects, feel free to visit my <a href "https://github.com/LuckyGamezDev/Full-Portfolio">github</a> repo which has ALL my projects in one place.
+                    I'll make sure to <em>NEVER</em> delete any of them later on because of me finding them "too bad and embarising" to show to others. 
+                </p>
+                <p id="about-me-text">
+                    Just a fair warning that there's a good possiblity that old me didn't know what he was doing and thus you'll see some interesting mistakes/decisions I made back in the day.
+                    Hopefully they're not too bad, though and good enough to take as example/learning material for beginners or heck, even more experienced people looking into how to implement something specific,
+                    since this repo will include <em>TONS</em> of different projects. Feel free to expand upon projects if you want as well, just let me know and show me what you've built, since I'm genuinely curious!
+                </p>
+            </section>
+
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                    <!--Welcome Paragraph-->
+                    <p>
+                        This is my portfolio. This specific section will only contain my <em>best</em> projects so far. <br>
+                        If you want to explore/see more, 
+                        feel free to visit the <a href="https://github.com/LuckyGamezDev/Full-Portfolio">github</a> that has <em>all</em> my stuff, including the <em>projects</em>.
+                    </p>
+
+                    <h2 id="portfolio-best-projects-header">My Best Projects</h2>
+                        <table id="best-projects-table">
+                            <nav>
+                                <tr>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 1</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 2</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 3</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 4</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
+                                </tr>
+                                <tr>
+                                    <th id="best-project-name"><a href="#", style="color:#54c4c2">Project 5</a></th>
+                                    <th id="best-project-description", style="color:#1283c9"><p>Project Description</p></th>
+                                </tr>
+                            </nav>
+                        </table>
+
+                        <article>
+                            <p id="best-projects-overview">
+                                On the left-hand side, you can see a table of my top 5 projects, at least, according to me that is. These are the projects I feel most proud of. <br>
+                                I'll tell you about them briefly, if you're interested in knowing more about them, feel free to visit my <a href="https://github.com/LuckyGamezDev/Full-Portfolio">github</a> to view the entire project(s)!
+                                <br><br><br><br><br><br><br><br><br><br>
+                            </p>
+                        </article>
+
+                    
+                </aside>
+            </section>
+            <section>
+                <h3 id="contact-info-header">Contact Information</h3>
+                    <address id="contact-info">
+                        <p>Email (Business Enquiries):<br><a href="mailto:luckygamezdev@gmail.com", id="contact-info-text">luckygamezdev@gmail.com</a></p>
+                        <p>Email (Personal Enquiries):<br><a href="mailto:denzel.mombarg.2010@gmail.com", id="contact-info-text">denzel.mombarg.2010@gmail.com</a></p>
+                    </address>
+
+                    <img src="sources/LuckyGamez_Logo.png", alt="LuckyGamez Logo", style="width:300px;height:300px;", id="logo-portfolio">
+            </section>
+
+            <section>
+                <h3 id="sources">Sources</h3>
+                    <a href="https://github.com/LuckyGamezDev/Full-Portfolio", id="sources-source">My Github</a>
+            </section>
+
+            <br> 
+            <footer>
+                &copy; Denzel Mombarg - Portfolio 
+            </footer>
+        </body>
+    </html>
+
+<!--TODO-->
+<!--
+...
+-->
+
+<!--SOURCES TO CHECK OUT-->
+<!--
+https://www.w3schools.com/html/html_head.asp
+https://www.w3schools.com/html/html_images.asp
+https://www.w3schools.com/html/html_lists.asp
+-->
+
+<!--WORKING HOURS: 9-->

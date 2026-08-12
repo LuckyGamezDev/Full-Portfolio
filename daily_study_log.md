@@ -52,3 +52,8 @@ I was finally able to find out on how to make the portfolio section have a secti
 
 I learned that you can controll the closeness of the next element by adjusting the (bottom) margin of the element above it, which basically acts like a collider. Despite this discovery, I didn’t manage to get the “Sources” section to be pushed up. I don’t bother, because it still looks good the way it looks now. I also wasn’t able to get the top navigation bar to be horizontal, but again, I find it okay the way it is right now. I’ve finished this assignment now and will be moving onto the next one!
 
+### WEB-02
+
+12-08-2026:
+
+I’ve started working on this new assignment, which requires me to recreate a basic public website layout. I’ve chosen to do a nice news-article-like card grid. I’ve learned a lot during this first session, and it’s all logged inside the file (for the specific commit on this date). I’ve encountered a bit of a confusion, but it’s too imature to 100% I’m stuck, so I will be looking further into this tommorow, it’s basically me not getting the text of the card to be within the actual card’s (visible) area. There’s also a problem with the scalling of the cards, mostly making them too small for my liking. Today was a very valuable day!

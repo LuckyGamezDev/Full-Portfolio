@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .card-container {
+                display: grid;
+
+                /* Make the grid have a max of 2 items in 1 row */
+                grid-template-columns: auto auto; 
+
+                background-color: rgb(187, 255, 237);
+
+                padding: 10px;
+            }
+
+            
+            .card-container img {
+                background-color: rgb(146, 191, 230);
+                padding: 10px;        
+
+                transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+            }
+
+            .card-container img:hover {
+                background-color: pink;
+                transform: scale(1.02)
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Cards</h1>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Card Title</h2>
+
+                    <a href="#", class="card-link">
+                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Card Title</h2>
+
+                    <a href="#", class="card-link">
+                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Card Title</h2>
+
+                    <a href="#", class="card-link">
+                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="card-title">Card Title</h2>
+
+                    <a href="#", class="card-link">
+                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- What I've learned this session -->
+ <!-- 
+I've learned that when you input the 'auto' keyword as parameter in the grid-template-columns parameter, that it will limit how many elements are in each row based off the amount of 'auto' is put (because auto stand for auto fitting basically)
+
+I've learned that when you create a 'container' (with <div>) and inherit from a class, when you then use the syntax ".containername elementtypewithincontainer" the specified element type will only be affected within that class (like styling all buttons within that class)
+
+I've learned that when a background color is not visible, it may be because the elements within the element you're trying to set the background color of are blocking the visiblity of that color. You should set a padding to make the elements be spaced out more and thus making that background color visible.
+
+I've learned that adjusting the padding amount on a group of buttons may cause them to get bigger in size (which could be intented or not)
+I'm not sure as to why this happens, because you'd think the buttons would just move away from eachother just like when you adjust the padding of the container itself, which makes the buttons be further away from the edges.
+
+I've learned that you can set the background color of a button (or pretty much any element) to a different color when you hover over it with the ":hover" suffix on the styling. I did notice that a lot of these
+types of "extension" styling features start with "::" instead of ":" like with the hover "extension". I'm not sure why this is or what that means, but it's an interesting observation
+
+I've observed that when you change the left (or right) padding on the main container, the buttons more so go to the right side rather than the container moving away from the corners of the window/screen. I'm not sure why
+this is and I don't know how to make the container be further away from the corners
+
+I've learned a super cool way to smoothly "lerp" the scale of an element when hovering over it with the "transition" attribute (which combines all 4 transition properties into 1). Very cool!
+...
+-->
+
+<!-- Worked Hours -->
+ <!--1 hour-->

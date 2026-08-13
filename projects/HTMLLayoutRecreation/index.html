@@ -1,24 +1,78 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Card Grid Layout</title>
+
         <style>
+            body {
+                background-color: rgb(199, 222, 249);
+            }
+
             .card-container {
                 display: grid;
 
                 /* Make the grid have a max of 2 items in 1 row */
                 grid-template-columns: auto auto; 
 
-                background-color: rgb(187, 255, 237);
+                background-color: rgb(101, 199, 175);
 
-                padding: 10px;
+                justify-content: center;
+
+                justify-self: center;
+
+                border-radius: 30px;
+
+                padding: 20px;
             }
 
+            .card {
+                display: flexbox;
+
+                margin: 30px;
+
+                padding: 20px 10px;
+
+                justify-self: center
+            }
+
+            .card-top {
+                display: flex;
+
+                justify-content: space-between;
+
+                flex-direction: column;
+            }
+
+            .card-bottom {
+                justify-content: space-between;
+            }
+
+            .card-content {
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: space-between;
+
+                justify-content: space-between;
+            }
+
+            .card-bg {
+                .bg-image {
+                    height: 100%;
+                    object-fit: cover;
+                    vertical-align: middle;
+                }
+            }
             
             .card-container img {
                 background-color: rgb(146, 191, 230);
                 padding: 10px;        
 
                 transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+
+                border-radius: 25px;
+                overflow: hidden;
             }
 
             .card-container img:hover {
@@ -34,38 +88,78 @@
         <div class="card-container">
             <div class="card">
                 <div class="card-content">
-                    <h2 class="card-title">Card Title</h2>
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
 
-                    <a href="#", class="card-link">
-                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                    </a>
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h2 class="card-title">Card Title</h2>
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
 
-                    <a href="#", class="card-link">
-                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                    </a>
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h2 class="card-title">Card Title</h2>
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
 
-                    <a href="#", class="card-link">
-                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                    </a>
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h2 class="card-title">Card Title</h2>
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
 
-                    <a href="#", class="card-link">
-                        <img class="card-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                    </a>
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,24 +168,25 @@
 
 <!-- What I've learned this session -->
  <!-- 
-I've learned that when you input the 'auto' keyword as parameter in the grid-template-columns parameter, that it will limit how many elements are in each row based off the amount of 'auto' is put (because auto stand for auto fitting basically)
+That you can center the contents of a parent by using the "justify-content" parameter
 
-I've learned that when you create a 'container' (with <div>) and inherit from a class, when you then use the syntax ".containername elementtypewithincontainer" the specified element type will only be affected within that class (like styling all buttons within that class)
+That you can round the corners of an element with the "border-radius" parameter
 
-I've learned that when a background color is not visible, it may be because the elements within the element you're trying to set the background color of are blocking the visiblity of that color. You should set a padding to make the elements be spaced out more and thus making that background color visible.
+That I have no idea what's happening anymore and I have no idea how to fix this
+...
+-->
 
-I've learned that adjusting the padding amount on a group of buttons may cause them to get bigger in size (which could be intented or not)
-I'm not sure as to why this happens, because you'd think the buttons would just move away from eachother just like when you adjust the padding of the container itself, which makes the buttons be further away from the edges.
+<!-- TODO -->
+<!--
+Make the card text appear in the card instead of being outside of it ❌
 
-I've learned that you can set the background color of a button (or pretty much any element) to a different color when you hover over it with the ":hover" suffix on the styling. I did notice that a lot of these
-types of "extension" styling features start with "::" instead of ":" like with the hover "extension". I'm not sure why this is or what that means, but it's an interesting observation
+Center the cards 👍 (with justify-content)
 
-I've observed that when you change the left (or right) padding on the main container, the buttons more so go to the right side rather than the container moving away from the corners of the window/screen. I'm not sure why
-this is and I don't know how to make the container be further away from the corners
+Make each card have a flexbox layout 👍
 
-I've learned a super cool way to smoothly "lerp" the scale of an element when hovering over it with the "transition" attribute (which combines all 4 transition properties into 1). Very cool!
+Find a way to make the edges of an element rounded 👍 (with border-radius)
 ...
 -->
 
 <!-- Worked Hours -->
- <!--1 hour-->
+ <!-- 2 hour-->

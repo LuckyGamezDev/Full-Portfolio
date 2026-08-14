@@ -4,8 +4,22 @@
         <title>Card Grid Layout</title>
 
         <style>
+            /* No idea what this does */
+            html {
+                box-sizing: border-box;
+            }
+
+            /* No idea what these do either, but it improved my situation */
+            *,
+            *:before,
+            *:after {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
+
             body {
-                background-color: rgb(199, 222, 249);
+                background-color: rgb(204, 220, 238);
             }
 
             .card-container {
@@ -26,43 +40,47 @@
             }
 
             .card {
-                display: flexbox;
-
                 margin: 30px;
 
-                padding: 20px 10px;
+                padding: 10px 10px;
 
-                justify-self: center
+                justify-self: center;
+
+                background-color: blue;
+            }
+
+            .card-content {
+                height: 100%;
+
+                display: flex;
+                
+                flex-direction: column;
+
+                position: relative;
+
+                background-color: blueviolet;
             }
 
             .card-top {
                 display: flex;
 
-                justify-content: space-between;
+                position: absolute;
 
-                flex-direction: column;
+                justify-content: space-between;
             }
 
             .card-bottom {
-                justify-content: space-between;
-            }
-
-            .card-content {
                 display: flex;
 
-                flex-direction: column;
-
-                align-items: space-between;
-
                 justify-content: space-between;
+
+                align-content: center;
             }
 
-            .card-bg {
-                .bg-image {
-                    height: 100%;
-                    object-fit: cover;
-                    vertical-align: middle;
-                }
+            .bg-image {
+                height: 100%;
+                object-fit: cover;
+                vertical-align: middle;
             }
             
             .card-container img {
@@ -88,6 +106,12 @@
         <div class="card-container">
             <div class="card">
                 <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
                     <div class="card-top">
                         <h2 class="card-author-name">Card Author Name</h2>
 
@@ -96,17 +120,17 @@
 
                     <div class="card-bottom">
                         <h2 class="card-title">Card Title</h2>
-                    </div>
-
-                    <div class="card-bg">
-                        <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                        </a>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
                     <div class="card-top">
                         <h2 class="card-author-name">Card Author Name</h2>
 
@@ -115,17 +139,17 @@
 
                     <div class="card-bottom">
                         <h2 class="card-title">Card Title</h2>
-                    </div>
-
-                    <div class="card-bg">
-                        <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                        </a>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
                     <div class="card-top">
                         <h2 class="card-author-name">Card Author Name</h2>
 
@@ -134,17 +158,17 @@
 
                     <div class="card-bottom">
                         <h2 class="card-title">Card Title</h2>
-                    </div>
-
-                    <div class="card-bg">
-                        <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                        </a>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
                     <div class="card-top">
                         <h2 class="card-author-name">Card Author Name</h2>
 
@@ -153,12 +177,6 @@
 
                     <div class="card-bottom">
                         <h2 class="card-title">Card Title</h2>
-                    </div>
-
-                    <div class="card-bg">
-                        <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -168,25 +186,18 @@
 
 <!-- What I've learned this session -->
  <!-- 
-That you can center the contents of a parent by using the "justify-content" parameter
+I've learned that you can actually style the html itself in the styling area, which is very interesting. I have no idea what it does, but the implementation that I copied from someone improved my situation
+(along side those .* class styling under the html, which I also don't know what it does)
 
-That you can round the corners of an element with the "border-radius" parameter
-
-That I have no idea what's happening anymore and I have no idea how to fix this
 ...
 -->
 
 <!-- TODO -->
 <!--
-Make the card text appear in the card instead of being outside of it ❌
+Make the card text appear in the card instead of being outside of it
 
-Center the cards 👍 (with justify-content)
-
-Make each card have a flexbox layout 👍
-
-Find a way to make the edges of an element rounded 👍 (with border-radius)
 ...
 -->
 
 <!-- Worked Hours -->
- <!-- 2 hour-->
+ <!-- 3 hour-->

@@ -62,3 +62,7 @@ I’ve started working on this new assignment, which requires me to recreate a b
 
 I made a decent amount of progress, and am essentially already almost done, there’s just this critical bug I’m encountering that makes the text that’s supposed to be in the card be outside of it, on top. I have no idea how to fix this, so it’s going to be a hard time. I did learn a decent amount once again, which is all mentioned in the file like always, examples are: knowing how to round the corners of an element, how to center the contents of a parent, etc.
 
+14-08-2026:
+
+I’ve learned that you can literally style the html itself. Also that you can use the \* symbol in the styling area to style all the elements in the entire html. I did use AI because I got stuck with trying to get the text within the cards, and turns out that it had all to do with the relative and absolute positioning of the elements. I’m not exactly sure how to do it yet, because I didn’t ask AI on HOW to do it, but rather what the problem was, which was the positioning. I’ve learned the difference about the relative and absolute position attributes for an element and that an element with an absolute positioning NEEDS to have a parent of some sort that has a relative position (otherwise it will anchor to the most nearby relative position element).
+

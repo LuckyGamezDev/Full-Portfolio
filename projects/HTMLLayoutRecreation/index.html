@@ -3,6 +3,8 @@
     <head>
         <title>Card Grid Layout</title>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <style>
             /* No idea what this does */
             html {
@@ -36,7 +38,7 @@
 
                 border-radius: 30px;
 
-                padding: 20px;
+                padding: 15px;
             }
 
             .card {
@@ -46,8 +48,19 @@
 
                 justify-self: center;
 
-                background-color: blue;
-            }
+                border-radius: 30px;
+
+                transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+                
+                &:hover {
+                    background-color: pink;
+                    transform: scale(1.02)
+                }
+
+                &:focus {
+                    background-color: rgb(255, 86, 114);
+                }
+           }
 
             .card-content {
                 height: 100%;
@@ -57,20 +70,37 @@
                 flex-direction: column;
 
                 position: relative;
-
-                background-color: blueviolet;
             }
 
             .card-top {
                 display: flex;
 
                 position: absolute;
-
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                
                 justify-content: space-between;
+            } .card-date {
+                font-size: 1vw;
+
+                color: white;
+                font-weight: bold;
+            } .card-title {
+                font-size: 1.3vw;
+                color: white;
+            } .card-author-name {
+                font-size: 1.4vw;
+
+                color: white;
             }
 
             .card-bottom {
                 display: flex;
+
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
 
                 justify-content: space-between;
 
@@ -78,7 +108,11 @@
             }
 
             .bg-image {
+                max-width: 100%;
+                max-height: 100%;
+
                 height: 100%;
+                width: 100%;
                 object-fit: cover;
                 vertical-align: middle;
             }
@@ -87,17 +121,45 @@
                 background-color: rgb(146, 191, 230);
                 padding: 10px;        
 
-                transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-
                 border-radius: 25px;
                 overflow: hidden;
             }
 
-            .card-container img:hover {
-                background-color: pink;
-                transform: scale(1.02)
+            /* re-locate elements when the screen size is equal to or lower than 800px in width  */
+            @media screen and (max-width: 800px) { 
+                .card-container {
+                    grid-template-columns: auto;
+                }
+
+                .card-title {
+                    font-size: 3vw;
+                }
+
+                .card-author-name {
+                    font-size: 4vw;
+                }
+
+                .card-date {
+                    font-size: 2.5vw;
+                }
             }
+
+            @media screen and (min-width: 801px) {
+                .card-title {
+                    font-size: 1.3vw;
+                }
+
+                .card-author-name {
+                    font-size: 1.4vw;
+                }
+
+                .card-date {
+                    font-size: 1vw;
+                }
+            }
+
         </style>
+
     </head>
 
     <body>
@@ -108,7 +170,7 @@
                 <div class="card-content">
                     <div class="card-bg">
                         <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                            <img class="bg-image", src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg", alt="layout card", style="width: 640px; height: 285;"></img>
                         </a>
                     </div>
 
@@ -127,7 +189,7 @@
                 <div class="card-content">
                     <div class="card-bg">
                         <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                            <img class="bg-image", src="https://images.pexels.com/photos/38247462/pexels-photo-38247462.jpeg", alt="layout card", style="width: 640px; height: 285;"></img>
                         </a>
                     </div>
 
@@ -146,7 +208,7 @@
                 <div class="card-content">
                     <div class="card-bg">
                         <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                            <img class="bg-image", src="https://cdn.stocksnap.io/img-thumbs/960w/ITKSNPZ1VP.jpg", alt="layout card", style="width: 640px; height: 285;"></img>
                         </a>
                     </div>
 
@@ -165,7 +227,7 @@
                 <div class="card-content">
                     <div class="card-bg">
                         <a href="#", class="card-link">
-                            <img class="bg-image", src="sources/LuckyGamez_Portfolio_Banner.png", alt="layout card", style="width: 640px; height: 285;"></img>
+                            <img class="bg-image", src="https://images.pexels.com/photos/26771259/pexels-photo-26771259.jpeg", alt="layout card", style="width: 640px; height: 285;"></img>
                         </a>
                     </div>
 
@@ -186,18 +248,26 @@
 
 <!-- What I've learned this session -->
  <!-- 
-I've learned that you can actually style the html itself in the styling area, which is very interesting. I have no idea what it does, but the implementation that I copied from someone improved my situation
-(along side those .* class styling under the html, which I also don't know what it does)
+I learned that if you have "justify content" set to "space-between", the second element next to the first may be in an unexpected position. To fix this, you must use absolute and relative position on the
+applicable elements, and then specify something for the "right" parameter to position the second element accordingly. 
 
+I learned that if you want an element that is position relatively to be at the bottom (whilst the origin is most often in the top left corner of the parent), you must only specify the "bottom" attribute, since that
+will immediately position it at the bottom as expected. Using the top transform for this is not recommended since that is after all meant for the top.
 ...
 -->
 
 <!-- TODO -->
 <!--
-Make the card text appear in the card instead of being outside of it
+Make the card text appear in the card instead of being outside of it 👍
 
+Make the text within the card scale with it when hovering over it 👍
+
+Make the webpage compatible with all screen sizes 👍
+
+Make the text within the cards scale better (appear bigger) when switching to a verticle card layout for smaller screens since if I change it in the breakpoint that makes the layout verticle, it doesn't affect text
+for some reason. It's probably being overidden by the styling that's already set 👍
 ...
 -->
 
 <!-- Worked Hours -->
- <!-- 3 hour-->
+ <!-- 4 hour-->

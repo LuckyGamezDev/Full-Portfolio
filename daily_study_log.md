@@ -52,3 +52,25 @@ I was finally able to find out on how to make the portfolio section have a secti
 
 I learned that you can controll the closeness of the next element by adjusting the (bottom) margin of the element above it, which basically acts like a collider. Despite this discovery, I didn’t manage to get the “Sources” section to be pushed up. I don’t bother, because it still looks good the way it looks now. I also wasn’t able to get the top navigation bar to be horizontal, but again, I find it okay the way it is right now. I’ve finished this assignment now and will be moving onto the next one!
 
+### WEB-02
+
+12-08-2026:
+
+I’ve started working on this new assignment, which requires me to recreate a basic public website layout. I’ve chosen to do a nice news-article-like card grid. I’ve learned a lot during this first session, and it’s all logged inside the file (for the specific commit on this date). I’ve encountered a bit of a confusion, but it’s too imature to 100% I’m stuck, so I will be looking further into this tommorow, it’s basically me not getting the text of the card to be within the actual card’s (visible) area. There’s also a problem with the scalling of the cards, mostly making them too small for my liking. Today was a very valuable day!
+
+13-08-2026:
+
+I made a decent amount of progress, and am essentially already almost done, there’s just this critical bug I’m encountering that makes the text that’s supposed to be in the card be outside of it, on top. I have no idea how to fix this, so it’s going to be a hard time. I did learn a decent amount once again, which is all mentioned in the file like always, examples are: knowing how to round the corners of an element, how to center the contents of a parent, etc.
+
+14-08-2026:
+
+I’ve learned that you can literally style the html itself. Also that you can use the \* symbol in the styling area to style all the elements in the entire html. I did use AI because I got stuck with trying to get the text within the cards, and turns out that it had all to do with the relative and absolute positioning of the elements. I’m not exactly sure how to do it yet, because I didn’t ask AI on HOW to do it, but rather what the problem was, which was the positioning. I’ve learned the difference about the relative and absolute position attributes for an element and that an element with an absolute positioning NEEDS to have a parent of some sort that has a relative position (otherwise it will anchor to the most nearby relative position element).
+
+17-08-2026:
+
+I learned a lot about scalling elements, especially on how to implement “breakpoints” to scale the screen accordingly toward the device screen size. In my project, I’ve made it so that when you’re on a mobile device, the cards will switch to a verticle grid where they are stacked onto eachother instead of pairs of two being next to eachother. I’m so close on finishing this project. The only thing that’s left to do is add some sort of “focus” indicator when clicking/selecting a card, which doesn’t work yet since the “:hover” function is interfering with that.
+
+18-08-2026:
+
+Today I finished the project. I was struggling A LOT with implementing focus correctly, because of that I unfortunately had to use the help of an AI. The problem was that when clicking the card, the \<a\> element instead would receive the focus instead of the card. The fix was to use “:focus-within” which also registeres when children in the parent get focused.
+

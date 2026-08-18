@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card Grid Layout</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            /* No idea what this does */
+            html {
+                box-sizing: border-box;
+            }
+
+            /* No idea what these do either, but it improved my situation */
+            *,
+            *:before,
+            *:after {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
+
+            body {
+                background-color: rgb(204, 220, 238);
+            }
+
+            .card-container {
+                display: grid;
+
+                /* Make the grid have a max of 2 items in 1 row */
+                grid-template-columns: auto auto; 
+
+                background-color: rgb(101, 199, 175);
+
+                justify-content: center;
+
+                justify-self: center;
+
+                border-radius: 30px;
+
+                padding: 15px;
+            }
+
+            .card {
+                margin: 30px;
+
+                padding: 10px 10px;
+
+                justify-self: center;
+
+                border-radius: 30px;
+
+                transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+                
+                --has-focus: false;
+
+                &:hover {
+                    transform: scale(1.02);
+
+                    background-color: #FFC0CB;
+                }
+
+                &:focus-within {
+                    background-color: rgb(255, 86, 114);
+                }
+                &:focus-within:hover {
+                    /* I used AI for this ): */
+                    background-color: rgb(255, 86, 114); 
+                }
+            }
+
+            .card-content {
+                height: 100%;
+
+                display: flex;
+                
+                flex-direction: column;
+
+                position: relative;
+            }
+
+            .card-top {
+                display: flex;
+
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                
+                justify-content: space-between;
+            } .card-date {
+                font-size: 1vw;
+
+                color: white;
+                font-weight: bold;
+            } .card-title {
+                font-size: 1.3vw;
+                color: white;
+            } .card-author-name {
+                font-size: 1.4vw;
+
+                color: white;
+            }
+
+            .card-bottom {
+                display: flex;
+
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+
+                justify-content: space-between;
+
+                align-content: center;
+            }
+
+            .bg-image {
+                max-width: 100%;
+                max-height: 100%;
+
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                vertical-align: middle;
+            }
+            
+            .card-container img {
+                background-color: rgb(146, 191, 230);
+                padding: 10px;        
+
+                border-radius: 25px;
+                overflow: hidden;
+            }
+
+            /* re-locate elements when the screen size is equal to or lower than 800px in width  */
+            @media screen and (max-width: 800px) { 
+                .card-container {
+                    grid-template-columns: auto;
+                }
+
+                .card-title {
+                    font-size: 3vw;
+                }
+
+                .card-author-name {
+                    font-size: 4vw;
+                }
+
+                .card-date {
+                    font-size: 2.5vw;
+                }
+            }
+
+            @media screen and (min-width: 801px) {
+                .card-title {
+                    font-size: 1.3vw;
+                }
+
+                .card-author-name {
+                    font-size: 1.4vw;
+                }
+
+                .card-date {
+                    font-size: 1vw;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>Cards</h1>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
+
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="https://images.pexels.com/photos/38247462/pexels-photo-38247462.jpeg", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
+
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="https://cdn.stocksnap.io/img-thumbs/960w/ITKSNPZ1VP.jpg", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
+
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-bg">
+                        <a href="#", class="card-link">
+                            <img class="bg-image", src="https://images.pexels.com/photos/26771259/pexels-photo-26771259.jpeg", alt="layout card", style="width: 640px; height: 285;"></img>
+                        </a>
+                    </div>
+
+                    <div class="card-top">
+                        <h2 class="card-author-name">Card Author Name</h2>
+
+                        <span class="card-date">Card Date</span>
+                    </div>
+
+                    <div class="card-bottom">
+                        <h2 class="card-title">Card Title</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- What I've learned this session -->
+ <!-- 
+I've learned (with the help of AI) that you can use "focus-within" on a parent to activate whenever any element witin that parent (a child) gets focused.
+...
+-->
+
+<!-- TODO -->
+<!--
+Make the focus work correctly on cards 👍
+...
+-->
+
+<!-- Worked Hours -->
+ <!-- 5 hour-->

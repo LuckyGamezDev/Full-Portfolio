@@ -69,3 +69,8 @@ I’ve learned that you can literally style the html itself. Also that you can u
 17-08-2026:
 
 I learned a lot about scalling elements, especially on how to implement “breakpoints” to scale the screen accordingly toward the device screen size. In my project, I’ve made it so that when you’re on a mobile device, the cards will switch to a verticle grid where they are stacked onto eachother instead of pairs of two being next to eachother. I’m so close on finishing this project. The only thing that’s left to do is add some sort of “focus” indicator when clicking/selecting a card, which doesn’t work yet since the “:hover” function is interfering with that.
+
+18-08-2026:
+
+Today I finished the project. I was struggling A LOT with implementing focus correctly, because of that I unfortunately had to use the help of an AI. The problem was that when clicking the card, the \<a\> element instead would receive the focus instead of the card. The fix was to use “:focus-within” which also registeres when children in the parent get focused.
+

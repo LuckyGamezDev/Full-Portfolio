@@ -52,15 +52,22 @@
 
                 transition: all 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
                 
+                --has-focus: false;
+
                 &:hover {
-                    background-color: pink;
-                    transform: scale(1.02)
+                    transform: scale(1.02);
+
+                    background-color: #FFC0CB;
                 }
 
-                &:focus {
+                &:focus-within {
                     background-color: rgb(255, 86, 114);
                 }
-           }
+                &:focus-within:hover {
+                    /* I used AI for this ): */
+                    background-color: rgb(255, 86, 114); 
+                }
+            }
 
             .card-content {
                 height: 100%;
@@ -159,7 +166,6 @@
             }
 
         </style>
-
     </head>
 
     <body>
@@ -248,26 +254,15 @@
 
 <!-- What I've learned this session -->
  <!-- 
-I learned that if you have "justify content" set to "space-between", the second element next to the first may be in an unexpected position. To fix this, you must use absolute and relative position on the
-applicable elements, and then specify something for the "right" parameter to position the second element accordingly. 
-
-I learned that if you want an element that is position relatively to be at the bottom (whilst the origin is most often in the top left corner of the parent), you must only specify the "bottom" attribute, since that
-will immediately position it at the bottom as expected. Using the top transform for this is not recommended since that is after all meant for the top.
+I've learned (with the help of AI) that you can use "focus-within" on a parent to activate whenever any element witin that parent (a child) gets focused.
 ...
 -->
 
 <!-- TODO -->
 <!--
-Make the card text appear in the card instead of being outside of it 👍
-
-Make the text within the card scale with it when hovering over it 👍
-
-Make the webpage compatible with all screen sizes 👍
-
-Make the text within the cards scale better (appear bigger) when switching to a verticle card layout for smaller screens since if I change it in the breakpoint that makes the layout verticle, it doesn't affect text
-for some reason. It's probably being overidden by the styling that's already set 👍
+Make the focus work correctly on cards 👍
 ...
 -->
 
 <!-- Worked Hours -->
- <!-- 4 hour-->
+ <!-- 5 hour-->

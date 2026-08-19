@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const sessionNameInputField = document.getElementById("session-name");
+            const sessionLengthInputField = document.getElementById("session-length");          
+
+            var sessionsArray = new Array();
+
+            function createSession() {
+                if (sessionNameInputField.textContent == null || sessionLengthInputField == null) {
+                    console.log("values are not valid!");
+                    return;
+                }
+
+                let createdSession = new Session(sessionNameInputField.textContent, sessionLengthInputField.textContent);
+
+                sessionsArray.push(createdSession);
+
+                console.log("Created new session. Current sessions array length: ", sessionsArray.length);
+            }
+
+            class Session {
+                constructor(name, length) {
+                    this.name = name;
+                    this.length = length;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <label for="session-name">Session Name:</label>
+        <input id="session-name" type="text" name="session-name-input"><br><br>
+
+        <label for="session-length">Session Length (min):</label>
+        <input id="session-length" type="number" name="session-length-input"><br><br>
+
+        <button type="button" onclick="createSession()">Create Session</button>
+    </body>
+</html>
+
+<!-- TODO -->
+ <!-- 
+Find out how to retrieve the value from an input field
+
+Store all created sessions in an array and save that array locally
+
+...-->
+
+<!-- Things I've learned this session -->
+ <!-- 
+I've learned on how to use input fields
+  
+I've learned how to create a class in javascript
+ -->

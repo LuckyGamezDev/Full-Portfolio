@@ -74,3 +74,8 @@ I learned a lot about scalling elements, especially on how to implement “break
 
 Today I finished the project. I was struggling A LOT with implementing focus correctly, because of that I unfortunately had to use the help of an AI. The problem was that when clicking the card, the \<a\> element instead would receive the focus instead of the card. The fix was to use “:focus-within” which also registeres when children in the parent get focused.
 
+**WEB-03:**
+
+**19-08-2026:**
+
+**Started working on the project immediately learning on how to use input elements. I’m having a hard time figuring out on how to retrieve the values of those input fields though.**

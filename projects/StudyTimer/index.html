@@ -1,23 +1,99 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-            const sessionNameInputField = document.getElementById("session-name");
-            const sessionLengthInputField = document.getElementById("session-length");          
+        <style>
+            .sessions-container {
+                background-color: blueviolet;
+            }
+        </style>
 
-            var sessionsArray = new Array();
+        <script>
+            const maxSessionNameLength = 30
+
+            var sessionsArray = [];
+
+            loadSessions();
+
+            function loadSessions() {
+                sessionsArray = JSON.parse(localStorage.getItem("user-sessions"));
+
+
+                for (let session of sessionsArray) {
+                   addSessionToContainer(session);
+                }
+            }
+
+            function addSessionToContainer(session) {
+                    let sessionsContainer = document.getElementById("user-sessions-container")
+
+                    let sessionNodeContainer = document.createElement("div");
+
+                    let sessionNodeName = document.createElement("a");
+                    let sessionNodeLength = document.createElement("a");
+
+                    sessionNodeName.innerHTML = session.name;
+                    sessionNodeLength.innerHTML = session.length;
+
+                    sessionNodeContainer.appendChild(sessionNodeName);
+                    sessionNodeContainer.appendChild(sessionNodeLength);
+
+                    sessionsContainer.appendChild(sessionNodeContainer);
+            }
 
             function createSession() {
-                if (sessionNameInputField.textContent == null || sessionLengthInputField == null) {
+                if (sessionsArray == null) {
+                    sessionsArray = [];
+                }
+
+                let sessionNameInputField = document.getElementById("session-name");
+                let sessionLengthInputField = document.getElementById("session-length");
+
+                if (sessionNameInputField.value == null || sessionLengthInputField == null) {
                     console.log("values are not valid!");
                     return;
                 }
 
-                let createdSession = new Session(sessionNameInputField.textContent, sessionLengthInputField.textContent);
+                let createdSession = new Session(sessionNameInputField.value, sessionLengthInputField.value);
 
-                sessionsArray.push(createdSession);
+                if (validateSession(createdSession) == true) {
+                    sessionsArray.push(createdSession);
 
-                console.log("Created new session. Current sessions array length: ", sessionsArray.length);
+                    console.log("Created new session. Current sessions:");
+                    for (let session of sessionsArray) {
+                        console.log(session.name + " " + session.length);
+                    }
+
+                    addSessionToContainer(createdSession)
+                    
+                    localStorage.setItem("user-sessions", JSON.stringify(sessionsArray));
+                }
+
+                sessionNameInputField.value = "";
+                sessionLengthInputField.value = "";
+            }
+
+            function validateSession(session) {
+                if (session.name == null || session.name == "") {
+                    alert("Please fill in a name for this session!");
+
+                    return false;
+                } else if (session.length == null || session.length == "") {
+                    alert("Please fill in the length of the session!");
+
+                    return false;
+                }
+
+                if (session.name.length > maxSessionNameLength) {
+                    alert("Session name can't be longer than " + maxSessionNameLength);
+
+                    return false;
+                }
+
+                if (session.length > 60) {
+                    return false;
+                }
+
+                return true;
             }
 
             class Session {
@@ -34,23 +110,33 @@
         <input id="session-name" type="text" name="session-name-input"><br><br>
 
         <label for="session-length">Session Length (min):</label>
-        <input id="session-length" type="number" name="session-length-input"><br><br>
+        <input id="session-length" type="number" name="session-length-input" min="0"><br><br>
 
-        <button type="button" onclick="createSession()">Create Session</button>
+        <button type="button" onclick="createSession()">Create Session</button><br><br>
+
+        <div class="sessions-container" id="user-sessions-container">
+            <h2>Sessions</h2>
+        </div>
     </body>
 </html>
 
 <!-- TODO -->
  <!-- 
-Find out how to retrieve the value from an input field
+Find out how to retrieve the value from an input field 👍
 
-Store all created sessions in an array and save that array locally
+Store all created sessions in an array and save that array locally 👍
 
-...-->
+Display all the session to the user
+
+Make the user able to start a session
+
+...
+-->
 
 <!-- Things I've learned this session -->
  <!-- 
-I've learned on how to use input fields
-  
-I've learned how to create a class in javascript
+If you want to access the value of an element, you should get that element by its ID every single time. You cannot store it as a variable, because that'll only store the init state of that element (thus the value is null)
  -->
+
+ <!-- Time Worked -->
+  <!-- 2 hours -->

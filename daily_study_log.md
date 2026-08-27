@@ -80,7 +80,15 @@ Today I finished the project. I was struggling A LOT with implementing focus cor
 
 **Started working on the project immediately learning on how to use input elements. I’m having a hard time figuring out on how to retrieve the values of those input fields though.**
 
-
 **20-08-2026:**
 
 **I learned on how to create “nodes” (elements) in javascript and how to add those to parents as children (well… not really because it didn’t work as expected, but still). I also became a little more comfortable with classes and functions, so that’s excellent!**
+
+**21-08-2026: abscent**
+
+**23-08-2026 – 26-08-2026: away from home**
+
+**27-08-2026:**
+
+**I didn’t learn too much this session. I tried troubleshooting on how to make the script not complain that the element (the container that holds all the session elements) is null on start, because the script is being run before the DOM has finished intializing. I used an even listener that should’ve fixed the issue, and I think it has, but I’m now getting a new error that isn’t clear as to what the problem is. Next session I think I’ll work on starting a timer and forget about showing the sessions to the user for a bit.**
+

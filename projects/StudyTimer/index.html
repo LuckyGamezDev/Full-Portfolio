@@ -7,102 +7,7 @@
             }
         </style>
 
-        <script>
-            const maxSessionNameLength = 30
-
-            var sessionsArray = [];
-
-            loadSessions();
-
-            function loadSessions() {
-                sessionsArray = JSON.parse(localStorage.getItem("user-sessions"));
-
-
-                for (let session of sessionsArray) {
-                   addSessionToContainer(session);
-                }
-            }
-
-            function addSessionToContainer(session) {
-                    let sessionsContainer = document.getElementById("user-sessions-container")
-
-                    let sessionNodeContainer = document.createElement("div");
-
-                    let sessionNodeName = document.createElement("a");
-                    let sessionNodeLength = document.createElement("a");
-
-                    sessionNodeName.innerHTML = session.name;
-                    sessionNodeLength.innerHTML = session.length;
-
-                    sessionNodeContainer.appendChild(sessionNodeName);
-                    sessionNodeContainer.appendChild(sessionNodeLength);
-
-                    sessionsContainer.appendChild(sessionNodeContainer);
-            }
-
-            function createSession() {
-                if (sessionsArray == null) {
-                    sessionsArray = [];
-                }
-
-                let sessionNameInputField = document.getElementById("session-name");
-                let sessionLengthInputField = document.getElementById("session-length");
-
-                if (sessionNameInputField.value == null || sessionLengthInputField == null) {
-                    console.log("values are not valid!");
-                    return;
-                }
-
-                let createdSession = new Session(sessionNameInputField.value, sessionLengthInputField.value);
-
-                if (validateSession(createdSession) == true) {
-                    sessionsArray.push(createdSession);
-
-                    console.log("Created new session. Current sessions:");
-                    for (let session of sessionsArray) {
-                        console.log(session.name + " " + session.length);
-                    }
-
-                    addSessionToContainer(createdSession)
-                    
-                    localStorage.setItem("user-sessions", JSON.stringify(sessionsArray));
-                }
-
-                sessionNameInputField.value = "";
-                sessionLengthInputField.value = "";
-            }
-
-            function validateSession(session) {
-                if (session.name == null || session.name == "") {
-                    alert("Please fill in a name for this session!");
-
-                    return false;
-                } else if (session.length == null || session.length == "") {
-                    alert("Please fill in the length of the session!");
-
-                    return false;
-                }
-
-                if (session.name.length > maxSessionNameLength) {
-                    alert("Session name can't be longer than " + maxSessionNameLength);
-
-                    return false;
-                }
-
-                if (session.length > 60) {
-                    return false;
-                }
-
-                return true;
-            }
-
-            class Session {
-                constructor(name, length) {
-                    this.name = name;
-                    this.length = length;
-                }
-            }
-        </script>
+        <script src="main.js" defer></script>
     </head>
 
     <body>
@@ -122,21 +27,18 @@
 
 <!-- TODO -->
  <!-- 
-Find out how to retrieve the value from an input field 👍
-
-Store all created sessions in an array and save that array locally 👍
-
 Display all the session to the user
 
 Make the user able to start a session
 
+Fix the script throwing errors on start
 ...
 -->
 
 <!-- Things I've learned this session -->
  <!-- 
-If you want to access the value of an element, you should get that element by its ID every single time. You cannot store it as a variable, because that'll only store the init state of that element (thus the value is null)
+That you can use the async and defer tags when loading a script to make the script either be loaded ascynrhonously or be executed after the HTML (DOM) has finished loading.
  -->
 
  <!-- Time Worked -->
-  <!-- 2 hours -->
+  <!-- 3 hours -->

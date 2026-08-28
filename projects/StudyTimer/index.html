@@ -7,21 +7,31 @@
             }
         </style>
 
-        <script src="main.js" defer></script>
+        <script src="session-handler.js" defer></script>
+        <script src="timer-handler.js"></script>
     </head>
 
     <body>
-        <label for="session-name">Session Name:</label>
-        <input id="session-name" type="text" name="session-name-input"><br><br>
+        <label for="session-create-name">Session Name:</label>
+        <input id="session-create-name" type="text"><br><br>
 
         <label for="session-length">Session Length (min):</label>
-        <input id="session-length" type="number" name="session-length-input" min="0"><br><br>
+        <input id="session-length" type="number" min="0"><br><br>
 
         <button type="button" onclick="createSession()">Create Session</button><br><br>
+
+        <label for="session-start-name">Session Name: </label>
+        <input id="session-start-name" type="text">
+        <button type="button" onclick="startSession()">Start Session</button><br><br>
+
+        Time Left: 
+        <input id="timer-minutes" type="text"><br><br>
+        <input id="timer-seconds" type="text">
 
         <div class="sessions-container" id="user-sessions-container">
             <h2>Sessions</h2>
         </div>
+
     </body>
 </html>
 
@@ -29,7 +39,7 @@
  <!-- 
 Display all the session to the user
 
-Make the user able to start a session
+Make the user able to start a session 👍
 
 Fix the script throwing errors on start
 ...
@@ -37,8 +47,8 @@ Fix the script throwing errors on start
 
 <!-- Things I've learned this session -->
  <!-- 
-That you can use the async and defer tags when loading a script to make the script either be loaded ascynrhonously or be executed after the HTML (DOM) has finished loading.
+    That you can assign .1 to a variable, which I'm not sure what that means.
  -->
 
  <!-- Time Worked -->
-  <!-- 3 hours -->
+  <!-- 4 hours -->

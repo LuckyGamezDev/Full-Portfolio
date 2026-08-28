@@ -7,24 +7,29 @@ var sessionToAdd = null;
 document.addEventListener("DOMContentLoaded", function() {
     sessionsArray = JSON.parse(localStorage.getItem("user-sessions"));
 
+    if (sessionsArray == null) {
+        sessionsArray = [];
+    }
+
     for (let session of sessionsArray) {
         addSessionToContainer(session);
     }
 });
 
 function addSessionToContainer(session) {
-    const sessionsContainer = document.querySelector(".sessions-container");
+    const sessionsContainer = document.getElementById("user-sessions-container");
 
+    // If for some reason the last session that was supposed to be added wasn't added properly, add it here
     if (sessionToAdd && sessionsContainer) {
         sessionsContainer.appendChild(sessionToAdd);
 
         sessionToAdd = null;
     }
 
-    let sessionNodeContainer = document.createElement("div");
+    let sessionNodeContainer = document.createElement('div');
 
-    let sessionNodeName = document.createElement("a");
-    let sessionNodeLength = document.createElement("a");
+    let sessionNodeName = document.createElement('a');
+    let sessionNodeLength = document.createElement('a');
 
     sessionNodeName.innerHTML = "session name: " + session.name + " ";
     sessionNodeLength.innerHTML = "session length: " + session.length + " ";
@@ -35,6 +40,7 @@ function addSessionToContainer(session) {
     if (sessionsContainer) {                        
         sessionsContainer.appendchild(sessionNodeContainer);
     } else {
+        // If for some reason this happens, make this session be assigned the next time a new one gets created as fail safe
         sessionToAdd = sessionNodeContainer;
     }
                     
@@ -45,7 +51,7 @@ function createSession() {
         sessionsArray = [];
     }
 
-    let sessionNameInputField = document.getElementById("session-name");
+    let sessionNameInputField = document.getElementById("session-create-name");
     let sessionLengthInputField = document.getElementById("session-length");
 
         if (sessionNameInputField.value == null || sessionLengthInputField == null) {
@@ -93,7 +99,19 @@ function validateSession(session) {
         return false;
     }
 
+    for (let sessionFromArray of sessionsArray) {
+        if (sessionFromArray.name == session.name) {
+            alert("This isn't a valid session name since an other session already exists with this given name!");
+
+            return false;
+        }
+    }
+
     return true;
+}
+
+function getAllSessionsArray() {
+    return sessionsArray;
 }
 
 class Session {

@@ -27,9 +27,13 @@ function addSessionToContainer(session) {
     }
 
     let sessionNodeContainer = document.createElement('div');
+    sessionNodeContainer.id = "session-container-instance";
 
     let sessionNodeName = document.createElement('a');
+    sessionNodeName.id = "session-container-instance-name";
+
     let sessionNodeLength = document.createElement('a');
+    sessionNodeLength.id = "session-container-instance-length";
 
     sessionNodeName.innerHTML = "session name: " + session.name + " ";
     sessionNodeLength.innerHTML = "session length: " + session.length + " ";
@@ -38,7 +42,7 @@ function addSessionToContainer(session) {
     sessionNodeContainer.appendChild(sessionNodeLength);
 
     if (sessionsContainer) {                        
-        sessionsContainer.appendchild(sessionNodeContainer);
+        sessionsContainer.appendChild(sessionNodeContainer);
     } else {
         // If for some reason this happens, make this session be assigned the next time a new one gets created as fail safe
         sessionToAdd = sessionNodeContainer;

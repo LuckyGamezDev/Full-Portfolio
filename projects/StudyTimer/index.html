@@ -3,7 +3,105 @@
     <head>
         <style>
             .sessions-container {
-                background-color: blueviolet;
+                background-color: rgba(150, 63, 231, 0.64);
+
+                max-width: fit-content;
+                min-width: 300px;
+
+                min-height: auto;
+
+                margin: 5px;
+                padding: 3px;
+
+                border-radius: 15px;
+            }
+
+            #session-container-instance {
+                background-color: rgba(62, 104, 141, 0.892);
+                display: grid;
+                grid-template-columns: auto;
+
+                border-radius: 5px;
+
+                margin: 10px;
+
+                padding: 5px;
+
+                max-width: fit-content;
+                min-width: 150px;
+            }
+
+            #session-creation {
+                background-color: aliceblue;
+
+                max-width: 400px;
+                min-width: 375px;
+
+                border-radius: 4px;
+
+                padding: 4px;
+
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            #session-selection {
+                background-color: rgb(183, 195, 205);
+
+                max-width: 375px;
+                min-width: 350px;
+
+                margin-top: 5px;
+                margin-bottom: 5px;
+
+                padding: 4px;
+
+                border-radius: 4px;
+            }
+
+            #session-container-instance-name {
+            }
+
+            #session-container-instance-length {
+            }
+
+            #timer-container {
+            }
+
+            #timer-container-timers {
+                display: grid;
+                grid-template-columns: auto auto auto;
+
+                justify-content: left;
+
+                margin-top: 6px;
+                margin-right: 3px;
+            }
+
+            #timer-minutes {
+                max-height: 20px;
+                min-height: 15px;
+
+                max-width: 30px;
+                min-width: 25px;
+
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+
+            #timer-seconds {
+                max-height: 17px;
+                min-height: 12px;
+
+                max-width: 25px;
+                min-width: 21px;
+
+                margin-left: 3px;
+                margin-right: 3px;
+            }
+
+            #sessions-label {
+                margin: 10px;
             }
         </style>
 
@@ -12,24 +110,35 @@
     </head>
 
     <body>
-        <label for="session-create-name">Session Name:</label>
-        <input id="session-create-name" type="text"><br><br>
+        <div id="session-creation">
+            <label for="session-create-name">Session Name:</label>
+            <input id="session-create-name" type="text"><br><br>
 
-        <label for="session-length">Session Length (min):</label>
-        <input id="session-length" type="number" min="0"><br><br>
+            <label for="session-length">Session Length (min):</label>
+            <input id="session-length" type="number" min="0"><br><br>
 
-        <button type="button" onclick="createSession()">Create Session</button><br><br>
+            <button type="button" onclick="createSession()">Create Session</button><br><br>
+        </div>
 
-        <label for="session-start-name">Session Name: </label>
-        <input id="session-start-name" type="text">
-        <button type="button" onclick="startSession()">Start Session</button><br><br>
+        <div id="session-selection">
+            <label for="session-start-name">Session Name: </label>
+            <input id="session-start-name" type="text">
 
-        Time Left: 
-        <input id="timer-minutes" type="text"><br><br>
-        <input id="timer-seconds" type="text">
+            <button type="button" onclick="startSession()">Start Session</button><br><br>
+        </div>
+
+        <div id="timer-container">
+            Time Left: 
+            <div id="timer-container-timers">
+                <input id="timer-minutes" type="text" readonly><br><br>
+                <input id="timer-seconds" type="text" readonly><br><br>
+
+                <button id="stop-timer-button" onclick="stopTimer()">Stop Timer</button>
+            </div>
+        </div>
 
         <div class="sessions-container" id="user-sessions-container">
-            <h2>Sessions</h2>
+            <h2 id="sessions-label">Sessions</h2>
         </div>
 
     </body>
@@ -37,18 +146,20 @@
 
 <!-- TODO -->
  <!-- 
-Display all the session to the user
+Display all the session to the user 👍 (I don't wanna talk about how easy this was to fix)
 
-Make the user able to start a session 👍
+Fix the stop timer button misfunctioning and the shown errors associated with it.
 
-Fix the script throwing errors on start
+Make the display for the sessions nicer (mostly the container) 👷🏻
 ...
 -->
 
 <!-- Things I've learned this session -->
  <!-- 
-    That you can assign .1 to a variable, which I'm not sure what that means.
+    How to make elements visible/invisible (in javascript)
+
+    Became more comfortable with styling overal
  -->
 
  <!-- Time Worked -->
-  <!-- 4 hours -->
+  <!-- 5 hours -->

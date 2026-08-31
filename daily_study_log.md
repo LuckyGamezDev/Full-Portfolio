@@ -78,21 +78,24 @@ Today I finished the project. I was struggling A LOT with implementing focus cor
 
 **19-08-2026:**
 
-**Started working on the project immediately learning on how to use input elements. I’m having a hard time figuring out on how to retrieve the values of those input fields though.**
+Started working on the project immediately learning on how to use input elements. I’m having a hard time figuring out on how to retrieve the values of those input fields though.
 
 **20-08-2026:**
 
-**I learned on how to create “nodes” (elements) in javascript and how to add those to parents as children (well… not really because it didn’t work as expected, but still). I also became a little more comfortable with classes and functions, so that’s excellent!**
+I learned on how to create “nodes” (elements) in javascript and how to add those to parents as children (well… not really because it didn’t work as expected, but still). I also became a little more comfortable with classes and functions, so that’s excellent!
 
-**21-08-2026: abscent**
+**21-08-2026:** abscent
 
-**23-08-2026 – 26-08-2026: away from home**
+**23-08-2026 – 26-08-2026:** away from home
 
 **27-08-2026:**
 
-**I didn’t learn too much this session. I tried troubleshooting on how to make the script not complain that the element (the container that holds all the session elements) is null on start, because the script is being run before the DOM has finished intializing. I used an even listener that should’ve fixed the issue, and I think it has, but I’m now getting a new error that isn’t clear as to what the problem is. Next session I think I’ll work on starting a timer and forget about showing the sessions to the user for a bit.**
+I didn’t learn too much this session. I tried troubleshooting on how to make the script not complain that the element (the container that holds all the session elements) is null on start, because the script is being run before the DOM has finished intializing. I used an even listener that should’ve fixed the issue, and I think it has, but I’m now getting a new error that isn’t clear as to what the problem is. Next session I think I’ll work on starting a timer and forget about showing the sessions to the user for a bit.
 
 **28-08-2026:**
 
-**I was kinda confused this session with everything. There were a bunch of errors and I didn’t really fully get the implementation of the timer. I managed to find a nice article of someone that explained how to implement a timer that you can view in the UI. I think I get the system now, but it was a bit confusing at first. Might be his implementation that’s just confusing to me, or maybe it’s just really me. Either way, the timer works (mostly, with 1 bug I found).**
+I was kinda confused this session with everything. There were a bunch of errors and I didn’t really fully get the implementation of the timer. I managed to find a nice article of someone that explained how to implement a timer that you can view in the UI. I think I get the system now, but it was a bit confusing at first. Might be his implementation that’s just confusing to me, or maybe it’s just really me. Either way, the timer works (mostly, with 1 bug I found).
 
+**31-08-2026:**
+
+During this session I've become even more comfortable with styling, which is excellent! I also learned how to change the visiblity of elements, especially in javascript. This session was mostly just fixing and adding stuff, so I didn't necesarilly learn much, but I was pretty productive!

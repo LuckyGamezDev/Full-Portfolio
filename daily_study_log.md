@@ -99,3 +99,7 @@ I was kinda confused this session with everything. There were a bunch of errors 
 **31-08-2026:**
 
 During this session I've become even more comfortable with styling, which is excellent! I also learned how to change the visiblity of elements, especially in javascript. This session was mostly just fixing and adding stuff, so I didn't necesarilly learn much, but I was pretty productive!
+
+**01-09-2026:**
+
+This session was a bit disasterous because of me not being able to figure out what was causing a specific error/bug with the timer. Luckily, I found the problem at the last moment. To compesate for all the lost time, I quickly implemented a "clear all session" button that learned me how to remove a/all child(ren) from a parent. I think I'm nearly done with this project. I will be doing some more polishing tomorrow in terms of UI, but it should be almost done.

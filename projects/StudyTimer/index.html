@@ -59,15 +59,6 @@
                 border-radius: 4px;
             }
 
-            #session-container-instance-name {
-            }
-
-            #session-container-instance-length {
-            }
-
-            #timer-container {
-            }
-
             #timer-container-timers {
                 display: grid;
                 grid-template-columns: auto auto auto;
@@ -139,6 +130,10 @@
 
         <div class="sessions-container" id="user-sessions-container">
             <h2 id="sessions-label">Sessions</h2>
+            <div id="sessions-holder-container">
+
+            </div>
+            <button onclick="clearAllSessions()">Clear All Session</button>
         </div>
 
     </body>
@@ -146,19 +141,13 @@
 
 <!-- TODO -->
  <!-- 
-Display all the session to the user 👍 (I don't wanna talk about how easy this was to fix)
-
-Fix the stop timer button misfunctioning and the shown errors associated with it.
-
 Make the display for the sessions nicer (mostly the container) 👷🏻
 ...
 -->
 
 <!-- Things I've learned this session -->
  <!-- 
-    How to make elements visible/invisible (in javascript)
-
-    Became more comfortable with styling overal
+I've learned on how to remove (all) children from a parent in javascript
  -->
 
  <!-- Time Worked -->

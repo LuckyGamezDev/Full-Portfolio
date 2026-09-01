@@ -11,13 +11,17 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionsArray = [];
     }
 
+    loadAllSessionsIntoContainer();
+});
+
+function loadAllSessionsIntoContainer() {
     for (let session of sessionsArray) {
         addSessionToContainer(session);
     }
-});
+}
 
 function addSessionToContainer(session) {
-    const sessionsContainer = document.getElementById("user-sessions-container");
+    const sessionsContainer = document.getElementById("sessions-holder-container");
 
     // If for some reason the last session that was supposed to be added wasn't added properly, add it here
     if (sessionToAdd && sessionsContainer) {
@@ -80,6 +84,20 @@ function createSession() {
 
         sessionNameInputField.value = "";
         sessionLengthInputField.value = "";
+}
+
+function clearAllSessions() {
+    localStorage = null;
+
+    sessionsArray = [];
+
+    const sessionsContainer = document.getElementById("sessions-holder-container");
+
+    while (sessionsContainer.firstChild) {
+        sessionsContainer.removeChild(sessionsContainer.lastChild);
+    }
+
+    loadAllSessionsIntoContainer();
 }
 
 function validateSession(session) {

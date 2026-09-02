@@ -103,3 +103,8 @@ During this session I've become even more comfortable with styling, which is exc
 **01-09-2026:**
 
 This session was a bit disasterous because of me not being able to figure out what was causing a specific error/bug with the timer. Luckily, I found the problem at the last moment. To compesate for all the lost time, I quickly implemented a "clear all session" button that learned me how to remove a/all child(ren) from a parent. I think I'm nearly done with this project. I will be doing some more polishing tomorrow in terms of UI, but it should be almost done.
+
+**02-09-2026:**
+
+I'm nearly done finishing the project. The only thing I still need to do is add an 'empty' state for the sessions when no sessions are added yet. I've not done this today yet, because I'm also required to write article/blog post, which takes a lot of time. And because of the rough new schedule I now have to follow because of school, I'll just leave those
+two things for tommorow. I did fix a pretty interesting bug, which is listed in the 'what I've learned this session' part at the bottom of the index.html file

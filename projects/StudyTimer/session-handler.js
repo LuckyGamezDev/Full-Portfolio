@@ -40,7 +40,7 @@ function addSessionToContainer(session) {
     sessionNodeLength.id = "session-container-instance-length";
 
     sessionNodeName.innerHTML = "session name: " + session.name + " ";
-    sessionNodeLength.innerHTML = "session length: " + session.length + " ";
+    sessionNodeLength.innerHTML = "session length: " + session.length + " min";
 
     sessionNodeContainer.appendChild(sessionNodeName);
     sessionNodeContainer.appendChild(sessionNodeLength);
@@ -87,7 +87,7 @@ function createSession() {
 }
 
 function clearAllSessions() {
-    localStorage = null;
+    localStorage.clear();
 
     sessionsArray = [];
 

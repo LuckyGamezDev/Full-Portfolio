@@ -7,12 +7,15 @@ let mins;
 let secs;
 
 function startSession() {
+    stopSession();
+
     createdSessionsArray = getAllSessionsArray();
 
     const sessionNameInputField = document.getElementById("session-start-name");
 
     for (let session of createdSessionsArray) {
         if (session.name == sessionNameInputField.value) {
+
             sessionToStart = session;
 
             break;
@@ -20,7 +23,9 @@ function startSession() {
     }
 
     if (sessionToStart) {
-        countdown(sessionToStart.length);
+        setTimeout(function() {
+            countdown(sessionToStart.length);
+        }, 1000);
     } else {
         alert("This session does not (yet) exist. Please specify an other session or create a new one!");
 
@@ -39,7 +44,7 @@ function countdown(countdownLengthMinutes) {
 
 // Got this code from someone's article
 function decrement() {
-    if (shouldTimerBeActive) {
+    while (shouldTimerBeActive) {
         if (document.getElementById) { // I wonder what this is for
             timerMinutes = document.getElementById("timer-minutes");
             timerSeconds = document.getElementById("timer-seconds");
@@ -68,14 +73,22 @@ function decrement() {
             } else {
                 secs--;
 
-                setTimeout('decrement()', 1000);
+                setTimeout('decrement()', 1001);
+
+                break;
             }
         }
     }
 }
 
-function stopTimer() {
+function stopSession() {
     shouldTimerBeActive = false;
+
+    timerMinutes = document.getElementById("timer-minutes");
+    timerSeconds = document.getElementById("timer-seconds");
+
+    timerMinutes.value = 0;
+    timerSeconds.value = 0;
 }
 
 function getMinutes() {

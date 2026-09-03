@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .sessions-container {
+                background-color: rgba(150, 63, 231, 0.64);
+
+                max-width: fit-content;
+                min-width: 300px;
+
+                min-height: auto;
+
+                margin: 5px;
+                padding: 3px;
+
+                border-radius: 15px;
+            }
+
+            #sessions-label {
+                margin: 10px;
+            }
+
+            #session-container-instance {
+                background-color: rgba(62, 104, 141, 0.892);
+                display: grid;
+                grid-template-columns: auto;
+
+                border-radius: 5px;
+
+                margin: 10px;
+
+                padding: 5px;
+
+                max-width: fit-content;
+                min-width: 150px;
+            }
+
+            #session-creation {
+                background-color: aliceblue;
+
+                max-width: 400px;
+                min-width: 375px;
+
+                border-radius: 4px;
+
+                padding: 4px;
+
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            #session-selection {
+                background-color: rgb(183, 195, 205);
+
+                max-width: 375px;
+                min-width: 350px;
+
+                margin-top: 5px;
+                margin-bottom: 5px;
+
+                padding: 4px;
+
+                border-radius: 4px;
+            }
+
+            #clear-sessions-button {
+                margin-left: 10px;
+                margin-bottom: 3px;
+
+                border-radius: 4px;
+
+                background-color: rgb(170, 0, 170);
+                color: rgb(59, 0, 59);
+            }
+
+            #no-sessions-text {
+                margin-left: 10px;
+
+                color: rgb(149, 0, 149);
+            }
+
+            #timer-container {
+                background-color: rgb(58, 111, 158);
+
+                max-width: 375px;
+                min-width: 375px;
+            }
+
+            #timer-container-timers {
+                display: grid;
+                grid-template-columns: auto auto auto;
+
+                position: relative;
+
+                justify-content: left;
+
+                margin-top: 6px;
+                margin-right: 3px;
+            }
+
+            #timer-minutes {
+                max-height: 20px;
+                min-height: 15px;
+
+                max-width: 30px;
+                min-width: 25px;
+
+                margin-left: 3px;
+                margin-right: 3px;
+
+                border-color: aqua;
+                border-width: 4px;
+            }
+
+            #timer-seconds {
+                max-height: 17px;
+                min-height: 12px;
+
+                max-width: 25px;
+                min-width: 21px;
+
+                margin-left: 3px;
+                margin-right: 3px;
+
+                border-color: aqua;
+                border-width: 4px;
+            }
+
+            #stop-timer-button {
+                margin: 0px;
+
+                position: absolute;
+
+                width: 100px;
+                height: 30px;
+
+                left: 4px;
+                bottom: 4px;
+
+                border-color: rgb(187, 216, 240);
+                border-radius: 2px;
+            }
+        </style>
+
+        <script src="session-handler.js" defer></script>
+        <script src="timer-handler.js"></script>
+    </head>
+
+    <body>
+        <div id="session-creation">
+            <label for="session-create-name">Session Name:</label>
+            <input id="session-create-name" type="text"><br><br>
+
+            <label for="session-length">Session Length (min):</label>
+            <input id="session-length" type="number" min="0"><br><br>
+
+            <button type="button" onclick="createSession()">Create Session</button><br><br>
+        </div>
+
+        <div id="session-selection">
+            <label for="session-start-name">Session Name: </label>
+            <input id="session-start-name" type="text">
+
+            <button type="button" onclick="startSession()">Start Session</button><br><br>
+        </div>
+
+        <div id="timer-container">
+            Time Left: 
+            <div id="timer-container-timers">
+                <input id="timer-minutes" type="text" readonly><br><br>
+                <input id="timer-seconds" type="text" readonly><br><br>
+
+                <button id="stop-timer-button" onclick="stopSession()">Stop Timer</button>
+            </div>
+        </div>
+
+        <div class="sessions-container" id="user-sessions-container">
+            <h2 id="sessions-label">Sessions</h2>
+            <div id="sessions-holder-container">
+
+            </div>
+            <button id="clear-sessions-button" onclick="clearAllSessions()">Clear All Session</button>
+        </div>
+
+    </body>
+</html>
+
+<!-- TODO -->
+ <!--  
+Add an empty state 👍
+
+... 
+-->
+
+<!-- Things I've learned this session -->
+ <!-- 
+ -->
+
+ <!-- Time Worked -->
+  <!-- 6.5 hours -->

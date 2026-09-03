@@ -73,6 +73,12 @@
                 color: rgb(59, 0, 59);
             }
 
+            #no-sessions-text {
+                margin-left: 10px;
+
+                color: rgb(149, 0, 149);
+            }
+
             #timer-container {
                 background-color: rgb(58, 111, 158);
 
@@ -180,21 +186,15 @@
 </html>
 
 <!-- TODO -->
- <!-- 
-Make the display for the sessions nicer (mostly the container) 👍
+ <!--  
+Add an empty state 👍
 
-Fix the timer behaving weirdly when interupted by starting a new session without clicking the 'stop session' button
 ... 
 -->
 
 <!-- Things I've learned this session -->
-I've finally figured out the cause of the problem with the timer, where the more often you interrupt it (by just starting a new one without clicking the 'stop timer' button), the faster
-the new timer depleted, was because of conflicting timeouts of the function call. Basically, when you interupt the current timer with a new one, it will still wait 1 second to check if
-the timer is still supposed to run, but because there's no delay from the user (where he'd normally click stop timer first, then start an actual timer), by the time the timeout(s)
-call(s) the function again, the bool for the timer to run will be already set to true again, because the new timer has started, meaning multiple timers will make it deplete.
-I've fixed the problem by making the user wait for the timer to start with a small delay of 1001ms, which avoids conflicts.
  <!-- 
  -->
 
  <!-- Time Worked -->
-  <!-- 6 hours -->
+  <!-- 6.5 hours -->

@@ -4,6 +4,8 @@ var sessionsArray = [];
 
 var sessionToAdd = null;
 
+var noSessionsTextNode = null;
+
 document.addEventListener("DOMContentLoaded", function() {
     sessionsArray = JSON.parse(localStorage.getItem("user-sessions"));
 
@@ -11,16 +13,60 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionsArray = [];
     }
 
-    loadAllSessionsIntoContainer();
+    refreshSessionsInContainer();
 });
 
-function loadAllSessionsIntoContainer() {
-    for (let session of sessionsArray) {
-        addSessionToContainer(session);
+function refreshSessionsInContainer() {
+    const sessionsContainer = document.getElementById("sessions-holder-container");
+
+    if (sessionsArray.length == 0) {
+        while (sessionsContainer.firstChild) {
+            sessionsContainer.removeChild(sessionsContainer.lastChild);
+        }
+
+        displayNoSessionsText();
+    } else {
+        hideNoSessionsText();
+
+        while (sessionsContainer.firstChild) {
+            sessionsContainer.removeChild(sessionsContainer.lastChild);
+        }
+    
+        for (let session of sessionsArray) {
+            addSessionToContainer(session);
+        }
+    }
+}
+
+function displayNoSessionsText() {
+    console.log("Displaying 'no sessions' text");
+
+    const sessionsContainer = document.getElementById("sessions-holder-container");
+
+    noSessionsTextNode = document.createElement("h2");
+    noSessionsTextNode.innerHTML = "No Sessions";
+    noSessionsTextNode.id = "no-sessions-text"
+
+    sessionsContainer.appendChild(noSessionsTextNode);
+}
+
+function hideNoSessionsText() {
+    if (noSessionsTextNode) {
+        console.log("Hiding 'no sessions' text");
+
+        const sessionsContainer = document.getElementById("sessions-holder-container");
+
+        sessionsContainer.removeChild(noSessionsTextNode);
+
+        noSessionsTextNode = null;
+    } else {
+        console.log("Can't hide 'No sessions' text because it isn't enabled!");        
     }
 }
 
 function addSessionToContainer(session) {
+    console.log("added session to container");
+
     const sessionsContainer = document.getElementById("sessions-holder-container");
 
     // If for some reason the last session that was supposed to be added wasn't added properly, add it here
@@ -78,7 +124,10 @@ function createSession() {
             }
 
             addSessionToContainer(createdSession)
-                    
+            
+            // Reload the container so that everything is displayed correctly
+            refreshSessionsInContainer();
+
             localStorage.setItem("user-sessions", JSON.stringify(sessionsArray));
         }
 
@@ -91,13 +140,7 @@ function clearAllSessions() {
 
     sessionsArray = [];
 
-    const sessionsContainer = document.getElementById("sessions-holder-container");
-
-    while (sessionsContainer.firstChild) {
-        sessionsContainer.removeChild(sessionsContainer.lastChild);
-    }
-
-    loadAllSessionsIntoContainer();
+    refreshSessionsInContainer();
 }
 
 function validateSession(session) {

@@ -108,3 +108,7 @@ This session was a bit disasterous because of me not being able to figure out wh
 
 I'm nearly done finishing the project. The only thing I still need to do is add an 'empty' state for the sessions when no sessions are added yet. I've not done this today yet, because I'm also required to write article/blog post, which takes a lot of time. And because of the rough new schedule I now have to follow because of school, I'll just leave those
 two things for tommorow. I did fix a pretty interesting bug, which is listed in the 'what I've learned this session' part at the bottom of the index.html file
+
+**03-09-2026:**
+
+I've finished the project. Added the 'No Sessions' label when there aren't any created sessions, which represents the required empty state.

@@ -1,2 +1,5 @@
 # Ignore the IGNOREME file for educational purposes:
 /IGNOREME.txt
+
+* Ignore created venv's
+venv*

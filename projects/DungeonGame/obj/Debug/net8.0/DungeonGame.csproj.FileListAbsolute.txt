@@ -1,0 +1,15 @@
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.GeneratedMSBuildEditorConfig.editorconfig
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.AssemblyInfoInputs.cache
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.AssemblyInfo.cs
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.csproj.CoreCompileInputs.cache
+Z:\VisualStudio Projects\CS\DungeonGame\bin\Debug\net8.0\DungeonGame.exe
+Z:\VisualStudio Projects\CS\DungeonGame\bin\Debug\net8.0\DungeonGame.deps.json
+Z:\VisualStudio Projects\CS\DungeonGame\bin\Debug\net8.0\DungeonGame.runtimeconfig.json
+Z:\VisualStudio Projects\CS\DungeonGame\bin\Debug\net8.0\DungeonGame.dll
+Z:\VisualStudio Projects\CS\DungeonGame\bin\Debug\net8.0\DungeonGame.pdb
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.dll
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\refint\DungeonGame.dll
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.pdb
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.genruntimeconfig.cache
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\ref\DungeonGame.dll
+Z:\VisualStudio Projects\CS\DungeonGame\obj\Debug\net8.0\DungeonGame.sourcelink.json

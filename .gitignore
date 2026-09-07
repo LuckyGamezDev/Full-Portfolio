@@ -3,3 +3,7 @@
 
 * Ignore created venv's
 venv*
+
+* Ignore unnecesarry big files
+Cache
+bin

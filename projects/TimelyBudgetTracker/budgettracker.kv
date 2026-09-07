@@ -1,0 +1,512 @@
+#:kivy 1.0.9
+#:import Factory kivy.factory.Factory
+#:import ScrollView kivy.uix.scrollview
+#:import ObjectProperty kivy.properties.ObjectProperty
+
+<MainScreen>:
+    canvas.before:
+        Color:
+            rgba: (0.1, 0.1, 0.1, 1)
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+    FloatLayout:
+        # Widget declarations:
+
+        BudgetTrackerTimer:
+            id: timerDisplay
+
+            size_hint: None, None
+            size: 500, 250
+
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+        BudgetTrackerBudget:
+            id: budgetDisplay
+
+            size_hint: None, None
+            size: 375, 200
+
+            pos_hint: {"center_x": 0.5, "center_y": 0.4}
+
+        BudgetSpender:
+            id: spender
+
+            Button:
+                text: "Add Product"
+                size_hint: 1, 0.1
+
+                background_normal: ''
+                background_color: 0.03, 0.03, 0.03, 1
+
+                on_release: 
+                    popup = Factory.SpendBudgetPopup()
+                    popup.product_info_callback = app.root.get_screen("main").ids.spender.CreateProduct
+                    popup.can_add_product = app.root.get_screen("main").ids.spender.CanAddProduct()
+                    popup.open()
+
+        # Individual UI components:
+
+        Button:
+            text: "Set New Budget"
+
+            pos_hint: {"x": 0, "y": 0.9}
+            size_hint: 0.3, 0.1
+
+            background_normal: ''
+            background_color: 0.03, 0.03, 0.03, 1
+
+            on_release: Factory.SetBudgetPopup().open()
+
+        Button:
+            text: "History"
+
+            pos_hint: {"x": 0.8, "y": 0.9}
+            size_hint: 0.2, 0.1
+
+            background_normal: ""
+            background_color: 0.03, 0.03, 0.03, 1
+
+            on_release: root.manager.current = "product_history"
+
+<ProductPurchaseHistoryScreen>:
+    canvas.before:
+        Color:
+            rgba: (0.1, 0.1, 0.1, 1)
+
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    FloatLayout:
+        ProductPurchaseHistoryWidget:
+            id: history
+
+        ScrollView:
+            id: history_scroll_view
+
+            do_scroll_x: False
+            do_scroll_y: True
+
+            GridLayout:
+                size_hint_y: None
+
+                padding: [left, top, right, bottom]
+                padding: (0, 0, 0, 100)
+
+                spacing: 5
+
+                cols: 1
+
+                height: self.minimum_height
+
+        Button:
+            text: "Back"
+
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, 0.1
+
+            background_normal: ''
+            background_color: 0.03, 0.03, 0.03, 1
+
+            on_release: root.manager.current = "main"
+
+<ProductPurchaseHistoryPurchaseInfoPopup@Popup>:
+        
+    purchaseInfoFloatLayout: product_purchase_info_popup
+
+    product_purchase_info_callback: None    
+
+    title: "Purchase info"
+
+    separator_color: 0.2, 0.2, 0.2, 1
+
+    auto_dismiss: False
+    size_hint: 0.7, 0.8
+
+    background_normal: ""
+    background_color: 0.8, 0.8, 0.8, 1
+
+    canvas.before:
+        Color:
+            rgba: 0.2, 0.2, 0.2, 1
+
+        Line:
+            rectangle: (self.x, self.y, self.width, self.height)
+            width: 1
+
+    FloatLayout:
+        id: product_purchase_info_popup
+
+        Label:
+            text: "Product Name: " + (root.productToDisplay.name if root.productToDisplay else "")
+
+            size_hint: None, None
+            width: product_purchase_info_popup.width * 0.9
+            height: product_purchase_info_popup.height * 0.4
+
+            valign: "top"
+            halign: "left"
+
+            text_size: self.width, None
+
+            color: 0.9, 0.9, 0.9, 1
+
+            pos_hint: {"x": 0, "y": 0.7}
+
+        Label:
+            text: "Product Cost: " + (app.FormatCurrencyToSymbol(root.productToDisplay.cost, app.userCurrency) if root.productToDisplay else "")
+
+            size_hint: None, None
+            width: product_purchase_info_popup.width * 0.9
+            height: product_purchase_info_popup.height * 0.4
+
+            valign: "top"
+            halign: "left"
+
+            text_size: self.width, None
+
+            color: 0.9, 0.9, 0.9, 1
+
+            pos_hint: {"x": 0, "y": 0.6}
+
+        Label:
+            text: "Product Description:\n" + (root.productToDisplay.description if root.productToDisplay else "")
+
+            size_hint: None, None
+            width: product_purchase_info_popup.width * 0.9
+            height: product_purchase_info_popup.height * 0.4
+
+            valign: "top"
+            halign: "left"
+
+            text_size: self.width, None
+
+            color: 0.9, 0.9, 0.9, 1
+
+            pos_hint: {"x": 0, "y": 0.5}
+    
+        Button:
+            text: "Back"
+
+            size_hint: None, None
+            height: 60
+            width: product_purchase_info_popup.width
+
+            pos_hint: {"x": 0, "y": 0}
+
+            on_release: root.dismiss()
+
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.1, 0.1, 0.1, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 3
+
+<SpendBudgetPopup@Popup>:
+    title: "Add spending product"
+
+    separator_color: 0.2, 0.2, 0.2, 1
+
+    background_normal: ""
+    background_color: 0.8, 0.8, 0.8, 1
+
+    product_info_callback: None
+    can_add_product: None
+
+    auto_dismiss: False
+    size_hint: 0.5, 0.6
+
+    canvas.before:
+        Color:
+            rgba: 0.2, 0.2, 0.2, 1
+
+        Line:
+            rectangle: (self.x, self.y, self.width, self.height)
+            width: 1
+
+    FloatLayout:
+        size_hint: 1, 1
+        pos_hint: {"x": 0, "y": 0}
+
+        TextInput:
+            id: product_name_input_text
+            multiline: False
+            hint_text: "Product Name"
+
+            size_hint: 1, 0.1
+            pos_hint: {"x": 0, "y": 0.9}
+            
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.3, 0.3, 0.3, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+
+        TextInput:
+            id: product_cost_input_text
+            multiline: False
+            hint_text: "Product Cost"
+
+            size_hint: 1, 0.2
+            pos_hint: {"x": 0, "y": 0.7}
+
+            input_filter: "float"
+            
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.3, 0.3, 0.3, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+        TextInput:
+            id: product_description_input_text
+            multiline: True
+            hint_text: "Description (optional)"
+
+            size_hint: 1, 0.55
+            pos_hint: {"x": 0, "y": 0.25}
+            
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.3, 0.3, 0.3, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+        Button:
+            text: "Add Product"
+
+            size_hint: 1, 0.1
+            pos_hint: {"x": 0, "y": 0.1}
+
+            on_release:
+                root.product_info_callback(root, [product_name_input_text.text, product_cost_input_text.text, product_description_input_text.text])
+
+            disabled: not app.HasBudgetBeenSet() or not root.can_add_product
+            
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.1, 0.1, 0.1, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+        Button:
+            text: "Cancel"
+
+            size_hint: 1, 0.1
+            pos_hint: {"x": 0, "y": 0}
+
+            on_release:
+                root.dismiss()
+                
+            foreground_color: 1, 1, 1, 1
+            
+            background_normal: ""
+            background_color: 0.1, 0.1, 0.1, 1
+
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+<SetBudgetPopup@Popup>:
+    dateSetterTextInput: deadline_input
+
+    title: "Set new budget"
+
+    separator_color: 0.2, 0.2, 0.2, 1
+
+    background_normal: ""
+    background_color: 0.8, 0.8, 0.8, 1
+
+    auto_dismiss: False
+    size_hint: 0.4, 0.4
+
+    canvas.before:
+        Color:
+            rgba: 0.2, 0.2, 0.2, 1
+
+        Line:
+            rectangle: (self.x, self.y, self.width, self.height)
+            width: 1
+
+    FloatLayout:
+        TextInput:
+            id: deadline_input
+            multiline: False
+            hint_text: "Months Amount"
+
+            size_hint: 1, 0.2
+            pos_hint: {"x": 0, "y": 0.8}
+
+            input_filter: "int"
+            
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.3, 0.3, 0.3, 1
+            
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+        TextInput:
+            id: deadline_budget_input
+            multiline: False
+            hint_text: "Budget Amount"
+
+            size_hint: 1, 0.2
+            pos_hint: {"x": 0, "y": 0.6}
+
+            input_filter: "int"
+
+            foreground_color: 1, 1, 1, 1 
+
+            background_normal: ""
+            background_color: 0.3, 0.3, 0.3, 1
+            
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+        Button:
+            text: "Set"
+
+            size_hint: 1, 0.2
+            pos_hint: {"x": 0, "y": 0.2}
+
+            on_release: 
+                root.OnNewBudgetSet(root, deadline_budget_input.text, deadline_input.text)
+
+            foreground_color: 1, 1, 1, 1
+            
+            background_normal: ""
+            background_color: 0.1, 0.1, 0.1, 1
+            
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+        Button:
+            text: "Cancel"
+
+            size_hint: 1, 0.2
+            pos_hint: {"x": 0, "y": 0}
+
+            on_release: root.dismiss()
+            
+            foreground_color: 1, 1, 1, 1
+            
+            background_normal: ""
+            background_color: 0.1, 0.1, 0.1, 1
+            
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+
+                Line:
+                    rectangle: (self.x, self.y, self.width, self.height)
+                    width: 2
+
+<BudgetTrackerTimer>:
+    countdownLabel: timer_label
+
+    canvas.before:
+        Color:
+            rgba: 0.3, 0, 0.2, 1
+
+        SmoothRoundedRectangle:
+            size: root.size
+            pos: root.pos
+
+
+    Label:
+        id: timer_label
+
+        text: "Time until budget reset: 00:00:00"
+        bold: True
+
+        size: root.size
+        pos: root.pos
+        text_size: self.size
+        
+        halign: "center"
+        valign: "middle"
+
+<BudgetTrackerBudget>:
+    budgetAmountLabel: budget_label
+
+    canvas.before:
+        Color:
+            rgba: 0, 0.3, 0, 1
+
+        SmoothRoundedRectangle:
+            size: root.size
+            pos: root.pos
+
+
+    Label:
+        id: budget_label
+
+        text: "Remaining budget: $0"
+        bold: True
+
+        size: root.size
+        pos: root.pos
+        text_size: self.size
+
+        halign: "center"
+        valign: "middle"

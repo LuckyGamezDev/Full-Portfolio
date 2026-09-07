@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SmartSearchIndexer": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Z:\\Programming\\VisualStudio Projects\\CS\\SmartSearchIndexer\""
+    }
+  }
+}

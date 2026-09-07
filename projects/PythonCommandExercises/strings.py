@@ -8,19 +8,13 @@ def save():
     global users_dict
 
     with open("saved_users", "w") as save_file:
-        save_file.write(str(users_dict))
-
+        pass
 def load():
     global users_dict
-    dic = ''
 
     if Path("saved_users").exists(): # Only load the save file if it exists
         with open("saved_users", "r") as save_file:
-            for i in save_file.readlines():
-                dic = i
-
-        dic = eval(dic)
-        users_dict = dic
+            pass            
     else:
         print("NO SAVED USERS YET") # Temporary for testing
 

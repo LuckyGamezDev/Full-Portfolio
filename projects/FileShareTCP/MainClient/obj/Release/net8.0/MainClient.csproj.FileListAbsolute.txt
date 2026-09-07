@@ -1,0 +1,15 @@
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\MainClient.exe
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\MainClient.deps.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\MainClient.runtimeconfig.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\MainClient.dll
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\MainClient.pdb
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.AssemblyInfoInputs.cache
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.AssemblyInfo.cs
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.csproj.CoreCompileInputs.cache
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.sourcelink.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.dll
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\refint\MainClient.dll
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.pdb
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\MainClient.genruntimeconfig.cache
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\obj\Release\net8.0\ref\MainClient.dll

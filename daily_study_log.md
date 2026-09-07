@@ -121,3 +121,7 @@ I started working on this new assignment. This is honestly way to easy, but it d
 I've made the command lines a little harder and more complex to at least make it a bit interesting, but it's still extremely easy 
 (since what I'm doing isn't that complex, just some basic account system). I tried finishing the project entirely today, but loading with json got me stuck, because apperantly
 json doesn't like it when you try to save a dictionary with a tuple as key to json.
+
+**05-09-2026:**
+
+Opened the project, but was too demotivated to do anything. I did figure out one thing, and that is what I should be doing the next session, which is find a way to convert the current date I want to save to a saveable and loadable json format, since the format I'm currently perusiading isn't compatible with the working flow of json. This is a reletively intensive task, because I'm not THAT familiar with how json works, so that's why I won't be doing this today. I also added a bit more projects I've worked on before, since it is my full portfolio after all. Though I noticed that the file sizes are getting a bit big, so I might stop saving the entire projects and only include the actual scripts.

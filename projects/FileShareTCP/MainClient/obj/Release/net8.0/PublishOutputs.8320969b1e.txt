@@ -1,0 +1,5 @@
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\Final Build\MainClient.exe
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\Final Build\MainClient.dll
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\Final Build\MainClient.deps.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\Final Build\MainClient.runtimeconfig.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\Final Build\MainClient.pdb

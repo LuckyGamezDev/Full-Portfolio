@@ -1,0 +1,28 @@
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\bin\Debug\net8.0\LAN File Sync_Client.exe
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\bin\Debug\net8.0\LAN File Sync_Client.deps.json
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\bin\Debug\net8.0\LAN File Sync_Client.runtimeconfig.json
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\bin\Debug\net8.0\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\bin\Debug\net8.0\LAN File Sync_Client.pdb
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.AssemblyInfoInputs.cache
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.AssemblyInfo.cs
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.csproj.CoreCompileInputs.cache
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\refint\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.pdb
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\LAN File Sync_Client.genruntimeconfig.cache
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\LAN File Sync_Client\obj\Debug\net8.0\ref\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\bin\Debug\net8.0\LAN File Sync_Client.exe
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\bin\Debug\net8.0\LAN File Sync_Client.deps.json
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\bin\Debug\net8.0\LAN File Sync_Client.runtimeconfig.json
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\bin\Debug\net8.0\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\bin\Debug\net8.0\LAN File Sync_Client.pdb
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.AssemblyInfoInputs.cache
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.AssemblyInfo.cs
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.csproj.CoreCompileInputs.cache
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\refint\LAN File Sync_Client.dll
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.pdb
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\LAN File Sync_Client.genruntimeconfig.cache
+Z:\Programming\VisualStudio Projects\CS\LAN_FileSync\MainClient\obj\Debug\net8.0\ref\LAN File Sync_Client.dll

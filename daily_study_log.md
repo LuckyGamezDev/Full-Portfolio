@@ -74,7 +74,7 @@ I learned a lot about scalling elements, especially on how to implement “break
 
 Today I finished the project. I was struggling A LOT with implementing focus correctly, because of that I unfortunately had to use the help of an AI. The problem was that when clicking the card, the \<a\> element instead would receive the focus instead of the card. The fix was to use “:focus-within” which also registeres when children in the parent get focused.
 
-**WEB-03:**
+### WEB-03:
 
 **19-08-2026:**
 
@@ -112,3 +112,20 @@ two things for tommorow. I did fix a pretty interesting bug, which is listed in 
 **03-09-2026:**
 
 I've finished the project. Added the 'No Sessions' label when there aren't any created sessions, which represents the required empty state.
+
+### PY-01:
+
+**04-09-2026:**
+
+I started working on this new assignment. This is honestly way to easy, but it did refresh my memory A LOT in terms of syntax, so it's definitely important I do this still.
+I've made the command lines a little harder and more complex to at least make it a bit interesting, but it's still extremely easy 
+(since what I'm doing isn't that complex, just some basic account system). I tried finishing the project entirely today, but loading with json got me stuck, because apperantly
+json doesn't like it when you try to save a dictionary with a tuple as key to json.
+
+**05-09-2026:**
+
+Opened the project, but was too demotivated to do anything. I did figure out one thing, and that is what I should be doing the next session, which is find a way to convert the current date I want to save to a saveable and loadable json format, since the format I'm currently perusiading isn't compatible with the working flow of json. This is a reletively intensive task, because I'm not THAT familiar with how json works, so that's why I won't be doing this today. I also added a bit more projects I've worked on before, since it is my full portfolio after all. Though I noticed that the file sizes are getting a bit big, so I might stop saving the entire projects and only include the actual scripts.
+
+**06-09-2026:**
+
+I finished the account project by implementing the save and load system properly. It was honestly extremely easy to do so, I just had to think a little about how I wanted to do it. I went for the architecture to just make a __dict__ out of all the UserInformation classes that were saved in the dictionary and add those to a list. Then save that list to a json which I then can load and just create new UserInformation classes from the values of the __dict__ within the list. I also started a new project, since I hadn't yet used the required sets. I made a number guessing game, which was first that came to mind after reading what sets are for and how they work. I finished that project today as well.

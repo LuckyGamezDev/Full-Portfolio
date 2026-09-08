@@ -1,0 +1,5 @@
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\publish\MainClient.exe
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\publish\MainClient.dll
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\publish\MainClient.deps.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\publish\MainClient.runtimeconfig.json
+Z:\Programming\VisualStudio Projects\CS\FileShareTCP\MainClient\bin\Release\net8.0\publish\MainClient.pdb

@@ -1,22 +1,10 @@
 from pathlib import Path
 
+import json
+
 from multimethod import multimethod
 
 users_dict = {}
-
-def save():
-    global users_dict
-
-    with open("saved_users", "w") as save_file:
-        pass
-def load():
-    global users_dict
-
-    if Path("saved_users").exists(): # Only load the save file if it exists
-        with open("saved_users", "r") as save_file:
-            pass            
-    else:
-        print("NO SAVED USERS YET") # Temporary for testing
 
 class UserInformation:
     user_name: str
@@ -40,12 +28,42 @@ class UserInformation:
     
     def get_current_money_amount(self) -> float:
         return self.user_money
+    
+def save():
+    global users_dict
+
+    saved_user_information_array = []
+
+    for k, v in users_dict.items():
+        v_dict = v.__dict__
+        saved_user_information_array.append(v_dict)
+
+    with open("saved_users", "w") as save_file:
+        json.dump(saved_user_information_array, save_file)
+
+
+def load():
+    global users_dict
+
+    user_information_array = []
+
+    if Path("saved_users").exists(): # Only load the save file if it exists
+        with open("saved_users", "r") as save_file:
+            user_information_array = json.load(save_file)            
+
+        for user in user_information_array:
+            user_information = UserInformation(user["user_name"], user["user_password"], user["user_money"])
+
+            users_dict[(user_information.user_name, user_information.user_password)] = user_information
+    else:
+        print("NO SAVED USERS YET") # Temporary for testing
 
 current_logged_in_user: UserInformation = None
 
 @multimethod
 def log_into_user():
     global users_dict
+
     if len(users_dict) == 0:
         print("There aren't any accounts to log into. Please create a new account(s) to procceed.")
 
@@ -68,6 +86,8 @@ def log_into_user():
 
 @multimethod
 def log_into_user(user_name: str, user_password: str):
+    global current_logged_in_user
+
     if ((user_name, user_password) in users_dict):
             current_logged_in_user = users_dict[(user_name, user_password)]
     
@@ -150,7 +170,7 @@ if __name__ == "__main__":
 # That you can't easily serialize a dictionary with a tuple as key to a json file (yay)
 
 # TODO:
-# Make the accounts save and load properly. (somehow)
+# Make the accounts save and load properly. (somehow) 👍
 # ...
 
 # Working Time: 2 hours

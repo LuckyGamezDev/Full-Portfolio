@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\",
+  "WorkspaceRootPath": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|z:\\programming\\visualstudio projects\\cs\\filesharetcp\\mainserver\\serverclientdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\filesharetcp\\mainserver\\serverclientdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|solutionrelative:serverclientdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|z:\\programming\\visualstudio projects\\cs\\filesharetcp\\mainserver\\mainserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|solutionrelative:mainserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\filesharetcp\\mainserver\\serverfilechunkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|solutionrelative:serverfilechunkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|z:\\programming\\visualstudio projects\\cs\\filesharetcp\\mainserver\\serverfilechunkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|solutionrelative:serverfilechunkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|z:\\programming\\_programming-future-roadmap\\_github repository\\full-documented-learning-repository\\projects\\filesharetcp\\mainserver\\mainserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4CF4B2DD-C7DF-44B0-8ABB-B2D1A2AF1334}|MainServer.csproj|solutionrelative:mainserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,36 +40,37 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ServerClientDataBase.cs",
-              "DocumentMoniker": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\ServerClientDataBase.cs",
+              "DocumentMoniker": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\ServerClientDataBase.cs",
               "RelativeDocumentMoniker": "ServerClientDataBase.cs",
-              "ToolTip": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\ServerClientDataBase.cs",
+              "ToolTip": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\ServerClientDataBase.cs",
               "RelativeToolTip": "ServerClientDataBase.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAwwEoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAuwPIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-26T16:49:03.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ServerFileChunkHandler.cs",
-              "DocumentMoniker": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\ServerFileChunkHandler.cs",
+              "DocumentMoniker": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\ServerFileChunkHandler.cs",
               "RelativeDocumentMoniker": "ServerFileChunkHandler.cs",
-              "ToolTip": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\ServerFileChunkHandler.cs",
+              "ToolTip": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\ServerFileChunkHandler.cs",
               "RelativeToolTip": "ServerFileChunkHandler.cs",
-              "ViewState": "AgIAAB0BAAAAAAAAAAAAADYBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABEBAAAAAAAAAAAuwDgBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T16:46:52.941Z"
+              "WhenOpened": "2026-03-26T16:46:52.941Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainServer.cs",
-              "DocumentMoniker": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\MainServer.cs",
+              "DocumentMoniker": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\MainServer.cs",
               "RelativeDocumentMoniker": "MainServer.cs",
-              "ToolTip": "Z:\\Programming\\VisualStudio Projects\\CS\\FileShareTCP\\MainServer\\MainServer.cs",
+              "ToolTip": "Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FileShareTCP\\MainServer\\MainServer.cs",
               "RelativeToolTip": "MainServer.cs",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAAOQAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAuwEUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T14:45:13.336Z",
               "EditorCaption": ""

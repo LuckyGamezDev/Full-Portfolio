@@ -129,3 +129,7 @@ Opened the project, but was too demotivated to do anything. I did figure out one
 **06-09-2026:**
 
 I finished the account project by implementing the save and load system properly. It was honestly extremely easy to do so, I just had to think a little about how I wanted to do it. I went for the architecture to just make a __dict__ out of all the UserInformation classes that were saved in the dictionary and add those to a list. Then save that list to a json which I then can load and just create new UserInformation classes from the values of the __dict__ within the list. I also started a new project, since I hadn't yet used the required sets. I made a number guessing game, which was first that came to mind after reading what sets are for and how they work. I finished that project today as well.
+
+**07-09-2026 - 15-09-2026:**
+
+Descision made that I will no longer be doing programming every day, far from that even. Since the new school year has started, there's just no time and discipline/motivation left in me after the long school days I need to make + all of the homework I need to do. This does not mean I'm completely stopping with this, but I will be significantly slowing down stuff, and thus ignoring the given dead lines on the assignment(s).

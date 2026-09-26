@@ -140,3 +140,7 @@ I've found out that working in the weekends is basically my only choice from now
 I'm pretty confused currently with the csv.DictWriter, because apperantly you can't assign any value without it throwing an error after accessing it when the DictWriter stream
 is closed. So apperantly it isn't a copy of the value of the DictWriter, but instead a reference? Anyway, my code is a little spaghetti momentarily, so I'll have to refactor it 
 a bit tommorrow. And I'll also have to find a way to resolve this problem with the DictWriter.
+
+**26-09-2026:**
+
+It's getting pretty bad; no motivation at all. I described briefely what I did in the 'What I've learned this session' section in the code file. So if interested, check that out.

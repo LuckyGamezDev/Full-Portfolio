@@ -1,50 +1,82 @@
 import csv
 
-shouldRunProgram = True
+import os
 
-def read_and_format_csv_file_as_dict(file) -> dict:
-    with open(file, "r") as csv_file:
-        csv_file_dict = csv.DictReader(csv_file)
+shouldRunProgram = True     
 
-        # Show the user what the file contents are
-        print("CSV file contents:\n")
+invalid_records_list = []
 
-        for record in csv_file_dict:
-            print(record)  
+def export_clean_csv(file_name, records_list: dict):
+    with open(file_name, "w") as csv_file:
+        print("Writing to file...")
 
-        # Convert the file contents into a dictionary
+        try:
+            writer = csv.DictWriter(csv_file, fieldnames=["name", "gender", "age", "school_name", "country", "pet"], restval="unknown")
 
-        validated_csv_file_dict = validate_csv_file_contents(csv_file_dict)
+            writer.writeheader()
+            writer.writerows(records_list)
+
+            for record_dict in records_list:
+                writer.writerow(record_dict)
+
+        except Exception as ex:
+            print("The following exception occured: ", ex)
+
+        print("Wrote records successfully to file!")
+
+def write_csv_summary(file_name):
+    with open(file_name, "r") as csv_file:
+        reader = csv.DictReader(csv_file)
+
+        same_school_occurrences = -1
+        same_age_occurrences = -1
+        male_gender_occurrences = -1
+        female_gender_occurrences = -1
+        same_country_occurrences = -1
+
+        # Save all the dictionaries to a list
+        record_dict_list = []
+        for record in reader:
+            record_dict_list.append(record)
 
         
 
+def validate_csv_file_contents(file_name: str) -> list:
+    global invalid_records_list
 
-invalid_records_list_in_csv: list = []
-def validate_csv_file_contents(file_dict: dict) -> dict:
-    invalid_records_list = []
+    records_list = []
 
-    for file in file_dict:
-        if any(char.isdigit() for char in file.name):
-            invalid_records_list.append(file)
-            print("Invalid record: ", file)
+    with open(file_name, "r") as csv_file:
+        reader = csv.DictReader(csv_file)
 
-            continue
+        for record in reader:
+            print(record)
+
+            if any(char.isdigit() for char in record["name"]):
+                # Save the invalid record in a seperate list so that the user can see which record were faulty later
+                invalid_records_list.append(record)
+
+                # Continue so that the record doesn't get added to the list and thus gets excluded
+                continue
+
+            records_list.append(record)
+
+    print("All the added records:")
+    for record_dict in records_list:
+        print(record_dict)
 
     if len(invalid_records_list) > 0:
         print(
-            "This CSV file contains one or more invalid records, this could be because of several reasons." +
-            "To find out which records were found, you can use the '--invalid-record' command to see all the invalid ones." +
+            "This CSV file contains one or more invalid records, this could be because of several reasons. " +
+            "To find out which records were found, you can use the '--invalid-record' command to see all the invalid ones. " +
             "These records won't be included in the summary(s), nor in the final export file."
         )
 
-        global invalid_records_list_in_csv
-        invalid_records_list_in_csv = invalid_records_list
-
-    return file_dict
+    return records_list
 
 def reset_values():
-    global invalid_records_list_in_csv
-    invalid_records_list_in_csv.clear()
+    global invalid_records_list
+    invalid_records_list.clear()
 
 def main():
     print("Welcome to CSV Parser.\n")
@@ -55,21 +87,29 @@ def main():
 
         filePath = input("To get started please specify the path of the file you want to parse: ")
 
-        csv_file = read_and_format_csv_file_as_dict("random_invalid.csv")
+        if filePath is None or filePath == "" or not os.path.exists(filePath):
+            print("This is not a valid file path, please specify an other one!")
 
-        with open("exported_file", "w") as final_csv_file:
-            writer = csv.DictWriter(final_csv_file, fieldnames=["name", "gender", "age", "school_name", "city", "pet"])
-            writer.writeheader()
-            writer.writerows(csv_file)
+            continue
+
+        validated_csv_list = validate_csv_file_contents(filePath)
+
+        export_clean_csv("exported_file.csv", validated_csv_list)
 
 if __name__ == "__main__":
     main()
 
-# What I've learned this session:
-# It's my first time working with CSV, so my intial idea of working with this concept wasn't working. I was planning to directly read the csv file like any ordinary file, and then
-# just format it myself. Problem with that is that it doesn't work on all CSV files since CSV stupidely doesn't have a strict syntax. Turns out this assignment specifically
-# wants me to only read this specific CSV file, so that didn't matter after all, but I used the official CSV parser implementation library anyway. I'm facing a bit of a confusing
-# problem with the DictWriter, though. Apperantly I can't assign a variable to the output of the dict without it throwing an error after I'm trying to access that assigned value
-# when the DictWriter is closed. I'm not really happy with this entire code anyway, so I might need to refactor it quite a bit tommorrow.
+# TODO:
+# Fix error with the last record in a file 👍
 
-# Time worked: 1.3 hours
+# Add a summary of the CSV record(s)
+
+# ...
+
+
+# What I've learned this session:
+# How the actual reader/write from CSV works and finally getting that I should be saving each record to a list since one record is an entire dictionary. I got to know
+# with the help of AI. Anyway, I basically didn't do anything, just fixed the problem with saving and such. The main system works, now only the summary is left. For the record
+# so you know how bad I genuinely currently am: this was 1 hour of time, I basically just was staring at the code an hoped it'd fix it by itself. Motivation currently is basically non-existent.
+
+# Time worked: 3.5 hours

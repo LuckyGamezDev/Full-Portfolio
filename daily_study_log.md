@@ -129,3 +129,23 @@ Opened the project, but was too demotivated to do anything. I did figure out one
 **06-09-2026:**
 
 I finished the account project by implementing the save and load system properly. It was honestly extremely easy to do so, I just had to think a little about how I wanted to do it. I went for the architecture to just make a __dict__ out of all the UserInformation classes that were saved in the dictionary and add those to a list. Then save that list to a json which I then can load and just create new UserInformation classes from the values of the __dict__ within the list. I also started a new project, since I hadn't yet used the required sets. I made a number guessing game, which was first that came to mind after reading what sets are for and how they work. I finished that project today as well.
+
+**07-09-2026 - 15-09-2026:**
+
+Descision made that I will no longer be doing programming every day, far from that even. Since the new school year has started, there's just no time and discipline/motivation left in me after the long school days I need to make + all of the homework I need to do. This does not mean I'm completely stopping with this, but I will be significantly slowing down stuff, and thus ignoring the given dead lines on the assignment(s).
+
+**19-09-2026:**
+
+I've found out that working in the weekends is basically my only choice from now on, so that's what I'll be doing. I'll try to throw in slightly longer sessions as well.
+I'm pretty confused currently with the csv.DictWriter, because apperantly you can't assign any value without it throwing an error after accessing it when the DictWriter stream
+is closed. So apperantly it isn't a copy of the value of the DictWriter, but instead a reference? Anyway, my code is a little spaghetti momentarily, so I'll have to refactor it 
+a bit tommorrow. And I'll also have to find a way to resolve this problem with the DictWriter.
+
+**26-09-2026:**
+
+It's getting pretty bad; no motivation at all. I described briefely what I did in the 'What I've learned this session' section in the code file. So if interested, check that out.
+
+**02-10-2026:**
+
+It was a successful day, I was able to finish the project by implementing the remaining summaries, and command line commands! I hope I can get decent progress on the new project
+tomorrow and the day after!

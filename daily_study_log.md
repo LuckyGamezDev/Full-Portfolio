@@ -144,3 +144,8 @@ a bit tommorrow. And I'll also have to find a way to resolve this problem with t
 **26-09-2026:**
 
 It's getting pretty bad; no motivation at all. I described briefely what I did in the 'What I've learned this session' section in the code file. So if interested, check that out.
+
+**02-10-2026:**
+
+It was a successful day, I was able to finish the project by implementing the remaining summaries, and command line commands! I hope I can get decent progress on the new project
+tomorrow and the day after!

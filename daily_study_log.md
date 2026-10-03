@@ -149,3 +149,8 @@ It's getting pretty bad; no motivation at all. I described briefely what I did i
 
 It was a successful day, I was able to finish the project by implementing the remaining summaries, and command line commands! I hope I can get decent progress on the new project
 tomorrow and the day after!
+
+**03-10-2026:**
+
+I didn't do any programming, instead I made the required brief for the website I will be creating. I have a pretty complex/big idea for it, so I might extend the deadline quite a
+bit since I think I can learn a lot from this. The briefing has all the required stuff in it and includes a detailed description and layout of the website.

@@ -86,6 +86,3 @@ Club location:
 * One upcoming event shown
 * Working form submission, when a form gets submitted, it actually gets sent to the owner, either via email with an accept/decline button that actually accepts/rejects the admission request or via the website itself within the owner's account privileges (which would require a whole account system which might be too much work)
 * Creatable articles by the community and owner(s)
-
-
-

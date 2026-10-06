@@ -154,3 +154,7 @@ tomorrow and the day after!
 
 I didn't do any programming, instead I made the required brief for the website I will be creating. I have a pretty complex/big idea for it, so I might extend the deadline quite a
 bit since I think I can learn a lot from this. The briefing has all the required stuff in it and includes a detailed description and layout of the website.
+
+**06-10-2026:**
+
+One school lesson got cancelled, so I got home earlier, thus I had time  to actually do programming, yay! I'm actually genuinely impressed by myself in terms of what I was able to do today and I think I did the styling pretty nicely, eventhough it's all just drafts right now. I didn't learn much, but I was able to refresh my memory on how HTML works and all, so that's nice.

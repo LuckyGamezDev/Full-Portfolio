@@ -158,3 +158,7 @@ bit since I think I can learn a lot from this. The briefing has all the required
 **06-10-2026:**
 
 One school lesson got cancelled, so I got home earlier, thus I had time  to actually do programming, yay! I'm actually genuinely impressed by myself in terms of what I was able to do today and I think I did the styling pretty nicely, eventhough it's all just drafts right now. I didn't learn much, but I was able to refresh my memory on how HTML works and all, so that's nice.
+
+**10-10-2026:**
+
+I started making the top hamburger navigation menu bar, with the help from W3schools, since I'm physically unable to do this myself (as already explained in the 'what I've learned this session within the index.html file). I sure do hope I get better with this type of stuff, but I don't know. Anyway, I also created a fast prototype for the community page. I'm honestly not really sure as to how far I want to go with this webpage in terms of polishing and features. It's probably wise to not go crazy, since I already know creating webpages will definitely not be my special department later.

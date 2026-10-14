@@ -3,8 +3,11 @@
 <html>
     <head>
         <title>The Gaming Buddies - Submission Form</title>
-        <style>
-            
+
+        <link rel="stylesheet" href="navigation-bar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>   
             body {
                 background-color: rgba(140, 40, 40, 0.822);
             }
@@ -20,8 +23,27 @@
                 border-width: 1px;
             }
         </style>
+
+        <script src="navigation-bar-script.js"></script>
+
     </head>
     <body>
+        <!-- # Top (persistent) navigation bar -->
+        <div class="top-menu-nav">
+            <a href="index.html" id="home-title">The Gaming Buddies</a>
+            
+            <div id="top-menu-links">
+                <a href="index.html">Home</a>
+                <a href="join-us.html">Join Us</a>
+                <a href="community.html">Our Community</a>
+                <a href="#about">About</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
         <div class="submission">
             <h1>Submission Form</h1>
             <form id="submission-form">

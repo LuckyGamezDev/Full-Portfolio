@@ -3,60 +3,12 @@
     <head>
         <title>The Gaming Buddies - Homepage</title>
 
+        <link rel="stylesheet" href="navigation-bar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <style>
             body {
                 background-color: rgba(218, 207, 218, 0.619);
-            }
-
-            .top-menu-nav {
-
-                background-color: rgb(166, 180, 192);
-
-                position: relative;
-
-                padding: 10px;
-                margin-bottom: 10px;
-
-                min-height: 10px;
-            }
-
-            .top-menu-nav #top-menu-links {
-                display: none;
-
-                position: absolute;
-                right: 0;
-            }
-
-            .top-menu-nav a {
-                display: block;
-
-                background-color: rgb(107, 147, 147);
-
-                text-decoration: none;
-
-                padding: 14px 16px;            
-            }
-
-            .top-menu-nav a:hover {
-                background-color: rgb(78, 143, 143);
-            }
-
-            .top-menu-nav #home-title {
-                position: absolute;
-                left: 0;
-                top: 0;
-
-                text-decoration: none;
-            }
-
-            .top-menu-nav a.icon {
-                display: block;
-
-                background: rgb(61, 128, 176);
-
-                position: absolute;
-                right: 0;
-                top: 0;
             }
 
             .homepage-banner {
@@ -165,29 +117,17 @@
             }
         </style>
 
-        <script>
-            function toggleNavigationMenu() {
-                var navigationLinksHolder = document.getElementById("top-menu-links")
-
-                if (navigationLinksHolder.style.display == "block") {
-                    navigationLinksHolder.style.display = "none";
-                }
-                else {
-                    navigationLinksHolder.style.display = "block";
-                }
-            }
-        </script>
+        <script src="navigation-bar-script.js"></script>
     </head>
     <body>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+         <!-- Top (persistent) navigation bar -->
         <div class="top-menu-nav">
             <a href="index.html" id="home-title">The Gaming Buddies</a>
             
             <div id="top-menu-links">
                 <a href="index.html">Home</a>
                 <a href="join-us.html">Join Us</a>
-                <a href="#community">Our Community</a>
+                <a href="community.html">Our Community</a>
                 <a href="#about">About</a>
             </div>
 
@@ -273,18 +213,16 @@
 
 <!-- What I learned this session -->
   <!-- 
-This was a pretty slow session, though I did do some things luckily. I faced my worst fear: creating a top hamburger navigation bar. Well, at least I've started facing the
-fear, since it's far from done. I basically just took a template from W3schools to see how to make it, so I didn't do it myself, but that's basically impossible to me. I just
-can't get comfortable with layouts and making stuff be at the position I want them to be, a navigation bar needs to be very precise, so that's probably why it's such a hell for me.
+    I mostly read stuff to actually properly understand what I'm doing. I'm starting to get the navigation bar a bit more polished, but it's still definitely not what I want it to be.
+    I'll probably continue with adding the google maps things and polishing the community page first next time, since I don't want to spend too much time working on 1 thing.
     -->
 
-<!-- Work Duration: 2,25 hours -->
+<!-- Work Duration: 3,5 hours -->
 
 <!-- TODO -->
  <!--
- 1. Make the code and style an importable file for the top navigation bar so that you can easily import those into other .html files without needing to copy paste
- 2. Try to make the top bar a little more polished.
- 3. Add the google maps feature in the accessible about section
- 4. Polish the community page
- 5. Make the form actually send data to somewhere or atleast reject/approve the submition
+ 1. Try to make the top bar a little more polished.
+ 2. Add the google maps feature in the accessible about section
+ 3. Polish the community page
+ 4. Make the form actually send data to somewhere or atleast reject/approve the submition
    -->

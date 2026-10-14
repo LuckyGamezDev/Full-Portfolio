@@ -1,0 +1,65 @@
+.top-menu-nav {
+    display: flex;
+
+    overflow: visible;
+
+    background-color: rgb(166, 180, 192);
+
+    position: relative;
+
+    margin-bottom: 10px;
+
+    padding: 4px;
+
+    min-height: 10px;
+}
+
+.top-menu-nav #top-menu-links {
+    display: none;
+
+    position: absolute;
+    right: 0;
+}
+
+.top-menu-nav a {
+    display: block;
+
+    background-color: rgb(107, 147, 147);
+
+    text-decoration: none;
+
+    padding: 5px 16px;            
+
+    height: auto;
+    width: auto;
+
+    justify-self:stretch;
+}
+
+/* Style for the hovering over links within the task bar */
+.top-menu-nav a:hover {
+    background-color: rgb(78, 143, 143);
+}
+
+/* The home title that redirects to the main homepage */
+.top-menu-nav #home-title {
+    justify-self: left;
+
+    text-decoration: none;
+}
+
+/* Handles the hamburger menu icon */
+.top-menu-nav a.icon {
+    display: block;
+
+    background: rgb(61, 128, 176);
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.top-menu-nav a.icon:hover {
+    background-color: rgb(49, 102, 139);
+    color: rgb(101, 191, 255);
+}

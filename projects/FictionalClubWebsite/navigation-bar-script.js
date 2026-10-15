@@ -1,9 +1,9 @@
 function toggleNavigationMenu() {
     var navigationLinksHolder = document.getElementById("top-menu-links")
 
-    if (navigationLinksHolder.style.display == "block") {
+    if (navigationLinksHolder.style.display == "flex") {
         navigationLinksHolder.style.display = "none";
     } else {
-        navigationLinksHolder.style.display = "block";
+        navigationLinksHolder.style.display = "flex";
     }
 }

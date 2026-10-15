@@ -17,27 +17,32 @@
 .top-menu-nav #top-menu-links {
     display: none;
 
+    margin-top: 35px;
+
     position: absolute;
     right: 0;
+
+    width: 200px;
+    height: 150px;
+
+    flex-direction: column;
 }
 
-.top-menu-nav a {
-    display: block;
+.link-button {
+    display: flex;
 
     background-color: rgb(107, 147, 147);
 
     text-decoration: none;
 
-    padding: 5px 16px;            
+    padding: 5px 16px;    
 
-    height: auto;
-    width: auto;
-
-    justify-self:stretch;
+    flex: 1;
+    align-items: center;
 }
 
 /* Style for the hovering over links within the task bar */
-.top-menu-nav a:hover {
+.link-button:hover {
     background-color: rgb(78, 143, 143);
 }
 
@@ -46,17 +51,17 @@
     justify-self: left;
 
     text-decoration: none;
+
+    padding: 5px 16px;
 }
 
 /* Handles the hamburger menu icon */
 .top-menu-nav a.icon {
-    display: block;
-
     background: rgb(61, 128, 176);
 
-    position: absolute;
-    right: 0;
-    top: 0;
+    margin-left: auto;
+
+    padding: 7px 10px;
 }
 
 .top-menu-nav a.icon:hover {

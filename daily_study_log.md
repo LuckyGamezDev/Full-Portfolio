@@ -162,3 +162,11 @@ One school lesson got cancelled, so I got home earlier, thus I had time  to actu
 **10-10-2026:**
 
 I started making the top hamburger navigation menu bar, with the help from W3schools, since I'm physically unable to do this myself (as already explained in the 'what I've learned this session within the index.html file). I sure do hope I get better with this type of stuff, but I don't know. Anyway, I also created a fast prototype for the community page. I'm honestly not really sure as to how far I want to go with this webpage in terms of polishing and features. It's probably wise to not go crazy, since I already know creating webpages will definitely not be my special department later.
+
+**14-10-2026:**
+
+I've starting with actually properly reading documentation on how everything is supposed to work, since I'll need a deep understanding of how everything works before being able to make it correctly myself. I learned about how relative/absolute positioning can affect how children behave on scalling of the parent. I'll definitely be spending a lot more time actually reading stuff instead of only doing stuff, which, to me always feels like I'm doing nothing, but that's not true.
+
+**15-10-2026:**
+
+I learned a lot about how to position and scale things the way I want. I also learned how to make a nice layout with a grid display like here: https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named, which is with an interesting property named "grid-template-areas". I learned how to position a flex item to the right side of a flexbox display with the margin-left being set to "auto". Basically, I got more comfortable with the positioning and understanding of items within different displays!

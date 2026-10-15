@@ -12,7 +12,7 @@
             }
 
             .news {
-                display: flex;
+                display: grid;
 
                 background-color: rgb(121, 160, 147);
 
@@ -23,6 +23,8 @@
 
                 min-width: auto;
                 min-height: auto;
+
+                grid-template-columns: auto auto auto auto;
             }
 
             .news #news-header {
@@ -32,17 +34,24 @@
                 top: 0;
             }
 
-            .news #owner-post {
+            .owner-post-preview {
+                display: flex;
+
+                align-items: center;
+                align-content: center;
+
                 background-color: rgb(134, 224, 194);
 
                 max-width: 500px;
 
                 padding: 10px;
                 margin: 20px;
+
+                flex-direction: column;
             }
 
             .community-posts {
-                display: flex;
+                display: grid;
 
                 background-color: rgb(121, 154, 160);
 
@@ -52,6 +61,8 @@
 
                 min-width: auto;
                 min-height: auto;
+
+                grid-template-columns: auto auto auto auto;
             }
 
             .community-posts #community-posts-header {
@@ -61,13 +72,20 @@
                 top: 0;
             }
 
-            .community-posts #community-post {
+            .community-post-preview {
+                display: flex;
+
+                align-items: center;
+                align-content: center;
+
                 background-color: rgb(107, 156, 221);
 
                 max-width: 500px;
 
                 padding: 10px;
                 margin: 20px;
+
+                flex-direction: column;
             }
         </style>
 
@@ -80,10 +98,10 @@
             <a href="index.html" id="home-title">The Gaming Buddies</a>
             
             <div id="top-menu-links">
-                <a href="index.html">Home</a>
-                <a href="join-us.html">Join Us</a>
-                <a href="community.html">Our Community</a>
-                <a href="#about">About</a>
+                <a class="link-button" href="index.html">Home</a>
+                <a class="link-button" href="join-us.html">Join Us</a>
+                <a class="link-button" href="community.html">Our Community</a>
+                <a class="link-button" href="#about">About</a>
             </div>
 
             <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
@@ -96,80 +114,82 @@
         <div class="news">
             <h2 id="news-header">News</h2>
 
-            <div id="owner-post">
+            <div class="owner-post-preview">
                 <p>
                     Title: Lorem ipsum dolor sit.
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Beatae neque perspiciatis labore modi molestiae perferendis voluptatem praesentium facere hic, blanditiis explicabo natus possimus excepturi pariatur rem consequuntur 
-                    aliquid sapiente quos?
-                </p>
+                    Nemo consequatur odit aliquid similique beatae labore.
+                </p> <br>
+
+                <a href="#article">To Article</a>
             </div>
 
-            <div id="owner-post">
+            <div class="owner-post-preview">
                 <p>
                     Title: Lorem ipsum dolor sit.
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Beatae neque perspiciatis labore modi molestiae perferendis voluptatem praesentium facere hic, blanditiis explicabo natus possimus excepturi pariatur rem consequuntur 
-                    aliquid sapiente quos?
+                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
+
+                <a href="#article">To Article</a>
             </div>
         </div>
 
         <div class="community-posts">
             <h2 id="community-posts-header">Community Posts</h2>
 
-            <div id="community-post">
+            <div class="community-post-preview">
                 <p>
                     Title: Lorem ipsum dolor sit.
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Beatae neque perspiciatis labore modi molestiae perferendis voluptatem praesentium facere hic, blanditiis explicabo natus possimus excepturi pariatur rem consequuntur 
-                    aliquid sapiente quos?
+                    Itaque, illo magni, qui numquam quod.
                 </p>
+
+                <a href="#article">To Article</a>
+
             </div>
 
-            <div id="community-post">
+            <div class="community-post-preview">
                 <p>
                     Title: Lorem ipsum dolor sit.
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Beatae neque perspiciatis labore modi molestiae perferendis voluptatem praesentium facere hic, blanditiis explicabo natus possimus excepturi pariatur rem consequuntur 
-                    aliquid sapiente quos?
+                    Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis.
                 </p>
+
+                <a href="#article">To Article</a>
+
             </div>
 
-            <div id="community-post">
+            <div class="community-post-preview">
                 <p>
                     Title: Lorem ipsum dolor sit.
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Beatae neque perspiciatis labore modi molestiae perferendis voluptatem praesentium facere hic, blanditiis explicabo natus possimus excepturi pariatur rem consequuntur 
-                    aliquid sapiente quos?
+                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit.
                 </p>
+
+                <a href="#article">To Article</a>
+
             </div>
 
-                        <div id="community-post">
+            <div class="community-post-preview">
                 <p>
                     Title: Lorem ipsum dolor sit.
 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Beatae neque perspiciatis labore modi molestiae perferendis voluptatem praesentium facere hic, blanditiis explicabo natus possimus excepturi pariatur rem consequuntur 
-                    aliquid sapiente quos?
+                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
+
+                <a href="#article">To Article</a>
+
             </div>
         </div>
     </body>

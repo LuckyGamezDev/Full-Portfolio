@@ -109,6 +109,17 @@
                 border-radius: 1px;
                 border-color: rgb(108, 23, 57);
                 border-width: 3px;
+
+                cursor: pointer;
+            }
+
+            #form-redirection-button:hover {
+                background-color: rgb(231, 44, 119);
+                border-color: rgb(149, 34, 80);;
+            }
+
+            #form-redirection-button:active {
+                background-color: rgb(85, 21, 47);;
             }
 
             footer {
@@ -199,7 +210,7 @@
             <h2>Join Us And Our Community</h2>
 
             <div class="join-us-form-redirection">
-                <button onclick="location.href='join-us.html'" id="form-redirection-button">Take me to the form</button>
+                <a onclick="location.href='join-us.html'" id="form-redirection-button">Take me to the form</a>
             </div>
         </div>
         <footer>
@@ -213,13 +224,13 @@
 
 <!-- What I learned this session -->
   <!-- 
-    I got a bit distracted with the navigation bar again, but it's fine, because I did have a decent amount of fun with it. It's getting pretty close to the intended design, which
-    is nice. I also tried to start at least a little with polishing the community page, but didn't come that far. I learned how to make a flexbox item be aligned to the right-hand
-    side of the layout, by setting the margin-left to "auto". I also learned how to center flex item texts and how to make items in a block display actually stretch themselves to fit
-    into the height of their parent (which is with a flexbox display, thus I had to change it to this).
+    I learned a lot about flex box positioning once again. Everytime there's still something new to learn about it. One of the things I learned was how to center grid elements to
+    be centered horizontally, which was with the place-content propery (on the parent). I also learned on how to put one specific element at the bottom and be at the same position
+    for all of the elements within the grid, which I did by setting justify-content: space between + centering the item itself properly to make it be at the bottom center of the parent.
+    I also got some nice styling stuff going on, with learning about the :active for links that triggers when you click them.
     -->
 
-<!-- Work Duration: 4,5 hours -->
+<!-- Work Duration: 6 hours -->
 
 <!-- TODO -->
  <!--

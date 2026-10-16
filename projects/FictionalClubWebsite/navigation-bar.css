@@ -41,6 +41,12 @@
     align-items: center;
 }
 
+.link-button:active {
+    color: rgb(45, 187, 187);
+
+    text-decoration: none;
+}
+
 /* Style for the hovering over links within the task bar */
 .link-button:hover {
     background-color: rgb(78, 143, 143);

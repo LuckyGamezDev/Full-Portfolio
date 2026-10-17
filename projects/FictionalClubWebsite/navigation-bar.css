@@ -26,6 +26,8 @@
     height: 150px;
 
     flex-direction: column;
+
+    z-index: +10;
 }
 
 .link-button {
@@ -54,11 +56,34 @@
 
 /* The home title that redirects to the main homepage */
 .top-menu-nav #home-title {
+    background-color: rgb(77, 157, 175);
+
     justify-self: left;
 
     text-decoration: none;
 
+    align-items: center;
+    align-content: center;
+
+    border-radius: 1px;
+    border-color: rgb(65, 147, 161);
+    border-style: solid;
+
+    color: hsl(208, 100%, 89%);
+
     padding: 5px 16px;
+}
+
+.top-menu-nav #home-title:hover {
+    background-color: rgba(33, 104, 120, 0.885);
+    border-color: rgb(31, 134, 132);
+}
+
+.top-menu-nav #home-title:active {
+    background-color: rgba(52, 161, 186, 0.885);
+    border-color: rgb(35, 162, 152);
+
+    color: darkslategray;
 }
 
 /* Handles the hamburger menu icon */

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Gaming Buddies - About</title>
+
+        <link rel="stylesheet" href="navigation-bar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+       <style>
+            body {
+                background-color: rgb(182, 182, 174);
+            }
+
+            #about-us-and-map {
+                display: flex;
+
+                flex-direction: row;
+
+                background-color: rgb(147, 147, 146);
+
+                border-radius: 5px;
+                border-color: rgb(137, 137, 137);
+                border-style: solid;
+
+                place-items: center;
+
+                justify-content: space-between;
+                align-content: center;
+
+                padding: 5px 10px;
+                margin: 5px;
+            }
+
+            .about-us {
+                background-color: rgb(181, 181, 146);
+
+                border-color: rgb(227, 204, 90);
+                border-radius: 5px;
+                border-style: solid;
+                border-width: 1px;
+
+                padding: 5px 15px;
+                margin-left: 10px;
+                margin-right: 20px;
+            }
+            
+            #about-us-text {
+                color: rgb(56, 56, 56);
+
+                font-size: 18px;
+            }
+
+            .google-map #container p {
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 18px;
+
+                color: rgb(189, 197, 247);
+
+                background-color: rgb(8, 43, 74);
+
+                border: 1px solid rgb(1, 19, 59);
+                border-radius: 8px;
+
+                padding: 6px;
+            }
+
+            .google-map #container img {
+                border-radius: 10px;
+            }
+
+            .google-map #container {
+                display: flex;
+
+                justify-content: space-between;
+
+                flex-direction: column;
+
+                place-items: center;
+                place-content: center;
+
+                margin: 10px;
+            }
+
+            footer {
+                background-color: rgb(78, 78, 114);
+
+                padding: 0px 7px;
+
+                border: 3px solid rgb(45, 45, 101);
+                border-radius: 5px;
+
+                position: fixed;
+                bottom: 5px;
+
+                justify-self: center;
+
+                width: 98.5%;
+            }
+       </style>
+
+       <script src="navigation-bar-script.js"></script>
+    </head>
+
+    <body>
+         <!-- Top (persistent) navigation bar -->
+        <div class="top-menu-nav">
+            <a href="index.html" id="home-title">The Gaming Buddies</a>
+            
+            <div id="top-menu-links">
+                <a class="link-button" href="index.html">Home</a>
+                <a class="link-button" href="join-us.html">Join Us</a>
+                <a class="link-button" href="community.html">Our Community</a>
+                <a class="link-button" href="about.html">About</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <h1>About</h1>
+
+        <div id="about-us-and-map">
+            <div class="about-us">
+                <h2>About Us</h2>
+
+                <p id="about-us-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, ratione! 
+                    Itaque, dolor fugiat qui sit quo omnis unde quibusdam laboriosam molestias doloremque consequatur magni molestiae necessitatibus animi laudantium possimus ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi doloribus dolorum esse sapiente explicabo labore quod, magni laudantium, beatae ducimus deserunt tenetur,
+                    fugit illum ad alias?<br><br>
+
+                    Officia, ipsa eos. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate expedita, esse quas error accusamus molestias architecto, vel harum autem voluptatibus 
+                    dolore reiciendis eum vero dolores. Aliquam blanditiis vero odit non.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, ratione! 
+                    Itaque, dolor fugiat qui sit quo omnis unde quibusdam laboriosam molestias doloremque consequatur magni molestiae necessitatibus animi laudantium possimus ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi doloribus dolorum esse sapiente explicabo labore quod, magni laudantium, beatae ducimus deserunt tenetur,
+                    fugit illum ad alias?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, ratione! 
+                    Itaque, dolor fugiat qui sit quo omnis unde quibusdam laboriosam molestias doloremque consequatur magni molestiae necessitatibus animi laudantium possimus ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi doloribus dolorum esse sapiente explicabo labore quod, magni laudantium, beatae ducimus deserunt tenetur,
+                    fugit illum ad alias?<br><br>
+
+                
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, ratione! 
+                    Itaque, dolor fugiat qui sit quo omnis unde quibusdam laboriosam molestias doloremque consequatur magni molestiae necessitatibus animi laudantium possimus ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi doloribus dolorum esse sapiente explicabo labore quod, magni laudantium, beatae ducimus deserunt tenetur,
+                    fugit illum ad alias?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, ratione! 
+                    Itaque, dolor fugiat qui sit quo omnis unde quibusdam laboriosam molestias doloremque consequatur magni molestiae necessitatibus animi laudantium possimus ex?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sequi doloribus dolorum esse sapiente explicabo labore quod, magni laudantium, beatae ducimus deserunt tenetur,
+                    fugit illum ad alias?
+                </p>
+            </div>
+
+            <div class="google-map">
+                <div id="container">
+                    <p>We Are Located Here:</p>
+                    <img src="content/placeholder-googlemap.jpg" alt="Google-Maps">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h3>Contact Info:</h3>
+            <p>
+                Email: loremimspusdf@gmail.com <br>
+            </p>
+        </footer>
+    </body>
+</html>

@@ -125,6 +125,11 @@
             footer {
                 background-color: grey;
                 padding: 5px;
+
+                border-radius: 5px;
+                border-color: rgb(93, 93, 91);
+                border-width: 3px;
+                border-style: solid;
             }
         </style>
 
@@ -139,7 +144,7 @@
                 <a class="link-button" href="index.html">Home</a>
                 <a class="link-button" href="join-us.html">Join Us</a>
                 <a class="link-button" href="community.html">Our Community</a>
-                <a class="link-button" href="#about">About</a>
+                <a class="link-button" href="about.html">About</a>
             </div>
 
             <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
@@ -149,7 +154,7 @@
 
         <div class="homepage-banner">
             <!-- Add an image or something like that + some text + maybe a button that leads to somewhere on the banner -->
-            <img src="content/Banner.png" id="banner-image">
+            <img src="content/Banner.png" id="banner-image" alt="The Gaming Buddies Banner">
         </div> 
 
         <div class="introduction">
@@ -224,13 +229,22 @@
 
 <!-- What I learned this session -->
   <!-- 
-    I learned a lot about flex box positioning once again. Everytime there's still something new to learn about it. One of the things I learned was how to center grid elements to
-    be centered horizontally, which was with the place-content propery (on the parent). I also learned on how to put one specific element at the bottom and be at the same position
-    for all of the elements within the grid, which I did by setting justify-content: space between + centering the item itself properly to make it be at the bottom center of the parent.
-    I also got some nice styling stuff going on, with learning about the :active for links that triggers when you click them.
+    1. How to know if the user clicks outside of an element.
+    2. How to change sort order (with z-index).
+    3. Re-learned the habbit to always add alt text to images.
     -->
 
-<!-- Work Duration: 6 hours -->
+<!-- 
+    Things I Did:
+    1. Made the contact info part on the homepage have round corners + a border.
+    2. Made the 'activate' color of the webpage title within the navigation bar be dark green, fitting better with the theme/rest.
+    3. Added a border/background behind the webpage title within the navigation bar to make it stand out more and seem clickable. 
+    4. Added the functionality to be able to click outside of the navigation menu when opened to hide it.
+    5. Made an about page.
+    6. Fixed an issue with the navigation menu panel where its z-index isn't high enough causing it to be behind certain elements.
+    -->
+
+<!-- Work Duration: 8 hours -->
 
 <!-- TODO -->
  <!--

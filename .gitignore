@@ -5,5 +5,6 @@
 venv*
 
 * Ignore unnecesarry big files
-Cache
-bin
+Cache/
+bin/
+.vs/

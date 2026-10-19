@@ -25,6 +25,7 @@
         </style>
 
         <script src="navigation-bar-script.js"></script>
+        <script src="join-us-form-handler.js"></script>
 
     </head>
     <body>
@@ -36,7 +37,7 @@
                 <a class="link-button" href="index.html">Home</a>
                 <a class="link-button" href="join-us.html">Join Us</a>
                 <a class="link-button" href="community.html">Our Community</a>
-                <a class="link-button" href="about.html">About</a>
+                <a class="link-button" href="about.html ">About</a>
             </div>
 
             <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
@@ -48,16 +49,20 @@
             <h1>Submission Form</h1>
             <form id="submission-form">
                 <label for="first-name">First Name: </label><br>
-                <input type="text" id="first-name" name="first-name"><br><br>
+                <input type="text" id="first-name" name="first-name" style="margin-right: 0px;"><br><br>
+                <p id="invalid-first-name-label" style="visibility: hidden; color: red; margin: 0px;">Invalid name (musn't include number/special characters)</p>
 
                 <label for="last-name">Last Name: </label><br>
-                <input type="text" id="last-name" name="last-name"><br><br>
+                <input type="text" id="last-name" name="last-name" style="margin-right: 0px;"><br><br>
+                <p id="invalid-last-name-label" style="visibility: hidden; color: red; margin: 0px;">Invalid name (musn't include number/special characters)</p>
 
                 <label for="user-email">Email: </label><br>
-                <input inputmode="email" id="user-email" name="user-email"><br><br>
+                <input inputmode="email" id="user-email" name="user-email" style="margin-right: 0px;"><br><br>
+                <p id="invalid-user-email-label" style="visibility: hidden; color: red; margin: 0px;">Invalid email (must be gmail)</p>
 
                 <label for="user-birthdate">Birthdate: </label><br>
-                <input type="date" id="user-birthdate" name="user-birthdate"><br><br>
+                <input type="date" id="user-birthdate" name="user-birthdate" style="margin-right: 0px;"><br><br>
+                <p id="invalid-birthdate-label" style="visibility: hidden; color: red; margin: 0px;">Invalid Birthdate (does not meet minimum age requirement)</p>
 
                 <input type="submit" value="Submit"></input>
             </form>

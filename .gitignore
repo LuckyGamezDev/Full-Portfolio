@@ -7,3 +7,4 @@ venv*
 * Ignore unnecesarry big files
 Cache
 bin
+.vs

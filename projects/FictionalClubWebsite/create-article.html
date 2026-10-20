@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Gaming Buddies - Create Article</title>
+
+        <link rel="stylesheet" href="navigation-bar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            #article-title {
+                display: block;
+            }
+
+            label {
+                font-size: 17px;
+                font-family: monospace;
+                font-weight: bold;
+            }
+
+            #article-title #article-title-text {
+                background-color: rgb(165, 165, 165);
+
+                width: 40%;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                margin-bottom: 20px;
+            }
+
+            #article-body #article-body-text {
+                background-color: rgb(154, 154, 154);
+
+                height: 600px;
+                width: 60%;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                resize: none;
+            }
+
+            #article-body #max-length-previewer {
+                margin-top: 2px;
+            }
+
+
+        </style>
+
+        <script src="navigation-bar-script.js"></script>
+        <script src="create-article-handler.js"></script>
+    </head>
+
+    <body>
+        <!-- # Top (persistent) navigation bar -->
+        <div class="top-menu-nav">
+            <a href="index.html" id="home-title">The Gaming Buddies</a>
+            
+            <div id="top-menu-links">
+                <a class="link-button" href="index.html">Home</a>
+                <a class="link-button" href="join-us.html">Join Us</a>
+                <a class="link-button" href="community.html">Our Community</a>
+                <a class="link-button" href="about.html ">About</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <h1>Create Article</h1>
+
+        <div id="article-title">
+            <label id="article-title-text-label" for="article-title-text">Article Name: </label><br>
+            <input type="text" maxlength="30" id="article-title-text" name="article-title-text">
+            <p id="max-length-previewer" style="display: inline;">N/A</p>
+
+        </div>
+
+        <div id="article-body">
+            <label id="article-title-text-label" for="article-body-text">Body: </label><br>
+            <textarea maxlength="1000" id="article-body-text" name="article-body-text"></textarea>
+            <p id="max-length-previewer">N/A</p>
+        </div>
+
+        <div id="article-sources">
+
+        </div>
+    </body>
+</html>

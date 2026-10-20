@@ -74,7 +74,7 @@ I learned a lot about scalling elements, especially on how to implement “break
 
 Today I finished the project. I was struggling A LOT with implementing focus correctly, because of that I unfortunately had to use the help of an AI. The problem was that when clicking the card, the \<a\> element instead would receive the focus instead of the card. The fix was to use “:focus-within” which also registeres when children in the parent get focused.
 
-### WEB-03:
+### WEB-03
 
 **19-08-2026:**
 
@@ -113,7 +113,7 @@ two things for tommorow. I did fix a pretty interesting bug, which is listed in 
 
 I've finished the project. Added the 'No Sessions' label when there aren't any created sessions, which represents the required empty state.
 
-### PY-01:
+### PY-01
 
 **04-09-2026:**
 
@@ -150,6 +150,11 @@ It's getting pretty bad; no motivation at all. I described briefely what I did i
 It was a successful day, I was able to finish the project by implementing the remaining summaries, and command line commands! I hope I can get decent progress on the new project
 tomorrow and the day after!
 
+<<<<<<< Updated upstream
+=======
+### WEB-04
+
+>>>>>>> Stashed changes
 **03-10-2026:**
 
 I didn't do any programming, instead I made the required brief for the website I will be creating. I have a pretty complex/big idea for it, so I might extend the deadline quite a
@@ -181,4 +186,12 @@ This was a pretty mixed session, with me working on a lot of different things, m
 
 **19-10-2026:**
 
+<<<<<<< Updated upstream
 Pretty bad session, ain't gonna lie. I've managed to implement the google maps widget thingy, which was way easier than it should've been. That's basically about it. I started implementing logic for checking the input in the forum area (join us), but my typing efficiency has just vanished into the void. It's so bad, I really need to fix my typing accuracy, because it's getting really bad. I guess it's because I don't spend enough time programming anymore because of my annoying school times, ugh. So yeah, I also added some nice labels that show the user when a field is invalid, but those don't yet work the way I want them to work. When I set the display to be inline, the reset just gets thrown all over the place for some reason, so I'll have to look into that. Anyway, I'm hoping on a better, more efficient session tomorrow.
+=======
+Pretty bad session, ain't gonna lie. I've managed to implement the google maps widget thingy, which was way easier than it should've been. That's basically about it. I started implementing logic for checking the input in the forum area (join us), but my typing efficiency has just vanished into the void. It's so bad, I really need to fix my typing accuracy, because it's getting really bad. I guess it's because I don't spend enough time programming anymore because of my annoying school times, ugh. So yeah, I also added some nice labels that show the user when a field is invalid, but those don't yet work the way I want them to work. When I set the display to be inline, the reset just gets thrown all over the place for some reason, so I'll have to look into that. Anyway, I'm hoping on a better, more efficient session tomorrow.
+
+**20-10-2026:**
+
+I fucked up pretty bad with my git repo, but I think most is fine now. Apperantly I had a mergin conflict and somehow history was rewritten in a way so that it was way behind the actual point it should be at. Luckily I have this branch separate, so I was able to just get my stuff back, otherwise this whole project would've been gone. Anyway, I managed to add the logic I wanted to the join us page, but I think I'm leaving it as is, since sending an actual approvable email request basically requires online servers to be up, which this site is obviously not run on any server (well.. technically it is on my local PC). I'm not sure how I want to continue with that, so I moved on to creating the 'create article' section where users can post articles. Normally, the plan was to have only joined users be able to post, but that'd mean I'd have to implement a whole account system with data base and all, which I'm fine with since I'd learn a lot more about javascript, but it won't really lead anywhere because proper submissions can't really be implemented. I'll maybe do some more research later to see if it maybe is possible to this all locally and thhink about if it's still worth it anyway to implement the profiles/accounts.
+>>>>>>> Stashed changes

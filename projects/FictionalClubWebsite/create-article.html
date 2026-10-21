@@ -27,6 +27,8 @@
                 border-radius: 2px;
 
                 margin-bottom: 20px;
+
+                font-size: large;
             }
 
             #article-body #article-body-text {
@@ -39,13 +41,27 @@
                 border-radius: 2px;
 
                 resize: none;
+
+                font-size: large;
             }
 
             #article-body #max-length-previewer {
                 margin-top: 2px;
             }
 
+            #article-sources #article-sources-text {
+                background-color: rgb(154, 154, 154);
 
+                height: 150px;
+                width: 25%;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                resize: none;
+
+                font-size: medium;
+            }
         </style>
 
         <script src="navigation-bar-script.js"></script>
@@ -73,7 +89,7 @@
 
         <div id="article-title">
             <label id="article-title-text-label" for="article-title-text">Article Name: </label><br>
-            <input type="text" maxlength="30" id="article-title-text" name="article-title-text">
+            <input type="text" maxlength="50" id="article-title-text" name="article-title-text">
             <p id="max-length-previewer" style="display: inline;">N/A</p>
 
         </div>
@@ -85,7 +101,9 @@
         </div>
 
         <div id="article-sources">
-
+            <label for="">Sources: </label><br>
+            <textarea maxlength="200" id="article-sources-text"></textarea>
+            <p id="max-length-previewer">N/A</p>
         </div>
     </body>
 </html>

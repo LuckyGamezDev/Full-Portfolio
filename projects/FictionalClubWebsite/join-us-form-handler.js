@@ -30,26 +30,26 @@ function onFirstNameFieldChanged() {
 
     var regex = /\d/;
     if (regex.test(firstNameField.value)) {
-        console.log("This is not a valid first name!");
-
         firstnameFieldInvalidTag.style.visibility = "visible";
+    } else {
+        firstnameFieldInvalidTag.style.visibility = "hidden";
     }
 }
 
 function onLastNameFieldChanged() {
     var regex = /\d/;
     if (regex.test(lastNameField.value)) {
-        console.log("This is not a valid last name!");
-
         lastnameFieldInvalidTag.style.visibility = "visible";
+    } else {
+        lastnameFieldInvalidTag.style.visibility = "hidden";
     }
 }
 
 function onEmailChanged() {
     if (!emailField.value.includes("@gmail.com")) {
-        console.log("This is not a valid email! Make sure it is a gmail!");
-
         emailFieldInvalidTag.style.visibility = "visible";
+    } else {
+        emailFieldInvalidTag.style.visibility = "hidden";
     }
 }
 
@@ -59,8 +59,9 @@ function onBirthdateChanged() {
     selectedDate.split('-');
 
     if (2026 - selectedDate[0] < 16) { // Use 2026 (at least for now) since it is currently that year. Might add a current year check
-        console.log("You are too young to join our club (min age is 16 or older)!")
-
+        console.log("invalid birthdate!")
         birthdateFieldInvalidTag.style.visibility = "visible";
+    } else {
+        birthdateFieldInvalidTag.style.visibility = "hidden";
     }
 }

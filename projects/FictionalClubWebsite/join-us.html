@@ -49,20 +49,19 @@
             <h1>Submission Form</h1>
             <form id="submission-form">
                 <label for="first-name">First Name: </label><br>
-                <input type="text" id="first-name" name="first-name" style="margin-right: 0px;"><br><br>
-                <p id="invalid-first-name-label" style="visibility: hidden; color: red; margin: 0px;">Invalid name (musn't include number/special characters)</p>
-
+                <input type="text" id="first-name" name="first-name">
+                <p id="invalid-first-name-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid name (musn't include number/special characters)</p><br><br>
                 <label for="last-name">Last Name: </label><br>
-                <input type="text" id="last-name" name="last-name" style="margin-right: 0px;"><br><br>
-                <p id="invalid-last-name-label" style="visibility: hidden; color: red; margin: 0px;">Invalid name (musn't include number/special characters)</p>
+                <input type="text" id="last-name" name="last-name">
+                <p id="invalid-last-name-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid name (musn't include number/special characters)</p><br><br>
 
                 <label for="user-email">Email: </label><br>
-                <input inputmode="email" id="user-email" name="user-email" style="margin-right: 0px;"><br><br>
-                <p id="invalid-user-email-label" style="visibility: hidden; color: red; margin: 0px;">Invalid email (must be gmail)</p>
+                <input inputmode="email" id="user-email" name="user-email">
+                <p id="invalid-user-email-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid email (must be gmail)</p><br><br>
 
                 <label for="user-birthdate">Birthdate: </label><br>
-                <input type="date" id="user-birthdate" name="user-birthdate" style="margin-right: 0px;"><br><br>
-                <p id="invalid-birthdate-label" style="visibility: hidden; color: red; margin: 0px;">Invalid Birthdate (does not meet minimum age requirement)</p>
+                <input type="date" id="user-birthdate" name="user-birthdate">
+                <p id="invalid-birthdate-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid Birthdate (does not meet minimum age requirement)</p><br><br>
 
                 <input type="submit" value="Submit"></input>
             </form>

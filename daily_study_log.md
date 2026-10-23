@@ -196,3 +196,7 @@ I fucked up pretty bad with my git repo, but I think most is fine now. Apperantl
 **21-10-2026:**
 
 Neutral session. I learned on how you can pass in parameters to function via the "addEventListener" function by just adding an anonymous function witin it. I also refined some of my event handling skills and refactored the code to be a little cleaner, which means I'm getting a little more comfortable with javascript, which is exactly what I wanted! Next session I'll finish the page and I think I'll begin on implementing profiles, since I've decided I want to fidget with databases in javascript to get to know javascript better.
+
+**22-10-2026:**
+
+Pretty nice, relaxing session. I learned a lot by getting some short advice from chatGPT. Because of chatGPT, I got to learn what the vh/vw and fr units stand for, which are actually really helpful! I made a nice layout for the 'create article' page, which was what I needed help with from chatGPT. I needed to make a small change to make it work as I wanted, so I was genuinely very close by just doing it all by myself (without documentation from others online), meanning I'm genuinely getting better, still. I also learned how to open a window via javascript (which I usually do with a <a> element)

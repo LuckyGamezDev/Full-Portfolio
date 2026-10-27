@@ -56,7 +56,7 @@ function onEmailChanged() {
 function onBirthdateChanged() {
     selectedDate = this.value; // Value is in yyyy-mm-dd format
 
-    selectedDate.split('-');
+    selectedDate = selectedDate.split('-');
 
     if (2026 - selectedDate[0] < 16) { // Use 2026 (at least for now) since it is currently that year. Might add a current year check
         console.log("invalid birthdate!")

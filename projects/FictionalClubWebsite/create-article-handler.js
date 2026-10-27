@@ -4,7 +4,7 @@ var titleInvalidTag;
 
 const titleInputTextId = "#article-title #article-title-text";
 const titleRemainingMaxLengthTextId = "#article-title #max-length-previewer";
-const titleInvalidTagId = "#article-title #invalid-label";
+const titleInvalidTagId = "#article-title .invalid-label";
 
 var bodyInputText;
 var bodyRemainingMaxLengthText;
@@ -13,7 +13,7 @@ var bodyInvalidTag;
 const bodyInputTextId = "#article-body #article-body-text";
 const bodyRemainingMaxLengthTextId = "#article-body #max-length-previewer";
 const minValidBodyLength = 300;
-const bodyInvalidTagId = "#article-body #invalid-label";
+const bodyInvalidTagId = "#article-body .invalid-label";
 
 var sourcesInputText;
 var sourcesRemainingMaxLengthText;
@@ -21,7 +21,7 @@ var sourcesInvalidTag;
 
 const sourcesInputTextId = "#article-sources #article-sources-text";
 const sourcesRemainingMaxLengthTextId = "#article-sources #max-length-previewer";
-const sourcesInvalidTagId = "#article-sources #invalid-label";
+const sourcesInvalidTagId = "#article-sources .invalid-label";
 
 isTitleValid = false;
 isBodyValid = false;
@@ -134,6 +134,9 @@ function createArticle() {
         articleBody = bodyInputText.value;
         articleSources = sourcesInputText.value;
 
+        var createdArticle = new Article(articleTitle, articleBody, articleSources);
+        jsonStringArticle = createdArticle.convertToJson();
+
         console.log("created article!")
 
         window.open("community.html", "_top");
@@ -149,5 +152,23 @@ function createArticle() {
         if (!isSourceValid) {
             sourcesInvalidTag.style.visibility = "visible";
         }
+    }
+}
+
+class Article {
+    constructor(title, body, sources) {
+        this.title = title;
+        this.body = body;
+        this.sources = sources;
+    }
+
+    convertToJson() {
+        const jsonObject = {
+            title: this.title,
+            body: this.body,
+            sources: this.sources
+        };
+
+        return JSON.stringify(jsonObject);
     }
 }

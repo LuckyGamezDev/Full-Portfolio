@@ -200,3 +200,15 @@ Neutral session. I learned on how you can pass in parameters to function via the
 **22-10-2026:**
 
 Pretty nice, relaxing session. I learned a lot by getting some short advice from chatGPT. Because of chatGPT, I got to learn what the vh/vw and fr units stand for, which are actually really helpful! I made a nice layout for the 'create article' page, which was what I needed help with from chatGPT. I needed to make a small change to make it work as I wanted, so I was genuinely very close by just doing it all by myself (without documentation from others online), meanning I'm genuinely getting better, still. I also learned how to open a window via javascript (which I usually do with a <a> element)
+
+**23-10-2026:**
+
+Unfortunately I was a bit short on time, but I did manage to make a small start on my new, occasional subject exploration of cyber security, hacking. This is an area I've wanted to look into for quite a while now to see if I like it and to just understand the concept of how it generally works for basic knowledge. I haven't learned much since I basically only was able to gather resources that are actually useful to read through. One of those resources is a website that literally lets you practise this stuff and learn about it (name is hack the box). I've also saved a couple of pages about subjects I should understand more deeply, like how pings work, VPNs work, etc. I'll be working on this tomorrow as well. Then next week, I'll continue with the WEB-04 assignment.
+
+**24-10-2026:**
+
+I started the junior beginner path in hack the box. I'm really liking it, eventhough I've only done 2 sections. I'm taking it slowly since I'm also making my own notes in word to review later. It takes a long time to write stuff over in my own words, which is why it took me about 2,5 hours to do the first two sections.
+
+**27-10-2026:**
+
+I managed to do something on a normal school day. Who knows, maybe I just had to get used to this new routine. I'll try to do as much programming as possible during weekdays. Since I want to do the cybersecurity course stuff in the weekend (since I need 2-3 hours for that), so if I can work on my assignments during most weekdays, I won't be missing anything. Though I don't think I'll be able to do this consistently, because I usually need the time to study for upcoming tests (which I finished earlier with today since I had time at school to do so). I've decided I'm going to run my own local server on my PC to then communicate with this webpage. To save articles and user information, meaninig I've also decided to escalate this project a bit further into more complex ground (handling databases and encryption for user profiles.). I'll probably need another 10 hours to do all that, so I'll be working about 20 hours on this project in total, which is not too much over my deadline. The upcoming projects/assignments do not look easy, so I'll have to really start locking in on stuff, I guess the AI who created these assignments thought it was clever to start off very easy, then out of nowhere throw insane projects at me. Anyway, that's exactly what I want, so I won't complain.

@@ -229,24 +229,28 @@
 
 <!-- What I learned this session -->
   <!-- 
-    1. How to stretch elements based of the viewport's heigh/width with the (d)vh/(d)vw units
-    2. How to divide a grid into 2 sections whilst also specifying the exact height each section should take up (with either a % or a fraction unit (fr))
+    1. I learned how to create a class and how to add a constructor in that class, as well as on how to actually use variables within a class, which apperantly you don't
+    just create/init with declaring them at the top and then assigning them in the consturctor.
+    
+    2. That you can only use place-self (and all those fields that fall under that) in grid and flexbox displays. My displays weren't flexbox on the article creation input box's
+    parent, which was the reason the label didn't react to setting the place-self variable to 'center'. I had to wrap those (the input box and the invalid label) into another
+    div, and set that one to flex display. I didn't come up with this solution myself, it was with chatGPT, but when this happens the next time, I will know how to solve it.
     -->
 
 <!-- 
     Things I Did:
-        1. Added labels to the 'create article' section that show up when input is invalid.
-        2. Did a major overhaul of the look of the 'create article' section.
-        3. Learned how to open a window in javascript
+    1. Fixed a bug with the birhdate setter.
+    2. Fixed the input fields invalid labels not being alligned correctly.
+    3. Did some exploration regarding how to implement article creation/saving
     --> 
 
-<!-- Work Duration: 10 hours -->
+<!-- Work Duration: 11 hours -->
 
 <!-- TODO -->
  <!--
  1. Polish the community page.
  2. Make the form actually send data to somewhere or at least reject/approve the submition. ❔
- 3. Fix the birthdate not being registered correctly as invalid when invalid.
- 4. Make the articles the user create actually appear and also save in localstorage.
- 5. Fix the invalid labels on the 'create article' page not being centered with the input fields.
+ 3. Fix the birthdate not being registered correctly as invalid when invalid. 👍
+ 4. Make the articles the user create actually appear and also save in localstorage. ❌ (Other method is needed)
+ 5. Fix the invalid labels on the 'create article' page not being centered with the input fields. 👍
    -->

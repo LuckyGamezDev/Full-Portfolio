@@ -12,7 +12,7 @@ var bodyInvalidTag;
 
 const bodyInputTextId = "#article-body #article-body-text";
 const bodyRemainingMaxLengthTextId = "#article-body #max-length-previewer";
-const minValidBodyLength = 300;
+const minValidBodyLength = 1 //300;
 const bodyInvalidTagId = "#article-body .invalid-label";
 
 var sourcesInputText;
@@ -91,6 +91,10 @@ document.addEventListener("DOMContentLoaded", function() {
     sourcesInputText.addEventListener("input", autoResizeTextArea, false);
 
     displayTextLengthLeft(sourcesInputTextId, sourcesRemainingMaxLengthTextId);
+
+    document.getElementById("publish-article").onclick = () => {
+        createArticle();
+    }
 });
 
 function displayTextLengthLeft(textBoxId, textLeftDisplayId, isTextField = true) {
@@ -128,7 +132,7 @@ function autoResizeTextArea() {
     this.style.height = this.scrollHeight + 'px';
 }
 
-function createArticle() {
+async function createArticle() {
     if (isTitleValid && isBodyValid && isSourceValid) {
         articleTitle = titleInputText.value;
         articleBody = bodyInputText.value;
@@ -137,9 +141,14 @@ function createArticle() {
         var createdArticle = new Article(articleTitle, articleBody, articleSources);
         jsonStringArticle = createdArticle.convertToJson();
 
+        fetch("http://localhost:3590/articles", {
+            method: "POST",
+            body: jsonStringArticle,
+            headers: {"Content-Type": "application/json"}
+        }) .then((response) => console.log(response));
+
         console.log("created article!")
 
-        window.open("community.html", "_top");
     } else {
         console.log("Cannot create article, please input something into the fields!")
 

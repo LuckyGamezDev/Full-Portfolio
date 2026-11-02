@@ -220,3 +220,9 @@ I did my first bit of research on how to go about this server client thing, and 
 **30-10-2026:**
 
 I made a lot of progress, especially with learning and understanding how HTTP requests work and the whole intended flow. I learned about CORS, which you need for making application/json POSTs, since a OPTIONS requests first gets made before actual data gets send to the server. Since the server runs on a different port than my local computer's web server run by node.js's HTTP module. If you don't allow the port on the server, it won't accept the request and you'll get an error. I also learned about javascript Promises, which monitors the current state of a HTTP request (well, in this specific scenario, that is. Promises are a general javascript feature, so they are also used for other things.). Next time I'll be implementing the proper sending, finally. I'll hopefully also be able to implement the fetching back from the server to actually preview those articles.
+
+**31-10-2026 - 01-11-2026:** Worked on HackTheBox
+
+**02-11-2026:**
+
+Got the article sending and saving working, but honestly it took longer than it should've in my opinion. I learned that the on() functions in node.js are actually events/callbacks, thus they won't get executed immediately, causing code to be after it to possibly run before the event runs, which, in my case caused a problem with my file writing, since I was writing the file before having proccessed the chunk(s). That's also basically it in terms of what I learned, I was mostly debugging why stuff wasn't working, but of course those moments are also important to actually be able to learn. Next session I'll request the server to send all the saved json files to the client so that the client can load the articles and make them openable for the user.

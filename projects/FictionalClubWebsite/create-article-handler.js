@@ -27,6 +27,24 @@ isTitleValid = false;
 isBodyValid = false;
 isSourceValid = false;
 
+
+function initializeArticles() {
+    console.log("Making request");
+    
+    let allArticlesArray = [];
+    fetch("http://localhost:3590/articles")
+        .then((response) => response.json())
+        .then((json) => {
+            console.log("Got json! : " + json);
+
+            allArticlesArray = json;
+        });
+
+    console.log("Made request");
+}
+
+initializeArticles();
+
 document.addEventListener("DOMContentLoaded", function() {
     titleInputText = document.querySelector(titleInputTextId);
     titleRemainingMaxLengthText = document.querySelector(titleRemainingMaxLengthTextId);

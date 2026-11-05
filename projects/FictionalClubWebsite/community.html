@@ -12,7 +12,7 @@
                 background-color: rgba(140, 150, 150, 0.63);
             }
 
-            .news {
+            #news {
                 display: grid;
 
                 background-color: rgb(121, 160, 147);
@@ -49,7 +49,7 @@
                 padding: 5px;
             }
 
-            .news #news-header {
+            #news #news-header {
                 position: absolute;
 
                 left: 10px;
@@ -76,7 +76,26 @@
                 grid-template-columns: auto;
             }
 
-            .community-posts {
+            .owner-post-preview .title {
+                font-weight: bold;
+
+                font-size: large;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .owner-post-preview .body {
+                text-align: center;
+
+                background-color: rgba(116, 55, 169, 0.666);
+
+                border-radius: 5px;
+
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            #community-posts {
                 display: grid;
 
                 background-color: rgb(121, 154, 160);
@@ -94,7 +113,7 @@
                 place-content: center;
             }
 
-            .community-posts #community-posts-header {
+            #community-posts #community-posts-header {
                 position: absolute;
 
                 left: 10px;
@@ -120,6 +139,24 @@
                 margin: 20px;
 
                 grid-template-columns: auto;
+            }
+
+            .community-post-preview .title {
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: large;
+            }
+
+            .community-post-preview .body {
+                text-align: center;
+
+                background-color: rgba(97, 142, 200, 0.777);
+
+                border-radius: 5px;
+
+                width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
 
             .article-redir-news {
@@ -159,7 +196,8 @@
             }
         </style>
 
-        <script src="navigation-bar-script.js"></script>
+        <script src="navigation-bar-script.js"></script>'
+        <script src="community-handler.js"></script>
 
     </head>
     <body>
@@ -183,55 +221,65 @@
 
         <a id="create-article-button" href="create-article.html">Create Article</a>
 
-        <div class="news">
+        <div id="news">
             <h2 id="news-header">News</h2>
 
             <div class="owner-post-preview">
-                <p>
+                <p class="title">
                     Title: Lorem ipsum dolor sit.
-
+                </p> 
+                
+                <p class="body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
                     Nemo consequatur odit aliquid similique beatae labore.
-                </p> <br>
+                </p><br>
 
                 <a class="article-redir-news" href="articles/news-article-01.html">To Article</a>
             </div>
 
             <div class="owner-post-preview">
-                <p>
+                <p class="title">
                     Title: Lorem ipsum dolor sit.
-
+                </p>
+                
+                <p class="body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
                     Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
+                </p><br>
 
                 <a class="article-redir-news" href="articles/news-article-02.html">To Article</a>
             </div>
         </div>
 
-        <div class="community-posts">
+        <div id="community-posts">
             <h2 id="community-posts-header">Community Posts</h2>
 
             <div class="community-post-preview">
-                <p>
+                <p class="title">
                     Title: Lorem ipsum dolor sit.
-
+                </p>
+                    
+                <p class="body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Itaque, illo magni, qui numquam quod.
+                    Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
+                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit.
                 </p>
 
                 <a class="article-redir-community" href="articles/community-news-article-01.html">To Article</a>
 
             </div>
-
+            
             <div class="community-post-preview">
-                <p>
+                <p class="title">
                     Title: Lorem ipsum dolor sit.
-
+                </p>
+                    
+                <p class="body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis.
+                    Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
+                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit.
                 </p>
 
                 <a class="article-redir-community" href="articles/community-news-article-02.html">To Article</a>
@@ -239,9 +287,11 @@
             </div>
 
             <div class="community-post-preview">
-                <p>
+                <p class="title">
                     Title: Lorem ipsum dolor sit.
-
+                </p>
+                    
+                <p class="body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
                     Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit.
@@ -252,12 +302,14 @@
             </div>
 
             <div class="community-post-preview">
-                <p>
+                <p class="title">
                     Title: Lorem ipsum dolor sit.
-
+                </p>
+                    
+                <p class="body">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Itaque, illo magni, qui numquam quod, ipsam quo in molestiae eligendi dicta magnam pariatur reiciendis. 
-                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nemo consequatur odit aliquid similique beatae labore. Lorem ipsum dolor sit.
                 </p>
 
                 <a class="article-redir-community" href="articles/community-news-article-04.html">To Article</a>

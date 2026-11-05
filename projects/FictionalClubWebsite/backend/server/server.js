@@ -1,11 +1,10 @@
 const http = require("http");
 const fs = require('node:fs');
-const buffer = new Buffer.alloc(1024);
 
 const projectRootDirectory = "Z:/Programming/_programming-future-roadmap/_Github Repository/Full-Documented-Learning-Repository/projects/FictionalClubWebsite";
 
 const server = http.createServer(async (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://192.168.68.128:9999");
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
@@ -62,7 +61,7 @@ const server = http.createServer(async (req, res) => {
 
         let allArticleFilePathsArray = await readAllArticleFilePaths();
 
-        console.log(allArticleFilePathsArray);
+        console.log("First article path: " + allArticleFilePathsArray[0]);
 
         let allArticleFileContentsArray = getAllDataFromDirectoryByFileNamesArray(allArticleFilePathsArray);
 
@@ -86,23 +85,33 @@ const server = http.createServer(async (req, res) => {
 });
 
 function getAllDataFromDirectoryByFileNamesArray(filePathsArray) {
+    console.log("File paths array length: " + filePathsArray.length);
+
     let allFileDataStringsArray = [];
-    for (let i = filePathsArray.length; i < filePathsArray.length; i++) {
-        allFileDataStringsArray.append(fs.readFileSync(filePathsArray[i], { encoding: "utf8" }));
+    for (let i = 0; i < filePathsArray.length; i++) {
+        allFileDataStringsArray.push(fs.readFileSync(filePathsArray[i], { encoding: "utf8" }));
     }
+
+    console.log("Return value length: " + allFileDataStringsArray.length);
 
     return allFileDataStringsArray;
 }
 
 async function readAllArticleFilePaths() {
-    let allArticleFileNamesArray
+    console.log("Reading all the files...");
+
+    let allArticleFileNamesArray = [];
     try {
-        allArticleFileNamesArray = await fs.promises.readdir(projectRootDirectory + "/articles/user-made");
+        console.log(typeof(allArticleFileNamesArray));
+        allArticleFileNamesArray.push(projectRootDirectory + "/articles/user-made/" + await fs.promises.readdir(projectRootDirectory + "/articles/user-made"));
     } catch (err) {
         console.error("ERROR: " + err);
 
         return null;
     }
+
+    console.log("Read all the files...");
+    console.log("First file path: " + allArticleFileNamesArray[0]);
 
     return allArticleFileNamesArray;
 }

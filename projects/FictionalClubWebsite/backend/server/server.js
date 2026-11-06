@@ -61,6 +61,13 @@ const server = http.createServer(async (req, res) => {
 
         let allArticleFilePathsArray = await readAllArticleFilePaths();
 
+        if (!allArticleFilePathsArray) {
+            res.writeHead(204)
+            res.end("No articles found.");
+
+            return;
+        }
+
         console.log("First article path: " + allArticleFilePathsArray[0]);
 
         let allArticleFileContentsArray = getAllDataFromDirectoryByFileNamesArray(allArticleFilePathsArray);
@@ -86,10 +93,19 @@ const server = http.createServer(async (req, res) => {
 
 function getAllDataFromDirectoryByFileNamesArray(filePathsArray) {
     console.log("File paths array length: " + filePathsArray.length);
+    console.log("File paths array content: " + filePathsArray[0]);
 
     let allFileDataStringsArray = [];
-    for (let i = 0; i < filePathsArray.length; i++) {
-        allFileDataStringsArray.push(fs.readFileSync(filePathsArray[i], { encoding: "utf8" }));
+    try {
+        for (let i = 0; i < filePathsArray.length; i++) {
+            let file = fs.readFileSync(filePathsArray[i], { encoding: "utf8" });
+
+            if (file) {
+                allFileDataStringsArray.push(file);
+            }
+        }
+    } catch (err) {
+        console.error("ERROR: " + err);
     }
 
     console.log("Return value length: " + allFileDataStringsArray.length);
@@ -100,10 +116,17 @@ function getAllDataFromDirectoryByFileNamesArray(filePathsArray) {
 async function readAllArticleFilePaths() {
     console.log("Reading all the files...");
 
-    let allArticleFileNamesArray = [];
+    let allArticlesFullPathsArray;
     try {
-        console.log(typeof(allArticleFileNamesArray));
-        allArticleFileNamesArray.push(projectRootDirectory + "/articles/user-made/" + await fs.promises.readdir(projectRootDirectory + "/articles/user-made"));
+        let articlesArray = await fs.promises.readdir(projectRootDirectory + "/articles/user-made");
+
+        if (articlesArray.length === 0) {
+            return null;
+        }
+
+        allArticlesFullPathsArray = articlesArray.map(fileName => {
+            return projectRootDirectory + "/articles/user-made/" + fileName;
+        });
     } catch (err) {
         console.error("ERROR: " + err);
 
@@ -111,9 +134,9 @@ async function readAllArticleFilePaths() {
     }
 
     console.log("Read all the files...");
-    console.log("First file path: " + allArticleFileNamesArray[0]);
+    console.log("First file path: " + allArticlesFullPathsArray[0]);
 
-    return allArticleFileNamesArray;
+    return allArticlesFullPathsArray;
 }
 
 const port = 3590;

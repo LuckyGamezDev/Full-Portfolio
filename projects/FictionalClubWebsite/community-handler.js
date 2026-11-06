@@ -4,12 +4,12 @@ const communityArticlesDivId = "community-posts";
 const communityArticleDivClassName = "community-post-preview";
 const communityArticlesTitleClassName = "title";
 const communityArticlesBodyClassName = "body";
-const communityArticlesRedirButtonClassName = "article-redir-news";
+const communityArticlesRedirButtonClassName = "article-redir-community";
 
 async function initializeArticles() {
     console.log("Making request");
     
-    let allArticlesArray = [];
+    let allArticlesArray;
 
     try {
         const response = await fetch("http://localhost:3590/articles")
@@ -18,21 +18,24 @@ async function initializeArticles() {
             throw new Error("A HTTP error occured whilst attempting to retrieve article data. Status: " + response.status);    
         }
 
-        allArticlesArray.push(await response.json());
+        if (response.status === 204) {
+            console.log("No articles to initialize.");
+
+            return;
+        }
+
+        allArticlesArray = await response.json();
 
     } catch (error) {
         console.log("An error occured whilst attempting to retrieve article data: " + error);
     }
 
     console.log(allArticlesArray.length);
+    console.log(typeof(allArticlesArray));
 
     for (let i = 0; i < allArticlesArray.length; i++) {
-        let article = allArticlesArray[i];
+        let article = JSON.parse(allArticlesArray[i]);
         loadArticle(new Article(article["title"], article["body"], article["sources"]));
-
-        console.log("Article values: " + article["title"] + " " + article["body"] + " " + article["sources"] + "Own value: " + typeof(article));
-
-        console.log("Is array: " + Array.isArray(article));
     } 
 
     console.log("Intialized articles!");
@@ -75,6 +78,7 @@ function loadArticle(article) {
 
 function openArticle(article) {
     // Logic for opening the article with the correct, according article information
+    window.open("articles/article-viewer.html", "_top");
 }
 
 class Article {

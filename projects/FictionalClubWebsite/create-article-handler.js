@@ -140,7 +140,7 @@ async function createArticle() {
         articleSources = sourcesInputText.value;
 
         var createdArticle = new Article(articleTitle, articleBody, articleSources);
-        jsonStringArticle = createdArticle.convertToJson();
+        var jsonStringArticle = createdArticle.convertToJson();
 
         fetch("http://localhost:3590/articles", {
             method: "POST",
@@ -149,6 +149,8 @@ async function createArticle() {
         }) .then((response) => console.log(response));
 
         console.log("created article!")
+
+        window.open("community.html", "_top");
 
     } else {
         console.log("Cannot create article, please input something into the fields!")

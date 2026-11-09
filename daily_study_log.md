@@ -242,3 +242,9 @@ Nice session, was pretty locked in and had fun, kinda just vibing whilst still d
 **06-11-2026:**
 
 I finished the logic for saving and loading the articles. Articles can now be created by the user, saved to the server, then loaded back on the client so that the user and other users is/are able to view the article. I do have a lot to do still. I need to somehow find a way to pass in the article information to the article-viewer.html to then make that page load in the necesarry article information for viewing. I also need to make the article creator much more advanced, since I need the user to be able to specify what things are headers and not. There's still a lot to do, so I need to get going. I'll set my deadline to 25 work hours, if I don't implement everything by then, it's over. Next time I'll first try to implement the proper article viewing, then after make the article creator more advanced.
+
+**07-11-2026 - 08-11-2026:** Worked on Hack the Box
+
+**09-11-2026:**
+
+Started implementing the functionality of being able to actually open the article cards from the articles created by the user on the client side. I've decided to just create two separate files for each article: the metadata, and a HTML that has all the information of the metadata in the HTML. Both get sent to the client, which was very hard to find out on how to implement this. I needed to use AI to come up with using array.map() to add the html to the same send. I obviously wrote the code myself and only asked AI on how to combine the two arrays. It still has errors, though, so I'll have to refine those next time. Shouldn't be too much of a hassle I think, but you never know. If everything goes as planned, I'll have around 3 hours to polish the article creator + 1 hour left after to polish stuff. Then this assignment will be finished!

@@ -57,9 +57,10 @@ const server = http.createServer(async (req, res) => {
 
                 return;
             }
-        });
 
-        createHTMLFromJson(JSON.parse(jsonFile), fileId);
+            // Create the HTML file
+            createHTMLFromJson(JSON.parse(jsonFile), fileId);
+        });
 
         res.writeHead(204);
         res.end("Got article!");
@@ -69,10 +70,6 @@ const server = http.createServer(async (req, res) => {
         console.log("Got get request");
 
         var allArticleFilePathsArray = await readAllArticleFilePaths();
-
-        if (allArticleFilePathsArray == null) {
-            console.log("is null: " + allArticleFilePathsArray);
-        }
 
         if (!allArticleFilePathsArray) {
             res.writeHead(204)
@@ -84,22 +81,30 @@ const server = http.createServer(async (req, res) => {
         console.log("First article path: " + allArticleFilePathsArray[0]);
 
         var allArticleFileContentsArray = getAllDataFromDirectoryByFileNamesArray(allArticleFilePathsArray);
+        var allArticleFileContentsParsedArray = allArticleFileContentsArray.map((articleString) => {
+            console.log("Unparsed string: " + articleString);
+            console.log("Parsed string: " + JSON.parse(articleString));
 
-        if (allArticleFileContentsArray) {
+            return JSON.parse(articleString);
+        });
 
+        if (allArticleFileContentsParsedArray) {
 
-            const completeArticlesArray = allArticleFileContentsArray.map(article => {
-                const html = fs.readFileSync(projectRootDirectory + serverDataInnerDirectory + "article_HTMLs/article_" + article["id"], "utf-8");
+            console.log("articles: " + allArticleFileContentsParsedArray);
+
+            const completeArticlesArray = allArticleFileContentsParsedArray.map((article) => {
+                const html = fs.readFileSync(projectRootDirectory + serverDataInnerDirectory + "article_HTMLs/article_" + article["id"] + ".html", "utf-8");
 
                 return {
                     ...article,
                     html: html
                 }
             })
+
+            console.log("article parsed array type and content: " + typeof(allArticleFileContentsParsedArray + " " + allArticleFileContentsParsedArray));
+            console.log("all articles array type and content: " + typeof(completeArticlesArray + " " + completeArticlesArray));
         
             console.log("Ending response...");
-
-            console.log("The json file being sent: " + JSON.stringify(completeArticlesArray));
 
             res.writeHead(200);
             res.end(JSON.stringify(completeArticlesArray));

@@ -30,15 +30,15 @@ async function initializeArticles() {
         console.log("An error occured whilst attempting to retrieve article data: " + error);
     }
 
-    // console.log(allArticlesArray.length);
-    // console.log(typeof(allArticlesArray));
+    console.log(allArticlesArray.length);
 
-    // for (let i = 0; i < allArticlesArray.length; i++) {
-    //     let article = JSON.parse(allArticlesArray[i]);
-    //     loadArticle(new Article(article["title"], article["body"], article["sources"]));
-    // } 
+    for (let i = 0; i < allArticlesArray.length; i++) {
+        let article = allArticlesArray[i];
 
-    // console.log("Intialized articles!");
+        loadArticle(new Article(article["title"], article["body"], article["sources"], article["html"]));
+    } 
+
+    console.log("Intialized articles!");
 }
 
 
@@ -78,15 +78,17 @@ function loadArticle(article) {
 
 function openArticle(article) {
     // Logic for opening the article with the correct, according article information
-    var articleViewerWindow = window.open("articles/article-viewer.html", "_top");
+    var articleWindow = window.open("", "_top");
+    articleWindow.document.write(article.articleHTML);
 
-    articleViewerWindow.myVariable
+    console.log("Opened article: " + article.articleHTML);
 }
 
 class Article {
-    constructor(title, body, sources) {
+    constructor(title, body, sources, articleHTML = null) {
         this.title = title;
         this.body = body;
         this.sources = sources;
+        this.articleHTML = articleHTML;
     }
 }

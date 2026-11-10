@@ -142,15 +142,19 @@ async function createArticle() {
         var createdArticle = new Article(articleTitle, articleBody, articleSources);
         var jsonStringArticle = createdArticle.convertToJson();
 
-        fetch("http://localhost:3590/articles", {
-            method: "POST",
-            body: jsonStringArticle,
-            headers: {"Content-Type": "application/json"}
-        }) .then((response) => console.log(response));
+        try {
+            fetch("http://localhost:3590/articles", {
+                method: "POST",
+                body: jsonStringArticle,
+                headers: {"Content-Type": "application/json"}
+            }) .then((response) => console.log(response));
+        } catch (err) {
+            console.error("ERR: " + err);
+        } 
 
         console.log("created article!")
 
-        window.open("community.html", "_top");
+        //window.open("community.html", "_top");
 
     } else {
         console.log("Cannot create article, please input something into the fields!")

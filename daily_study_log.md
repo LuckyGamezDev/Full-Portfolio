@@ -248,3 +248,7 @@ I finished the logic for saving and loading the articles. Articles can now be cr
 **09-11-2026:**
 
 Started implementing the functionality of being able to actually open the article cards from the articles created by the user on the client side. I've decided to just create two separate files for each article: the metadata, and a HTML that has all the information of the metadata in the HTML. Both get sent to the client, which was very hard to find out on how to implement this. I needed to use AI to come up with using array.map() to add the html to the same send. I obviously wrote the code myself and only asked AI on how to combine the two arrays. It still has errors, though, so I'll have to refine those next time. Shouldn't be too much of a hassle I think, but you never know. If everything goes as planned, I'll have around 3 hours to polish the article creator + 1 hour left after to polish stuff. Then this assignment will be finished!
+
+**10-11-2026:**
+
+Finished implementing the function to create, view the article card, and actually being able to open it in a window. I used a depricated function (document.write) to write the data into the window, since I didn't have a lot of time left. I'm not sure what the correct alternative to this function is, but I'll try to find and use it next time. I didn't learn much special, just that you can use both ["variableName"] and the usual .variablename to access variables, I didn't know the former. Next time I'll try to be fast with implementing the article creator requirements and fix the article cards.

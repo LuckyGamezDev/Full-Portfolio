@@ -3,7 +3,7 @@ const communityArticlesDivId = "community-posts";
 
 const communityArticleDivClassName = "community-post-preview";
 const communityArticlesTitleClassName = "title";
-const communityArticlesBodyClassName = "body";
+const communityArticlesBodySummaryClassName = "body-summary"
 const communityArticlesRedirButtonClassName = "article-redir-community";
 
 async function initializeArticles() {
@@ -35,7 +35,7 @@ async function initializeArticles() {
     for (let i = 0; i < allArticlesArray.length; i++) {
         let article = allArticlesArray[i];
 
-        loadArticle(new Article(article["title"], article["body"], article["sources"], article["html"]));
+        loadArticle(new Article(article["title"], article["body-summary"], article["body"], article["sources"], article["html"]));
     } 
 
     console.log("Intialized articles!");
@@ -56,9 +56,9 @@ function loadArticle(article) {
     articleTitle.className = communityArticlesTitleClassName;
     articleTitle.innerHTML = article.title;
 
-    let articleBody = document.createElement("p")
-    articleBody.className = communityArticlesBodyClassName;
-    articleBody.innerHTML = article.body;
+    let articleBodySummary = document.createElement("p")
+    articleBodySummary.className = communityArticlesBodySummaryClassName;
+    articleBodySummary.innerHTML = article.bodySummary;
 
     let articleRedirButton = document.createElement("button");
     articleRedirButton.className = communityArticlesRedirButtonClassName;
@@ -68,7 +68,7 @@ function loadArticle(article) {
     }
 
     articleDiv.appendChild(articleTitle);
-    articleDiv.appendChild(articleBody);
+    articleDiv.appendChild(articleBodySummary);
     articleDiv.appendChild(articleRedirButton);
     
     communityArticlesDiv.appendChild(articleDiv);
@@ -78,15 +78,16 @@ function loadArticle(article) {
 
 function openArticle(article) {
     // Logic for opening the article with the correct, according article information
-    var articleWindow = window.open("", "_top");
-    articleWindow.document.write(article.articleHTML);
+    var articleWindow = window.open("", "_self");
+    articleWindow.document.innerHTML = article.articleHTML;
 
     console.log("Opened article: " + article.articleHTML);
 }
 
 class Article {
-    constructor(title, body, sources, articleHTML = null) {
+    constructor(title, bodySummary, body, sources, articleHTML = null) {
         this.title = title;
+        this.bodySummary = bodySummary;
         this.body = body;
         this.sources = sources;
         this.articleHTML = articleHTML;

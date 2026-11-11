@@ -3,15 +3,24 @@ var titleRemainingMaxLengthText;
 var titleInvalidTag;
 
 const titleInputTextId = "#article-title #article-title-text";
-const titleRemainingMaxLengthTextId = "#article-title #max-length-previewer";
+const titleRemainingMaxLengthTextId = "#article-title .max-length-previewer";
 const titleInvalidTagId = "#article-title .invalid-label";
+
+var bodySummaryInputText;
+var bodySummaryRemainingMaxLengthText;
+var bodySummaryInvalidTag;
+
+const bodySummaryInputTextId = "#article-body-summary #article-body-summary-text";
+const bodySummaryRemainingMaxLengthTextId = "#article-body-summary .max-length-previewer";
+const bodySummaryInputTextMinLength = 50;
+const bodySummaryInvalidTagId = "#article-body-summary .invalid-label";
 
 var bodyInputText;
 var bodyRemainingMaxLengthText;
 var bodyInvalidTag;
 
 const bodyInputTextId = "#article-body #article-body-text";
-const bodyRemainingMaxLengthTextId = "#article-body #max-length-previewer";
+const bodyRemainingMaxLengthTextId = "#article-body .max-length-previewer";
 const minValidBodyLength = 1 //300;
 const bodyInvalidTagId = "#article-body .invalid-label";
 
@@ -20,12 +29,13 @@ var sourcesRemainingMaxLengthText;
 var sourcesInvalidTag;
 
 const sourcesInputTextId = "#article-sources #article-sources-text";
-const sourcesRemainingMaxLengthTextId = "#article-sources #max-length-previewer";
+const sourcesRemainingMaxLengthTextId = "#article-sources .max-length-previewer";
 const sourcesInvalidTagId = "#article-sources .invalid-label";
 
-isTitleValid = false;
-isBodyValid = false;
-isSourceValid = false;
+var isTitleValid = false;
+var isBodySummaryValid = false;
+var isBodyValid = false;
+var isSourceValid = false;
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -48,6 +58,29 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     displayTextLengthLeft(titleInputTextId, titleRemainingMaxLengthTextId, false);
+
+    bodySummaryInputText = document.querySelector(bodySummaryInputTextId);
+    bodySummaryRemainingMaxLengthText = document.querySelector(bodySummaryRemainingMaxLengthTextId);
+    bodySummaryInvalidTag = document.querySelector(bodySummaryInvalidTagId);
+
+    bodySummaryInvalidTag.style.visibility = "hidden";
+
+    bodySummaryInputText.addEventListener("input", function() {
+        displayTextLengthLeft(bodySummaryInputTextId, bodySummaryRemainingMaxLengthTextId);
+
+        if (bodySummaryInputText.value.length >= bodySummaryInputTextMinLength) {
+            isBodySummaryValid = true;
+
+            bodySummaryInvalidTag.style.visibility = "hidden";
+        } else {
+            isBodySummaryValid = false;
+        }
+    });
+
+    bodySummaryInputText.addEventListener("input", autoResizeTextArea, false);
+
+    displayTextLengthLeft(bodySummaryInputTextId, bodySummaryRemainingMaxLengthTextId);
+
 
     bodyInputText = document.querySelector(bodyInputTextId);
     bodyRemainingMaxLengthText = document.querySelector(bodyRemainingMaxLengthTextId);
@@ -134,13 +167,17 @@ function autoResizeTextArea() {
 }
 
 async function createArticle() {
-    if (isTitleValid && isBodyValid && isSourceValid) {
-        articleTitle = titleInputText.value;
-        articleBody = bodyInputText.value;
-        articleSources = sourcesInputText.value;
+    if (isTitleValid && isBodySummaryValid && isBodyValid && isSourceValid) {
+        var articleTitle = titleInputText.value;
+        var articleBodySummary = bodySummaryInputText.value;
+        var articleBody = bodyInputText.value;
+        var articleSources = sourcesInputText.value;
 
-        var createdArticle = new Article(articleTitle, articleBody, articleSources);
+        var createdArticle = new Article(articleTitle, articleBodySummary, articleBody, articleSources);
+        console.log("Variable value: " + articleBodySummary, " The saved class value: " + createdArticle.bodySummary);
         var jsonStringArticle = createdArticle.convertToJson();
+
+        console.log("Sending this article: " + jsonStringArticle);
 
         try {
             fetch("http://localhost:3590/articles", {
@@ -162,6 +199,9 @@ async function createArticle() {
         if (!isTitleValid) {
             titleInvalidTag.style.visibility = "visible"
         }
+        if (!isBodySummaryValid) {
+            bodySummaryInvalidTag.style.visibility = "visible";
+        }
         if (!isBodyValid) {
             bodyInvalidTag.style.visibility = "visible";
         }
@@ -172,8 +212,9 @@ async function createArticle() {
 }
 
 class Article {
-    constructor(title, body, sources) {
+    constructor(title, bodySummary, body, sources) {
         this.title = title;
+        this.bodySummary = bodySummary,
         this.body = body;
         this.sources = sources;
     }
@@ -181,6 +222,7 @@ class Article {
     convertToJson() {
         const jsonObject = {
             "title": this.title,
+            "body-summary": this.bodySummary,
             "body": this.body,
             "sources": this.sources
         };

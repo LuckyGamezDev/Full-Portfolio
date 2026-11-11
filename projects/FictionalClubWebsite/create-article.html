@@ -71,6 +71,28 @@
                 font-size: large;
             }
 
+            #article-body-summary {
+                width: fit-content;
+                height: fit-content;
+            }
+
+            #article-body-summary #article-body-summary-text {
+                background-color: rgb(137, 126, 126);
+
+                width: 30%;
+                min-width: 300px;
+                max-width: 600px;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                resize: none;
+
+                font-size: large;
+
+                place-self: center;
+            }
+
             #article-body {
                 width: fit-content;
                 height: fit-content;
@@ -93,7 +115,7 @@
                 place-self: center;
             }
 
-            #article-body #max-length-previewer {
+            #article-body .max-length-previewer {
                 margin-top: 2px;
             }
 
@@ -198,20 +220,29 @@
         <div id="article">
             <div id="article-info-container">
                 <div id="article-title">
-                    <label id="article-title-text-label" for="article-title-text">Article Name: </label><br>
+                    <label class="article-text-label" for="article-title-text">Article Name: </label><br>
                     <input type="text" maxlength="50" id="article-title-text" name="article-title-text">
-                    <p id="max-length-previewer" style="display: inline;">N/A</p>
+                    <p class="max-length-previewer" style="display: inline;">N/A</p>
                     <p class="invalid-label" style="display: inline; margin-left: 15px; color: red;">Input Invalid</p>
 
                 </div>
 
+                <div id="article-body-summary">
+                    <label class="article-text-label" for="article-body-summary-text">Body Summary: </label><br>
+                    <div class="input-row">
+                        <textarea maxlength="200" id="article-body-summary-text" name="article-body-summary-text"></textarea>
+                        <p class="invalid-label" style="display: inline; margin-left: 15px; place-self: center; color: red;">Input Invalid (min length: 50)</p>
+                    </div>
+                    <p class="max-length-previewer">N/A</p>
+                </div>
+
                 <div id="article-body">
-                    <label id="article-title-text-label" for="article-body-text">Body: </label><br>
+                    <label class="article-text-label" for="article-body-text">Body: </label><br>
                     <div class="input-row">
                         <textarea maxlength="3000" id="article-body-text" name="article-body-text"></textarea>
                         <p class="invalid-label" style="display: inline; margin-left: 15px; place-self: center; color: red;">Input Invalid (min length: 300)</p>
                     </div>
-                    <p id="max-length-previewer">N/A</p>
+                    <p class="max-length-previewer">N/A</p>
                 </div>
 
                 <div id="article-sources">
@@ -220,7 +251,7 @@
                         <textarea maxlength="100" id="article-sources-text"></textarea>
                         <p class="invalid-label" style="display: inline; margin-left: 15px; color: red; place-self: center;">Input invalid</p>
                     </div>
-                    <p id="max-length-previewer" style="margin-top: 0px;">N/A</p>
+                    <p class="max-length-previewer" style="margin-top: 0px;">N/A</p>
                 </div>
             </div>
 

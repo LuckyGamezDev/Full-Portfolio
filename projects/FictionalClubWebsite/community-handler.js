@@ -77,11 +77,43 @@ function loadArticle(article) {
 }
 
 function openArticle(article) {
+    var isFrontHeaderTag = false;
+    for (let i = 0; i < article.articleHTML.length; i++) {
+        if (article.articleHTML[i] == "#") {
+            i += 1;
+            if (article.articleHTML[i] == "#") { // Possible Header 2
+
+                i += 1;
+                if (article.articleHTML[i] == "#") { // Header 3
+                    for (let beginIndex = i - 2; beginIndex <= i; beginIndex++) {
+                        
+                        if (beginIndex === i - 2) { // Is first loop thus first tag symbol
+                            article.articleHTML[beginIndex] = isFrontHeaderTag ? "</h3>" : "<h3>";
+                        } else {
+                           article.articleHTML[beginIndex] === "";
+                        }
+                    }
+
+                    isFrontHeaderTag = !isFrontHeaderTag;
+                } else { // Header 2
+                    article.articleHTML[i - 1] = isFrontHeaderTag ? "</h2>" : "<h2>";
+                    article.articleHTML[i] === "";
+
+                    isFrontHeaderTag = !isFrontHeaderTag;
+                }
+            } else { // header 1
+                article.articleHTML[i - 1] = isFrontHeaderTag ? "</h1>" : "<h1>";
+
+                isFrontHeaderTag = !isFrontHeaderTag;
+            }
+        }
+    }
+
     // Logic for opening the article with the correct, according article information
     var articleWindow = window.open("", "_self");
     articleWindow.document.innerHTML = article.articleHTML;
 
-    console.log("Opened article: " + article.articleHTML);
+    console.log("Opened article");
 }
 
 class Article {

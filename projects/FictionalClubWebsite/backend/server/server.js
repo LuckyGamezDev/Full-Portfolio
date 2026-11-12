@@ -189,7 +189,7 @@ function createHTMLFromJson(jsonFile, fileId) {
 <!DOCTYPE html>
 
 <html>
-    <link rel="stylesheet" href="Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FictionalClubWebsite\\navigation-bar.css">
+    <link rel="stylesheet" href="../navigation-bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -244,17 +244,17 @@ function createHTMLFromJson(jsonFile, fileId) {
         }
     </style>
 
-    <script src="Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FictionalClubWebsite\\navigation-bar-script.js"></script>
+    <script src="../navigation-bar-script.js"></script>
     <body>
         <!-- # Top (persistent) navigation bar -->
         <div class="top-menu-nav">
-            <a href="Z:\Programming\_programming-future-roadmap\_Github Repository\Full-Documented-Learning-Repository\projects\FictionalClubWebsite\index.html" id="home-title">The Gaming Buddies</a>
+            <a href="../index.html" id="home-title">The Gaming Buddies</a>
             
             <div id="top-menu-links">
-                <a class="link-button" href="Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FictionalClubWebsite\\index.html">Home</a>
-                <a class="link-button" href="Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FictionalClubWebsite\\join-us.html">Join Us</a>
-                <a class="link-button" href="Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FictionalClubWebsite\\community.html">Our Community</a>
-                <a class="link-button" href="Z:\\Programming\\_programming-future-roadmap\\_Github Repository\\Full-Documented-Learning-Repository\\projects\\FictionalClubWebsite\\about.html">About</a>
+                <a class="link-button" href="../index.html">Home</a>
+                <a class="link-button" href="../join-us.html">Join Us</a>
+                <a class="link-button" href="../community.html">Our Community</a>
+                <a class="link-button" href="../about.html">About</a>
             </div>
 
             <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">

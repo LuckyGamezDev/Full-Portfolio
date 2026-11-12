@@ -166,6 +166,43 @@ function autoResizeTextArea() {
     this.style.height = this.scrollHeight + 'px';
 }
 
+function makeSelectionStyled(startTag, endTag) {
+    const textArea = bodyInputText;
+    const textAreaSelectionStart = textArea.selectionStart;
+    const textAreaSelectionEnd = textArea.selectionEnd;
+    const textAreaText = textArea.value;
+    const isHeader = startTag.includes("#");
+
+    // Get the selected text
+    const selectedText = textAreaText.substring(textAreaSelectionStart, textAreaSelectionEnd);
+
+    // Replacing the selected text with the wanted formatted form
+
+    var formattedText;
+    if (endTag) {
+        formattedText = startTag + selectedText + endTag;
+    } else { 
+        formattedText = startTag + selectedText;
+    }
+
+    if (isHeader) { // Auto add white lines at the start of the header to make it more polished somehow, later
+        textArea.value = textAreaText.substring(0, textAreaSelectionStart) + formattedText + "\r\n\r\n" + textAreaText.substring(textAreaSelectionEnd);
+    } else {
+        textArea.value = textAreaText.substring(0, textAreaSelectionStart) + formattedText + textAreaText.substring(textAreaSelectionEnd);
+    }    
+
+    //autoResizeTextArea();
+
+    // Reset the cursor position
+    textArea.selectionStart = textAreaSelectionStart;
+    textArea.selectionEnd = textAreaSelectionEnd;
+
+    // Bring back focus on the text area so that the user can continue typing
+    textArea.focus();
+
+    console.log("Styled text");
+}
+
 async function createArticle() {
     if (isTitleValid && isBodySummaryValid && isBodyValid && isSourceValid) {
         var articleTitle = titleInputText.value;

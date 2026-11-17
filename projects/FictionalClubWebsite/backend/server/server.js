@@ -180,7 +180,8 @@ async function readAllArticleFilePaths() {
 function createHTMLFromJson(jsonFile, fileId) {
     var articleTitle = jsonFile["title"];
     var articleBody = jsonFile["body"];
-    var articleSources = jsonFile["sources"];
+    var articleAuthorName = jsonFile["metadata"];
+    var articlePublishDate = jsonFile["date"];
 
     console.log("value of json file: " + jsonFile, jsonFile["title"], jsonFile["body"]);
 
@@ -208,6 +209,8 @@ function createHTMLFromJson(jsonFile, fileId) {
             padding: 15px;
 
             font-size: 20px;
+
+            margin-bottom: 10px;
         }
 
         #article-title {
@@ -221,7 +224,7 @@ function createHTMLFromJson(jsonFile, fileId) {
             border-color: rgb(24, 40, 121);
             border-style: dashed;
 
-            padding: 5px;
+            padding: 10px;
         }
 
         .article-sub-header {
@@ -264,13 +267,13 @@ function createHTMLFromJson(jsonFile, fileId) {
 
         <h1 id="article-title">${articleTitle}</h1>
 
-        <p id="article-body">
+        <div id="article-body">
             ${articleBody}
-        </p>
+        </div>
 
         <footer>
-            <p id="author">Placeholder</p>
-            <p id="publish-date">Placeholder <span id="publish-date" style="font-style: italic;">placeholder</span></p>
+            <p id="author">Author: ${articleAuthorName}</p>
+            <p id="publish-date">Date Published: <span id="publish-date" style="font-style: italic;">${articlePublishDate}</span></p>
         </footer>
     </body>
 </html>

@@ -24,18 +24,18 @@ const bodyRemainingMaxLengthTextId = "#article-body .max-length-previewer";
 const minValidBodyLength = 1 //300;
 const bodyInvalidTagId = "#article-body .invalid-label";
 
-var sourcesInputText;
-var sourcesRemainingMaxLengthText;
-var sourcesInvalidTag;
+var metadataInputText;
+var metadataRemainingMaxLengthText;
+var metadataInvalidTag;
 
-const sourcesInputTextId = "#article-sources #article-sources-text";
-const sourcesRemainingMaxLengthTextId = "#article-sources .max-length-previewer";
-const sourcesInvalidTagId = "#article-sources .invalid-label";
+const metadataInputTextId = "#article-metadata #article-metadata-text";
+const metadataRemainingMaxLengthTextId = "#article-metadata .max-length-previewer";
+const metadataInvalidTagId = "#article-metadata .invalid-label";
 
 var isTitleValid = false;
 var isBodySummaryValid = false;
 var isBodyValid = false;
-var isSourceValid = false;
+var isMetadataValid = false;
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -104,27 +104,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     displayTextLengthLeft(bodyInputTextId, bodyRemainingMaxLengthTextId);
 
-    sourcesInputText = document.querySelector(sourcesInputTextId);
-    sourcesRemainingMaxLengthText = document.querySelector(sourcesRemainingMaxLengthTextId);    
-    sourcesInvalidTag = document.querySelector(sourcesInvalidTagId);
+    metadataInputText = document.querySelector(metadataInputTextId);
+    metadataRemainingMaxLengthText = document.querySelector(metadataRemainingMaxLengthTextId);    
+    metadataInvalidTag = document.querySelector(metadataInvalidTagId);
 
-    sourcesInvalidTag.style.visibility = "hidden";
+    metadataInvalidTag.style.visibility = "hidden";
 
-    sourcesInputText.addEventListener("input", function() {
-        displayTextLengthLeft(sourcesInputTextId, sourcesRemainingMaxLengthTextId);
+    metadataInputText.addEventListener("input", function() {
+        displayTextLengthLeft(metadataInputTextId, metadataRemainingMaxLengthTextId);
 
-        if (sourcesInputText.value.length > 0) {
-            isSourceValid = true;
+        if (metadataInputText.value.length > 0) {
+            isMetadataValid = true;
 
-            sourcesInvalidTag.style.visibility = "hidden";
+            metadataInvalidTag.style.visibility = "hidden";
         } else {
-            isSourceValid = false;
+            isMetadataValid = false;
         }
     })
 
-    sourcesInputText.addEventListener("input", autoResizeTextArea, false);
+    metadataInputText.addEventListener("input", autoResizeTextArea, false);
 
-    displayTextLengthLeft(sourcesInputTextId, sourcesRemainingMaxLengthTextId);
+    displayTextLengthLeft(metadataInputTextId, metadataRemainingMaxLengthTextId);
 
     document.getElementById("publish-article").onclick = () => {
         createArticle();
@@ -204,31 +204,53 @@ function makeSelectionStyled(startTag, endTag) {
 }
 
 async function createArticle() {
-    if (isTitleValid && isBodySummaryValid && isBodyValid && isSourceValid) {
+    if (isTitleValid && isBodySummaryValid && isBodyValid && isMetadataValid) {
         var articleTitle = titleInputText.value;
         var articleBodySummary = bodySummaryInputText.value;
         var articleBody = bodyInputText.value;
-        var articleSources = sourcesInputText.value;
+        var articleMetadata = metadataInputText.value;
 
-        var createdArticle = new Article(articleTitle, articleBodySummary, articleBody, articleSources);
+        var createdArticle = new Article(articleTitle, articleBodySummary, articleBody, articleMetadata);
         console.log("Variable value: " + articleBodySummary, " The saved class value: " + createdArticle.bodySummary);
         var jsonStringArticle = createdArticle.convertToJson();
 
         console.log("Sending this article: " + jsonStringArticle);
 
-        try {
-            fetch("http://localhost:3590/articles", {
-                method: "POST",
-                body: jsonStringArticle,
-                headers: {"Content-Type": "application/json"}
-            }) .then((response) => console.log(response));
-        } catch (err) {
-            console.error("ERR: " + err);
-        } 
+        if (isTitleValid && isBodySummaryValid && isBodyValid && isMetadataValid) {
 
-        console.log("created article!")
+    const articleTitle = titleInputText.value;
+    const articleBodySummary = bodySummaryInputText.value;
+    const articleBody = bodyInputText.value;
+    const articleMetadata = metadataInputText.value;
 
-        //window.open("community.html", "_top");
+    const createdArticle = new Article(
+        articleTitle,
+        articleBodySummary,
+        articleBody,
+        articleMetadata
+    );
+
+    const jsonStringArticle = createdArticle.convertToJson();
+
+    try {
+        const response = await fetch("http://localhost:3590/articles", {
+            method: "POST",
+            body: jsonStringArticle,
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        console.log("Article successfully created!");
+
+        window.open("community.html", "_self");
+
+    } catch (err) {
+        console.error("ERR:", err);
+    }
+}
 
     } else {
         console.log("Cannot create article, please input something into the fields!")
@@ -242,18 +264,18 @@ async function createArticle() {
         if (!isBodyValid) {
             bodyInvalidTag.style.visibility = "visible";
         }
-        if (!isSourceValid) {
-            sourcesInvalidTag.style.visibility = "visible";
+        if (!isMetadataValid) {
+            metadataInvalidTag.style.visibility = "visible";
         }
     }
 }
 
 class Article {
-    constructor(title, bodySummary, body, sources) {
+    constructor(title, bodySummary, body, metadata) {
         this.title = title;
         this.bodySummary = bodySummary,
         this.body = body;
-        this.sources = sources;
+        this.metadata = metadata;
     }
 
     convertToJson() {
@@ -261,7 +283,8 @@ class Article {
             "title": this.title,
             "body-summary": this.bodySummary,
             "body": this.body,
-            "sources": this.sources
+            "metadata": this.metadata,
+            "date": new Date().toDateString()
         };
 
         console.log(jsonObject["body"]);

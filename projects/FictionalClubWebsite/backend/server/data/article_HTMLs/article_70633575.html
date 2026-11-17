@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href="../navigation-bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-color: rgba(195, 200, 229, 0.723);
+        }
+
+        #article-body {
+            background-color: rgba(42, 67, 93, 0.526);
+
+            border-color: rgb(37, 41, 59);
+            border-radius: 5px;
+            border-style: solid;
+
+            width: fit-content;
+            padding: 15px;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        #article-title {
+            background-color: rgb(43, 61, 226);
+
+            width: fit-content;
+
+            text-align: center;
+
+            border-radius: 5px;
+            border-color: rgb(24, 40, 121);
+            border-style: dashed;
+
+            padding: 10px;
+        }
+
+        .article-sub-header {
+            text-decoration: wavy;
+
+            font-family: fantasy;
+            font-size: 22px;
+        }
+
+        footer {
+            background-color: rgb(31, 107, 182);
+
+            width: fit-content;
+
+            padding: 1px 10px;
+
+            border-color: rgb(26, 67, 120);
+            border-style: solid;
+            border-radius: 3px;
+        }
+    </style>
+
+    <script src="../navigation-bar-script.js"></script>
+    <body>
+        <!-- # Top (persistent) navigation bar -->
+        <div class="top-menu-nav">
+            <a href="../index.html" id="home-title">The Gaming Buddies</a>
+            
+            <div id="top-menu-links">
+                <a class="link-button" href="../index.html">Home</a>
+                <a class="link-button" href="../join-us.html">Join Us</a>
+                <a class="link-button" href="../community.html">Our Community</a>
+                <a class="link-button" href="../about.html">About</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <h1 id="article-title">test</h1>
+
+        <div id="article-body">
+            if (isTitleValid && isBodySummaryValid && isBodyValid && isMetadataValid) {
+
+    const articleTitle = titleInputText.value;
+    const articleBodySummary = bodySummaryInputText.value;
+    const articleBody = bodyInputText.value;
+    const articleMetadata = metadataInputText.value;
+
+    const createdArticle = new Article(
+        articleTitle,
+        articleBodySummary,
+        articleBody,
+        articleMetadata
+    );
+
+    const jsonStringArticle = createdArticle.convertToJson();
+
+    try {
+        const response = await fetch("http://localhost:3590/articles", {
+            method: "POST",
+            body: jsonStringArticle,
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        console.log("Article successfully created!");
+
+        window.location.href = "community.html";
+
+    } catch (err) {
+        console.error("ERR:", err);
+    }
+}
+        </div>
+
+        <footer>
+            <p id="author">Author: test</p>
+            <p id="publish-date">Date Published: <span id="publish-date" style="font-style: italic;">Tue Nov 17 2026</span></p>
+        </footer>
+    </body>
+</html>
+    

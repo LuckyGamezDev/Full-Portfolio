@@ -77,41 +77,71 @@ function loadArticle(article) {
 }
 
 function openArticle(article) {
-    var isFrontHeaderTag = false;
-    for (let i = 0; i < article.articleHTML.length; i++) {
-        if (article.articleHTML[i] == "#") {
-            i += 1;
-            if (article.articleHTML[i] == "#") { // Possible Header 2
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(article.articleHTML, "text/html");
 
-                i += 1;
-                if (article.articleHTML[i] == "#") { // Header 3
-                    for (let beginIndex = i - 2; beginIndex <= i; beginIndex++) {
-                        
-                        if (beginIndex === i - 2) { // Is first loop thus first tag symbol
-                            article.articleHTML[beginIndex] = isFrontHeaderTag ? "</h3>" : "<h3>";
-                        } else {
-                           article.articleHTML[beginIndex] === "";
-                        }
-                    }
+    const articleBodyDiv = doc.querySelector("#article-body");
 
-                    isFrontHeaderTag = !isFrontHeaderTag;
-                } else { // Header 2
-                    article.articleHTML[i - 1] = isFrontHeaderTag ? "</h2>" : "<h2>";
-                    article.articleHTML[i] === "";
+    const regex = /^\s*#{1,3}.*?#\s*$/gm;
 
-                    isFrontHeaderTag = !isFrontHeaderTag;
-                }
-            } else { // header 1
-                article.articleHTML[i - 1] = isFrontHeaderTag ? "</h1>" : "<h1>";
+    const content = articleBodyDiv.innerHTML;
+    const headings = [...content.matchAll(regex)];
+    const sections = [];
 
-                isFrontHeaderTag = !isFrontHeaderTag;
-            }
-        }
+    for (let i = 0; i < headings.length; i++) {
+        const start = headings[i].index;
+        const end = headings[i + 1]?.index ?? content.length;
+
+        const section = content.substring(start, end).trim();
+
+        const match = section.match(/^(#{1,3})(.*?)\1\s*([\s\S]*)$/);
+
+        if (!match) continue;
+
+        const [, hashes, heading, body] = match;
+
+        sections.push({
+            headingText: heading.trim(),
+            level: hashes.length,
+            body: body.trim()
+        });
     }
 
-    // Logic for opening the article with the correct, according article information
-    var articleWindow = window.open("", "_self");
-    articleWindow.document.innerHTML = article.articleHTML;
+    articleBodyDiv.innerHTML = ""; // Reset the innerHTML to be empty
+    for (let i = 0; i < sections.length; i++) {
+        const lineBreakElement = doc.createElement("br");
+
+        const headerElement =
+            sections[i].level === 1 ? doc.createElement("h1") :
+            sections[i].level === 2 ? doc.createElement("h2") :
+            sections[i].level === 3 ? doc.createElement("h3") :
+            null;
+            
+        headerElement.innerHTML = sections[i].headingText; 
+        const headerBodyTextElement = doc.createElement("p");
+        headerBodyTextElement.innerHTML = sections[i].body;
+
+        console.log(headerElement);
+
+        articleBodyDiv.appendChild(headerElement);
+        articleBodyDiv.appendChild(headerBodyTextElement);
+        articleBodyDiv.appendChild(lineBreakElement);
+    }
+
+    console.log(articleBodyDiv);
+    
+    const fullArticle = doc.documentElement.outerHTML;
+
+    console.log(fullArticle);
+    
+    const newWindow = window.open("", "_self");
+    if (fullArticle) {
+        newWindow.document.open();
+        newWindow.document.write(fullArticle);
+        newWindow.document.close();
+    } else {
+        console.error("An error occured during the opening of an article!");
+    }
 
     console.log("Opened article");
 }

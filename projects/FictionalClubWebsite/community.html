@@ -43,12 +43,23 @@
                 text-decoration: none;
                 font-family: monospace;
                 font-weight: bold;
+                font-size: large;
 
                 position: absolute;
                 top: 60px;
                 right: 10px;
 
                 padding: 5px;
+            }
+
+            #create-article-button:hover {
+                background-color: rgb(121, 55, 156);
+                border-color: rgb(75, 29, 100);;
+            }
+
+            #create-article-button:active {
+                background-color: rgb(159, 107, 187);
+                border-color: rgb(90, 57, 108);;
             }
 
             #news #news-header {
@@ -63,14 +74,16 @@
                 flex-direction: column;
                 justify-content: space-between;
 
-
                 align-items: center;
 
                 background-color: rgb(133, 63, 194);
 
                 border-radius: 10px;
 
-                max-width: 500px;
+                max-width: 700px;
+
+                min-height: 300px;
+                max-height: 800px;
 
                 padding: 10px;
                 margin: 20px;
@@ -81,7 +94,7 @@
             .owner-post-preview .title {
                 font-weight: bold;
 
-                font-size: large;
+                font-size: larger;
                 font-family: 'Times New Roman', Times, serif;
             }
 
@@ -95,6 +108,11 @@
                 width: 100%;
                 padding-top: 10px;
                 padding-bottom: 10px;
+
+                min-height: 15%;
+                max-height: 60%;
+
+                font-size: larger;
             }
 
             #community-posts {
@@ -137,8 +155,10 @@
 
                 border-radius: 10px;
 
-                max-width: 500px;
-                min-width: auto;
+                max-width: 700px;
+
+                min-height: 250px;
+                max-height: 600px;
 
                 padding: 10px;
                 margin: 20px;
@@ -149,11 +169,12 @@
             .community-post-preview .title {
                 font-weight: bold;
                 font-family: 'Times New Roman', Times, serif;
-                font-size: large;
+                font-size: larger;
             }
 
             .community-post-preview .body-summary {
                 text-align: center;
+                font-size: large;
 
                 background-color: rgba(97, 142, 200, 0.777);
 
@@ -173,7 +194,7 @@
                 padding: 5px;
                 text-decoration: none;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-size: small;
+                font-size: medium;
 
                 border-radius: 5px;
                 border-color: rgb(90, 12, 90);
@@ -197,7 +218,7 @@
                 padding: 5px;
                 text-decoration: none;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-size: small;
+                font-size: medium;
 
                 border-radius: 5px;
                 border-color: rgb(17, 49, 59);

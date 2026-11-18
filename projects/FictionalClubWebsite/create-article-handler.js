@@ -185,8 +185,13 @@ function makeSelectionStyled(startTag, endTag) {
         formattedText = startTag + selectedText;
     }
 
-    if (isHeader) { // Auto add white lines at the start of the header to make it more polished somehow, later
-        textArea.value = textAreaText.substring(0, textAreaSelectionStart) + formattedText + "\r\n\r\n" + textAreaText.substring(textAreaSelectionEnd);
+    if (isHeader) {
+        let remainingBodyText = textAreaText.substring(textAreaSelectionEnd);
+
+        // Remove leading whitespace and newlines
+        remainingBodyText = remainingBodyText.replace(/^\s+/, "");
+
+        textArea.value = textAreaText.substring(0, textAreaSelectionStart) + formattedText + "\r\n\r\n" + remainingBodyText;
     } else {
         textArea.value = textAreaText.substring(0, textAreaSelectionStart) + formattedText + textAreaText.substring(textAreaSelectionEnd);
     }    
@@ -205,70 +210,56 @@ function makeSelectionStyled(startTag, endTag) {
 
 async function createArticle() {
     if (isTitleValid && isBodySummaryValid && isBodyValid && isMetadataValid) {
-        var articleTitle = titleInputText.value;
-        var articleBodySummary = bodySummaryInputText.value;
-        var articleBody = bodyInputText.value;
-        var articleMetadata = metadataInputText.value;
 
-        var createdArticle = new Article(articleTitle, articleBodySummary, articleBody, articleMetadata);
-        console.log("Variable value: " + articleBodySummary, " The saved class value: " + createdArticle.bodySummary);
-        var jsonStringArticle = createdArticle.convertToJson();
+        const articleTitle = titleInputText.value;
+        const articleBodySummary = bodySummaryInputText.value;
+        const articleBody = bodyInputText.value;
+        const articleMetadata = metadataInputText.value;
 
-        console.log("Sending this article: " + jsonStringArticle);
+        const createdArticle = new Article(
+            articleTitle,
+            articleBodySummary,
+            articleBody,
+            articleMetadata
+        );
 
-        if (isTitleValid && isBodySummaryValid && isBodyValid && isMetadataValid) {
+        const jsonStringArticle = createdArticle.convertToJson();
 
-    const articleTitle = titleInputText.value;
-    const articleBodySummary = bodySummaryInputText.value;
-    const articleBody = bodyInputText.value;
-    const articleMetadata = metadataInputText.value;
+        try {
+            const response = await fetch("http://localhost:3590/articles", {
+                method: "POST",
+                body: jsonStringArticle,
+                headers: { "Content-Type": "application/json" }
+            });
 
-    const createdArticle = new Article(
-        articleTitle,
-        articleBodySummary,
-        articleBody,
-        articleMetadata
-    );
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
 
-    const jsonStringArticle = createdArticle.convertToJson();
+            console.log("Article successfully created!");
 
-    try {
-        const response = await fetch("http://localhost:3590/articles", {
-            method: "POST",
-            body: jsonStringArticle,
-            headers: { "Content-Type": "application/json" }
-        });
+            window.open("community.html", "_self");
 
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
+        } catch (err) {
+            console.error("ERR:", err);
         }
-
-        console.log("Article successfully created!");
-
-        window.open("community.html", "_self");
-
-    } catch (err) {
-        console.error("ERR:", err);
-    }
-}
-
     } else {
-        console.log("Cannot create article, please input something into the fields!")
+            console.log("Cannot create article, please input something into the fields!")
 
-        if (!isTitleValid) {
-            titleInvalidTag.style.visibility = "visible"
-        }
-        if (!isBodySummaryValid) {
-            bodySummaryInvalidTag.style.visibility = "visible";
-        }
-        if (!isBodyValid) {
-            bodyInvalidTag.style.visibility = "visible";
-        }
-        if (!isMetadataValid) {
-            metadataInvalidTag.style.visibility = "visible";
-        }
+            if (!isTitleValid) {
+                titleInvalidTag.style.visibility = "visible"
+            }
+            if (!isBodySummaryValid) {
+                bodySummaryInvalidTag.style.visibility = "visible";
+            }
+            if (!isBodyValid) {
+                bodyInvalidTag.style.visibility = "visible";
+            }
+            if (!isMetadataValid) {
+                metadataInvalidTag.style.visibility = "visible";
+            }
     }
-}
+} 
 
 class Article {
     constructor(title, bodySummary, body, metadata) {

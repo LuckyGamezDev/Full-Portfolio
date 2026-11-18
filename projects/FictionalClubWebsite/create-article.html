@@ -115,6 +115,28 @@
                 place-self: center;
             }
 
+            .header-styling-button {
+                background-color: rgb(112, 92, 92);
+
+                font-weight: bold;
+                font-style: italic;
+
+                border: 3px, solid, black;
+                border-radius: 1px;
+
+                padding: 3px;
+                margin-top: 3px;
+                margin-right: 4px;
+            }
+            .header-styling-button:hover {
+                background-color: rgb(227, 170, 170);
+
+                cursor: pointer;
+            }
+            .header-styling-button:active {
+                background-color: rgb(54, 46, 46);
+            }
+
             #article-body .max-length-previewer {
                 margin-top: 2px;
             }
@@ -239,14 +261,14 @@
                 <div id="article-body">
                     <label class="article-text-label" for="article-body-text">Body: </label><br>
                     <div class="input-row">
-                        <textarea maxlength="3000" id="article-body-text" name="article-body-text"></textarea>
+                        <textarea maxlength="5000" id="article-body-text" name="article-body-text"></textarea>
                         <p class="invalid-label" style="display: inline; margin-left: 15px; place-self: center; color: red;">Input Invalid (min length: 300)</p>
                     </div>
                     <div class="text-styling-bar">
                         <div id="headers-styling-options">
-                            <button id="header_1-selection" onclick="makeSelectionStyled('#', '#')">Header 1</button>
-                            <button id="header_2-selection" onclick="makeSelectionStyled('##', '##')">Header 2</button>
-                            <button id="header_3-selection" onclick="makeSelectionStyled('###', '###')">Header 3</button>
+                            <button class="header-styling-button" id="header_1-selection" onclick="makeSelectionStyled('#', '#')">Header 1</button>
+                            <button class="header-styling-button" id="header_2-selection" onclick="makeSelectionStyled('##', '##')">Header 2</button>
+                            <button class="header-styling-button" id="header_3-selection" onclick="makeSelectionStyled('###', '###')">Header 3</button>
                         </div>
                     </div>
                     <p class="max-length-previewer">N/A</p>

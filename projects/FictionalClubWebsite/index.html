@@ -40,6 +40,21 @@
                 height: fit-content;
             }
 
+            #introduction-and-information {
+                display: grid;
+                grid-template-columns: auto auto;
+
+                gap: 20px;
+
+                background-color: rgb(61, 38, 61);;
+
+                margin-top: 10px;
+                padding: 10px;
+
+                border-radius: 5px;
+                border: 3px, solid, black;
+            }
+
             .introduction {
                 background-color: rgb(94, 71, 94);
 
@@ -51,6 +66,8 @@
                 margin-top: 15px;
                 margin-bottom: 15px;
                 padding: 5px;
+
+                font-size: larger;
             }
 
             .club-information {
@@ -64,6 +81,8 @@
                 margin-top: 15px;
                 margin-bottom: 15px;
                 padding: 5px;
+
+                font-size: larger;
             }
 
             .about-community {
@@ -77,6 +96,13 @@
                 margin-top: 15px;
                 margin-bottom: 15px;
                 padding: 5px;
+
+                font-size: larger;
+            }
+
+            .about-community p {
+                margin-left: 5px;
+                margin-bottom: 20px;
             }
 
             .join-us {
@@ -92,7 +118,12 @@
                 padding: 5px;
             }
 
-            .join-us-form-redirection {
+            .join-us p {
+                margin-left: 5px;
+                margin-bottom: 20px;
+            }
+
+            .button-redirection {
                 margin-top: 15px;
                 margin-bottom: 15px;
                 padding: 5px;
@@ -100,26 +131,49 @@
                 align-self: center;
             }
 
-            #form-redirection-button {
-                background-color: rgb(175, 38, 93);
+            #community-redirection-button {
+                background-color: rgb(82, 131, 210);
 
+                margin-top: 5px;
                 padding: 10px;
 
                 border-style: solid;
                 border-radius: 1px;
-                border-color: rgb(108, 23, 57);
+                border-color: rgb(47, 91, 119);
                 border-width: 3px;
 
                 cursor: pointer;
             }
 
+            #form-redirection-button {
+                background-color: rgba(105, 64, 179, 0.822);
+
+                padding: 10px;
+
+                border-style: solid;
+                border-radius: 1px;
+                border-color: rgba(68, 42, 117, 0.822);
+                border-width: 3px;
+
+                cursor: pointer;
+            }
+
+            #community-redirection-button:hover {
+                background-color:  rgb(147, 154, 255);
+                border-color: rgb(93, 104, 205);
+            }
+
+            #community-redirection-button:active {
+                background-color: rgb(30, 95, 200);
+            }
+
             #form-redirection-button:hover {
-                background-color: rgb(231, 44, 119);
-                border-color: rgb(149, 34, 80);;
+                background-color: rgb(149, 104, 231);
+                border-color: rgb(92, 59, 153);
             }
 
             #form-redirection-button:active {
-                background-color: rgb(85, 21, 47);;
+                background-color: rgba(71, 29, 149, 0.822);
             }
 
             footer {
@@ -157,45 +211,47 @@
             <img src="content/Banner.png" id="banner-image" alt="The Gaming Buddies Banner">
         </div> 
 
-        <div class="introduction">
-            <h2>Introduction</h2>
+        <div id="introduction-and-information">
+            <div class="introduction">
+                <h2>Introduction</h2>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-                Ad litora torquent per conubia nostra inceptos himenaeos.
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                    Ad litora torquent per conubia nostra inceptos himenaeos.
 
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-                Ad litora torquent per conubia nostra inceptos himenaeos.
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                    Ad litora torquent per conubia nostra inceptos himenaeos.
 
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-                Ad litora torquent per conubia nostra inceptos himenaeos.
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                    Ad litora torquent per conubia nostra inceptos himenaeos.
 
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-                Ad litora torquent per conubia nostra inceptos himenaeos.
-            </p>
-        </div>
-        <div class="club-information">
-            <h2>Club Information</h2>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                    Ad litora torquent per conubia nostra inceptos himenaeos.
+                </p>
+            </div>
+            <div class="club-information">
+                <h2>Club Information</h2>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-                Ad litora torquent per conubia nostra inceptos himenaeos.
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                    Ad litora torquent per conubia nostra inceptos himenaeos.
 
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
-                Ad litora torquent per conubia nostra inceptos himenaeos.
-            </p>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                    Ad litora torquent per conubia nostra inceptos himenaeos.
+                </p>
+            </div>
         </div>
         <div class="about-community">
             <h2>Our Community</h2>
@@ -210,12 +266,23 @@
                 In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
                 lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu.
             </p>
+
+            <div class="button-redirection">
+                <a href="community.html" id="community-redirection-button" style="text-decoration: none; color: black;">To Community</a>
+            </div>
         </div>
         <div class="join-us">
             <h2>Join Us And Our Community</h2>
 
-            <div class="join-us-form-redirection">
-                <a onclick="location.href='join-us.html'" id="form-redirection-button">Take me to the form</a>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+                In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+                lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. 
+                Ad litora torquent per conubia nostra inceptos himenaeos.
+            </p>
+
+            <div class="button-redirection">
+                <a href="join-us.html" id="form-redirection-button" style="text-decoration: none; color: black;">Take Me To The Form</a>
             </div>
         </div>
         <footer>
@@ -229,22 +296,22 @@
 
 <!-- What I learned this session -->
   <!-- 
-    1. That you can use the DOMParse class to parse HTML strings, which doesn't waste you as much time, since you don't have to manually parse.
-
-    2. That regex is more complicated than I thought.
-
-    3. That I really need to fix my current work posture to implement async when doing async stuff properly instead of handling it as if it's synchronous.
+    1. Once again that I really need to do some research into regex, since I needed it again today.
   -->
 
 <!-- 
     Things I Did:
+        1. Polished the homescreen to be a little nicer, with having made some layout adjustments, added a community button, and some other minor things.
+        2. Made the community page feel more zoomed-in by increasing the size of relevant elements.
+        3. Fixed an issue that caused the body text of a header to have a white space.
+        4. Changed the color palete of the join us page to be nicer
+        5. Styled the header buttons properly within the create an article page.
+        6. Styled some other things to be nicer.
     --> 
 
-<!-- Work Duration: 24 hours -->
+<!-- Work Duration: 25 hours -->
 
 <!-- TODO -->
  <!--
-    1. Make the article creator able to have headers and other various organizing functions for article creation. 👍
 
-    2. Fix the browser back navigation within the opened article, because for some reason it goes back to the homepage instead of the community page (where you opened the article).
  -->

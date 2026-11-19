@@ -5,6 +5,11 @@
 venv*
 
 * Ignore unnecesarry big files
-Cache/
-bin/
-.vs/
+Cache
+bin
+.vs
+
+
+# Node.js dependencies
+node_modules/
+**/node_modules/

@@ -1,0 +1,101 @@
+.top-menu-nav {
+    display: flex;
+
+    overflow: visible;
+
+    background-color: rgb(166, 180, 192);
+
+    position: relative;
+
+    margin-bottom: 10px;
+
+    padding: 4px;
+
+    min-height: 10px;
+}
+
+.top-menu-nav #top-menu-links {
+    display: none;
+
+    margin-top: 35px;
+
+    position: absolute;
+    right: 0;
+
+    width: 200px;
+    height: 150px;
+
+    flex-direction: column;
+
+    z-index: +10;
+}
+
+.link-button {
+    display: flex;
+
+    background-color: rgb(107, 147, 147);
+
+    text-decoration: none;
+
+    padding: 5px 16px;    
+
+    flex: 1;
+    align-items: center;
+}
+
+.link-button:active {
+    color: rgb(45, 187, 187);
+
+    text-decoration: none;
+}
+
+/* Style for the hovering over links within the task bar */
+.link-button:hover {
+    background-color: rgb(78, 143, 143);
+}
+
+/* The home title that redirects to the main homepage */
+.top-menu-nav #home-title {
+    background-color: rgb(77, 157, 175);
+
+    justify-self: left;
+
+    text-decoration: none;
+
+    align-items: center;
+    align-content: center;
+
+    border-radius: 1px;
+    border-color: rgb(65, 147, 161);
+    border-style: solid;
+
+    color: hsl(208, 100%, 89%);
+
+    padding: 5px 16px;
+}
+
+.top-menu-nav #home-title:hover {
+    background-color: rgba(33, 104, 120, 0.885);
+    border-color: rgb(31, 134, 132);
+}
+
+.top-menu-nav #home-title:active {
+    background-color: rgba(52, 161, 186, 0.885);
+    border-color: rgb(35, 162, 152);
+
+    color: darkslategray;
+}
+
+/* Handles the hamburger menu icon */
+.top-menu-nav a.icon {
+    background: rgb(61, 128, 176);
+
+    margin-left: auto;
+
+    padding: 7px 10px;
+}
+
+.top-menu-nav a.icon:hover {
+    background-color: rgb(49, 102, 139);
+    color: rgb(101, 191, 255);
+}

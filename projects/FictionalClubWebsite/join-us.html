@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Gaming Buddies - Submission Form</title>
+
+        <link rel="stylesheet" href="navigation-bar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>   
+            body {
+                background-color: rgba(68, 42, 117, 0.822);
+            }
+
+            .submission {
+                margin: 15px;
+            }
+
+            input {
+                border-style: solid;
+                border-radius: 2px;
+                border-color: black;
+                border-width: 1px;
+            }
+
+            #first-name {
+                background-color: rgba(130, 82, 219, 0.822);
+            }
+
+            #last-name {
+                background-color: rgba(130, 82, 219, 0.822);
+            }
+
+            #user-email {
+                background-color: rgba(130, 82, 219, 0.822);
+            }
+
+            #user-birthdate {
+                background-color: rgba(130, 82, 219, 0.822);
+            }
+
+            input {
+                background-color: rgba(130, 82, 219, 0.822);
+            }
+        </style>
+
+        <script src="navigation-bar-script.js"></script>
+        <script src="join-us-form-handler.js"></script>
+
+    </head>
+    <body>
+        <!-- # Top (persistent) navigation bar -->
+        <div class="top-menu-nav">
+            <a href="index.html" id="home-title">The Gaming Buddies</a>
+            
+            <div id="top-menu-links">
+                <a class="link-button" href="index.html">Home</a>
+                <a class="link-button" href="join-us.html">Join Us</a>
+                <a class="link-button" href="community.html">Our Community</a>
+                <a class="link-button" href="about.html ">About</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <div class="submission">
+            <h1>Submission Form</h1>
+            <form id="submission-form">
+                <label for="first-name">First Name: </label><br>
+                <input type="text" id="first-name" name="first-name">
+                <p id="invalid-first-name-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid name (musn't include number/special characters)</p><br><br>
+                <label for="last-name">Last Name: </label><br>
+                <input type="text" id="last-name" name="last-name">
+                <p id="invalid-last-name-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid name (musn't include number/special characters)</p><br><br>
+
+                <label for="user-email">Email: </label><br>
+                <input inputmode="email" id="user-email" name="user-email">
+                <p id="invalid-user-email-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid email (must be gmail)</p><br><br>
+
+                <label for="user-birthdate">Birthdate: </label><br>
+                <input type="date" id="user-birthdate" name="user-birthdate">
+                <p id="invalid-birthdate-label" style="display: inline; visibility: hidden; color: red; margin-left: 4px;">Invalid Birthdate (does not meet minimum age requirement)</p><br><br>
+
+                <input type="submit" value="Submit"></input>
+            </form>
+        </div>
+    </body>
+</html>

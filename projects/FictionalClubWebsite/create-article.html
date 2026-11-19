@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>The Gaming Buddies - Create Article</title>
+
+        <link rel="stylesheet" href="navigation-bar.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+            body {
+                display: flex;  
+
+                background-color: rgba(125, 28, 205, 0.996);
+
+                margin: 0;
+
+                min-height: 100dvh;
+                flex-direction: column;
+            }
+
+            #article-title {
+                display: block;
+            }
+
+            label {
+                font-size: 17px;
+                font-family: monospace;
+                font-weight: bold;
+            }
+
+            #article {
+                display: grid;
+
+                grid-template-areas: "input-fields" "bottom-footer";
+
+                grid-template-rows: 9fr 1fr;
+
+                flex: 1;
+
+                width: 100%;
+                height: 100vh;
+            }
+
+            #article-info-container {
+                grid-area: input-fields;
+
+                background-color: rgba(126, 28, 205, 0.416);
+
+                min-height: 0;
+                overflow-y: auto;
+
+                padding: 8px;
+            }
+
+            #article-title {
+                width: fit-content;
+                height: fit-content;
+            }
+
+            #article-title #article-title-text {
+                background-color: rgb(165, 165, 165);
+
+                width: 235px;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                margin-bottom: 20px;
+
+                font-size: large;
+            }
+
+            #article-body-summary {
+                width: fit-content;
+                height: fit-content;
+            }
+
+            #article-body-summary #article-body-summary-text {
+                background-color: rgb(154, 154, 154);
+
+                width: 30%;
+                min-width: 300px;
+                max-width: 600px;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                resize: none;
+
+                font-size: large;
+
+                place-self: center;
+            }
+
+            #article-body {
+                width: fit-content;
+                height: fit-content;
+            }
+
+            #article-body #article-body-text {
+                background-color: rgb(154, 154, 154);
+
+                width: 45%;
+                min-width: 400px;
+                max-width: 900px;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                resize: none;
+
+                font-size: large;
+
+                place-self: center;
+            }
+
+            .header-styling-button {
+                background-color: rgb(112, 92, 92);
+
+                font-weight: bold;
+                font-style: italic;
+
+                border: 3px, solid, black;
+                border-radius: 1px;
+
+                padding: 3px;
+                margin-top: 3px;
+                margin-right: 4px;
+            }
+            .header-styling-button:hover {
+                background-color: rgb(227, 170, 170);
+
+                cursor: pointer;
+            }
+            .header-styling-button:active {
+                background-color: rgb(54, 46, 46);
+            }
+
+            #article-body .max-length-previewer {
+                margin-top: 2px;
+            }
+
+            #article-metadata {
+                width: fit-content;
+                height: fit-content;
+            }
+
+            #article-metadata #article-metadata-text {
+                background-color: rgb(154, 154, 154);
+
+                width: 25%;
+                min-width: 250px;
+                max-width: 350px;
+
+                border: 2px solid black;
+                border-radius: 2px;
+
+                resize: none;
+
+                font-size: medium;
+
+                place-self: center;
+            }
+
+            #article-footer {
+                display: flex;
+
+                grid-area: bottom-footer;
+                
+                background-color: rgba(205, 28, 143, 0.416);
+
+                min-height: 0;
+
+                padding: 8px;
+            }
+
+            #publish-article {
+                background-color: rgb(111, 72, 126);
+                color: rgb(226, 136, 196);
+                
+                align-self: flex-end;
+
+                text-decoration: none;
+                font-family: monospace;
+                font-weight: bold;
+                font-size: large;
+
+                padding: 8px;
+                margin: 10px;
+
+                border: 2px solid rgb(88, 48, 87);
+
+                width: fit-content;
+                height: fit-content;
+            }
+
+            .input-row {
+                display: flex;
+
+                align-items: center;
+            }
+
+            #publish-article:hover {
+                cursor: pointer;
+
+                background-color: rgb(98, 66, 108);
+                color: rgb(182, 104, 150);
+                border-color: rgb(86, 50, 85);;
+            }
+
+            #publish-article:active {
+                background-color: rgb(146, 96, 163);
+                color: rgb(240, 172, 184);
+                border-color: rgb(202, 118, 200);;
+            }
+        </style>
+
+        <script src="navigation-bar-script.js"></script>
+        <script src="create-article-handler.js"></script>
+    </head>
+
+    <body>
+        <!-- # Top (persistent) navigation bar -->
+        <div class="top-menu-nav" style="padding-right: 8px; padding-left: 8px;">
+            <a href="index.html" id="home-title">The Gaming Buddies</a>
+            
+            <div id="top-menu-links">
+                <a class="link-button" href="index.html">Home</a>
+                <a class="link-button" href="join-us.html">Join Us</a>
+                <a class="link-button" href="community.html">Our Community</a>
+                <a class="link-button" href="about.html ">About</a>
+            </div>
+
+            <a href="javascript:void(0);" class="icon" onclick="toggleNavigationMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <h1 style="margin-left: 8px;">Create Article</h1>
+
+        <div id="article">
+            <div id="article-info-container">
+                <div id="article-title">
+                    <label class="article-text-label" for="article-title-text">Article Name: </label><br>
+                    <input type="text" maxlength="50" id="article-title-text" name="article-title-text">
+                    <p class="max-length-previewer" style="display: inline;">N/A</p>
+                    <p class="invalid-label" style="display: inline; margin-left: 15px; color: red;">Input Invalid</p>
+
+                </div>
+
+                <div id="article-body-summary">
+                    <label class="article-text-label" for="article-body-summary-text">Body Summary: </label><br>
+                    <div class="input-row">
+                        <textarea maxlength="200" id="article-body-summary-text" name="article-body-summary-text"></textarea>
+                        <p class="invalid-label" style="display: inline; margin-left: 15px; place-self: center; color: red;">Input Invalid (min length: 50)</p>
+                    </div>
+                    <p class="max-length-previewer">N/A</p>
+                </div>
+
+                <div id="article-body">
+                    <label class="article-text-label" for="article-body-text">Body: </label><br>
+                    <div class="input-row">
+                        <textarea maxlength="5000" id="article-body-text" name="article-body-text"></textarea>
+                        <p class="invalid-label" style="display: inline; margin-left: 15px; place-self: center; color: red;">Input Invalid (min length: 300)</p>
+                    </div>
+                    <div class="text-styling-bar">
+                        <div id="headers-styling-options">
+                            <button class="header-styling-button" id="header_1-selection" onclick="makeSelectionStyled('#', '#')">Header 1</button>
+                            <button class="header-styling-button" id="header_2-selection" onclick="makeSelectionStyled('##', '##')">Header 2</button>
+                            <button class="header-styling-button" id="header_3-selection" onclick="makeSelectionStyled('###', '###')">Header 3</button>
+                        </div>
+                    </div>
+                    <p class="max-length-previewer">N/A</p>
+                </div>
+
+                <div id="article-metadata">
+                    <label for="">Author Name: </label><br>
+                    <div class="input-row">
+                        <textarea maxlength="100" id="article-metadata-text"></textarea>
+                        <p class="invalid-label" style="display: inline; margin-left: 15px; color: red; place-self: center;">Input invalid</p>
+                    </div>
+                    <p class="max-length-previewer" style="margin-top: 0px;">N/A</p>
+                </div>
+            </div>
+
+            <div id="article-footer">
+                <button id="publish-article">Publish</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -74,7 +74,7 @@ I learned a lot about scalling elements, especially on how to implement “break
 
 Today I finished the project. I was struggling A LOT with implementing focus correctly, because of that I unfortunately had to use the help of an AI. The problem was that when clicking the card, the \<a\> element instead would receive the focus instead of the card. The fix was to use “:focus-within” which also registeres when children in the parent get focused.
 
-### WEB-03:
+### WEB-03
 
 **19-08-2026:**
 
@@ -113,7 +113,7 @@ two things for tommorow. I did fix a pretty interesting bug, which is listed in 
 
 I've finished the project. Added the 'No Sessions' label when there aren't any created sessions, which represents the required empty state.
 
-### PY-01:
+### PY-01
 
 **04-09-2026:**
 
@@ -149,3 +149,126 @@ It's getting pretty bad; no motivation at all. I described briefely what I did i
 
 It was a successful day, I was able to finish the project by implementing the remaining summaries, and command line commands! I hope I can get decent progress on the new project
 tomorrow and the day after!
+
+<<<<<<< Updated upstream
+=======
+### WEB-04
+
+>>>>>>> Stashed changes
+**03-10-2026:**
+
+I didn't do any programming, instead I made the required brief for the website I will be creating. I have a pretty complex/big idea for it, so I might extend the deadline quite a
+bit since I think I can learn a lot from this. The briefing has all the required stuff in it and includes a detailed description and layout of the website.
+
+**06-10-2026:**
+
+One school lesson got cancelled, so I got home earlier, thus I had time  to actually do programming, yay! I'm actually genuinely impressed by myself in terms of what I was able to do today and I think I did the styling pretty nicely, eventhough it's all just drafts right now. I didn't learn much, but I was able to refresh my memory on how HTML works and all, so that's nice.
+
+**10-10-2026:**
+
+I started making the top hamburger navigation menu bar, with the help from W3schools, since I'm physically unable to do this myself (as already explained in the 'what I've learned this session within the index.html file). I sure do hope I get better with this type of stuff, but I don't know. Anyway, I also created a fast prototype for the community page. I'm honestly not really sure as to how far I want to go with this webpage in terms of polishing and features. It's probably wise to not go crazy, since I already know creating webpages will definitely not be my special department later.
+
+**14-10-2026:**
+
+I've starting with actually properly reading documentation on how everything is supposed to work, since I'll need a deep understanding of how everything works before being able to make it correctly myself. I learned about how relative/absolute positioning can affect how children behave on scalling of the parent. I'll definitely be spending a lot more time actually reading stuff instead of only doing stuff, which, to me always feels like I'm doing nothing, but that's not true.
+
+**15-10-2026:**
+
+I learned a lot about how to position and scale things the way I want. I also learned how to make a nice layout with a grid display like here: https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named, which is with an interesting property named "grid-template-areas". I learned how to position a flex item to the right side of a flexbox display with the margin-left being set to "auto". Basically, I got more comfortable with the positioning and understanding of items within different displays!
+
+**16-10-2026:**
+
+S-tier session. It was an absolute vibe. I'm actually really liking web development all of a suddent since the last couple of days! I guess the beginning just sucks because you aren't comfortable with all the styling and stuff. Now, I keep learning new stuff every day and getting more comfortable with the stuff I already know. This webpage is genuinely starting to look pretty decent. Sure, not as good as most modern sites do nowadays, but for a non-artist dev, it's pretty nice imo. I'm really noticing I keep improving and getting more comfortable with all the stuff I need to do. I might actually create a really nice portolio site for myself to show off my portfolio, which... technically I already started making with my first ever web assignment, but it's probably best to start over, since my knowledge has greatly improved. I love to learn new stuff and eventually get comfortable and good at it, it's genuinely awesome! The next big subject I'll tackle soon will probably be cybersecurity. I think I'm going to try to hack my own school's site, since it looks extremely unpolished (worse than this site, like... WAY worse, with blank pages all over the place). Of course, if I actually manage to hack the site, I won't be doing any evil stuff or something like that. But it's just I perfect site to hack I think.
+
+**17-10-2026:**
+
+This was a pretty mixed session, with me working on a lot of different things, mostly fixing and polsishing (by adding new functionalities to elements). Tomorrow I'll finally try to implement the actual google map thingy that shows a real location, should be interesting. There's definitely still a lot to learn about javascript, I just now discovered javascript has some sort of querry system with being able to make jQuerry objects. I'd say my effeciency wasn't great, though not bad either. I worked for a fat 2 hours straight, the time flew by, which is also partly why I feel like I didn't do as much as I could've done. Anway, everything worked out pretty well so there's that.
+
+**19-10-2026:**
+
+Pretty bad session, ain't gonna lie. I've managed to implement the google maps widget thingy, which was way easier than it should've been. That's basically about it. I started implementing logic for checking the input in the forum area (join us), but my typing efficiency has just vanished into the void. It's so bad, I really need to fix my typing accuracy, because it's getting really bad. I guess it's because I don't spend enough time programming anymore because of my annoying school times, ugh. So yeah, I also added some nice labels that show the user when a field is invalid, but those don't yet work the way I want them to work. When I set the display to be inline, the reset just gets thrown all over the place for some reason, so I'll have to look into that. Anyway, I'm hoping on a better, more efficient session tomorrow.
+Pretty bad session, ain't gonna lie. I've managed to implement the google maps widget thingy, which was way easier than it should've been. That's basically about it. I started implementing logic for checking the input in the forum area (join us), but my typing efficiency has just vanished into the void. It's so bad, I really need to fix my typing accuracy, because it's getting really bad. I guess it's because I don't spend enough time programming anymore because of my annoying school times, ugh. So yeah, I also added some nice labels that show the user when a field is invalid, but those don't yet work the way I want them to work. When I set the display to be inline, the reset just gets thrown all over the place for some reason, so I'll have to look into that. Anyway, I'm hoping on a better, more efficient session tomorrow.
+
+**20-10-2026:**
+
+I fucked up pretty bad with my git repo, but I think most is fine now. Apperantly I had a mergin conflict and somehow history was rewritten in a way so that it was way behind the actual point it should be at. Luckily I have this branch separate, so I was able to just get my stuff back, otherwise this whole project would've been gone. Anyway, I managed to add the logic I wanted to the join us page, but I think I'm leaving it as is, since sending an actual approvable email request basically requires online servers to be up, which this site is obviously not run on any server (well.. technically it is on my local PC). I'm not sure how I want to continue with that, so I moved on to creating the 'create article' section where users can post articles. Normally, the plan was to have only joined users be able to post, but that'd mean I'd have to implement a whole account system with data base and all, which I'm fine with since I'd learn a lot more about javascript, but it won't really lead anywhere because proper submissions can't really be implemented. I'll maybe do some more research later to see if it maybe is possible to this all locally and thhink about if it's still worth it anyway to implement the profiles/accounts.
+
+**21-10-2026:**
+
+Neutral session. I learned on how you can pass in parameters to function via the "addEventListener" function by just adding an anonymous function witin it. I also refined some of my event handling skills and refactored the code to be a little cleaner, which means I'm getting a little more comfortable with javascript, which is exactly what I wanted! Next session I'll finish the page and I think I'll begin on implementing profiles, since I've decided I want to fidget with databases in javascript to get to know javascript better.
+
+**22-10-2026:**
+
+Pretty nice, relaxing session. I learned a lot by getting some short advice from chatGPT. Because of chatGPT, I got to learn what the vh/vw and fr units stand for, which are actually really helpful! I made a nice layout for the 'create article' page, which was what I needed help with from chatGPT. I needed to make a small change to make it work as I wanted, so I was genuinely very close by just doing it all by myself (without documentation from others online), meanning I'm genuinely getting better, still. I also learned how to open a window via javascript (which I usually do with a <a> element)
+
+**23-10-2026:**
+
+Unfortunately I was a bit short on time, but I did manage to make a small start on my new, occasional subject exploration of cyber security, hacking. This is an area I've wanted to look into for quite a while now to see if I like it and to just understand the concept of how it generally works for basic knowledge. I haven't learned much since I basically only was able to gather resources that are actually useful to read through. One of those resources is a website that literally lets you practise this stuff and learn about it (name is hack the box). I've also saved a couple of pages about subjects I should understand more deeply, like how pings work, VPNs work, etc. I'll be working on this tomorrow as well. Then next week, I'll continue with the WEB-04 assignment.
+
+**24-10-2026:**
+
+I started the junior beginner path in hack the box. I'm really liking it, eventhough I've only done 2 sections. I'm taking it slowly since I'm also making my own notes in word to review later. It takes a long time to write stuff over in my own words, which is why it took me about 2,5 hours to do the first two sections.
+
+**27-10-2026:**
+
+I managed to do something on a normal school day. Who knows, maybe I just had to get used to this new routine. I'll try to do as much programming as possible during weekdays. Since I want to do the cybersecurity course stuff in the weekend (since I need 2-3 hours for that), so if I can work on my assignments during most weekdays, I won't be missing anything. Though I don't think I'll be able to do this consistently, because I usually need the time to study for upcoming tests (which I finished earlier with today since I had time at school to do so). I've decided I'm going to run my own local server on my PC to then communicate with this webpage. To save articles and user information, meaninig I've also decided to escalate this project a bit further into more complex ground (handling databases and encryption for user profiles.). I'll probably need another 10 hours to do all that, so I'll be working about 20 hours on this project in total, which is not too much over my deadline. The upcoming projects/assignments do not look easy, so I'll have to really start locking in on stuff, I guess the AI who created these assignments thought it was clever to start off very easy, then out of nowhere throw insane projects at me. Anyway, that's exactly what I want, so I won't complain.
+
+**29-10-2026:**
+
+I did my first bit of research on how to go about this server client thing, and it's seems honestly way easier than I thought it'd be. I've already got a simple server and client file that are runnable via the terminal. I managed to let them communicate with some provided code from an article and it honestly really reminds me of how I needed to communicate with the server/client application I made that sends files to eachother, so this flow should be fairly easy/familar to me. Next time I'll need to find out on how to send a file to the server via my javascript code (instead of doing this directly via a form, which was used in the article I used today). It shouldn't be too hard I think. I'll just have to call some function on my client via my javascript and pass in the file.
+
+**30-10-2026:**
+
+I made a lot of progress, especially with learning and understanding how HTTP requests work and the whole intended flow. I learned about CORS, which you need for making application/json POSTs, since a OPTIONS requests first gets made before actual data gets send to the server. Since the server runs on a different port than my local computer's web server run by node.js's HTTP module. If you don't allow the port on the server, it won't accept the request and you'll get an error. I also learned about javascript Promises, which monitors the current state of a HTTP request (well, in this specific scenario, that is. Promises are a general javascript feature, so they are also used for other things.). Next time I'll be implementing the proper sending, finally. I'll hopefully also be able to implement the fetching back from the server to actually preview those articles.
+
+**31-10-2026 - 01-11-2026:** Worked on HackTheBox
+
+**02-11-2026:**
+
+Got the article sending and saving working, but honestly it took longer than it should've in my opinion. I learned that the on() functions in node.js are actually events/callbacks, thus they won't get executed immediately, causing code to be after it to possibly run before the event runs, which, in my case caused a problem with my file writing, since I was writing the file before having proccessed the chunk(s). That's also basically it in terms of what I learned, I was mostly debugging why stuff wasn't working, but of course those moments are also important to actually be able to learn. Next session I'll request the server to send all the saved json files to the client so that the client can load the articles and make them openable for the user.
+
+**03-11-2026:**
+
+Got started with implementing a GET call on the server to get all the saved, user-made articles. I made a decent amount of progress and should be able to finish the logic tomorrow. I learned about something called a lexical this, which is the thing you have when doing an arrow function for, for example a callback, meaning the this is inherrited from the surounding of where the function/arrow function was called from. Can be very usefull when you need to access some type of local variable in a class within the function. 
+
+**04-11-2026:**
+
+Very unproductive session, honestly. I worked for an hour but did almost nothing. I still haven't gotten the sending fixed. For some reason, the client isn't receiving any response somehow. The logs aren't being logged, so it seems like no response is getting received. I think I'll continue implementing the actual flow for loading and showing the files first next time, then when that's in place, I'll try to troubleshoot this issue. I got to learn more in depth about async stuff in javascript, which still wasn't very clear since you also are able to have async stuff that you don't await (and thus use callbacks instead). I also learned about HTTP error codes, like 100-500, 100 meaning the server is still processing stuff, 200 meaning success, 300 means that the client has to do an additional action, like going to a different URL to fetch specific data, 400 meaning a client-side error, and 500 meaning a server-side error. I will definitely try to learn and remember these properly.
+
+**05-11-2026:**
+
+Nice session, was pretty locked in and had fun, kinda just vibing whilst still doing a decent amount of work. I really got to notice the bad code I wrote before, apperantly I was doing for loops by assigning the i value to the length of the array I want to loop in without looping backwards, making the loop never trigger since it's already the same length as the array at the beginning. Furthermore, I discovered that apperantly javascript likes to be different and thus uses .push to append something to an array instead of the usual append name. I also just got a better eye on general javascript syntax since I had to fix a dozen of little bugs in my own code, I even declared the dictionary the wrong way in the 'create article' code, which is genuinely impressive, since that syntax is literally the same as in other coding languages. I think I'm just kinda slacking a bit, here's hoping to fix that and having learned from those mistakes (for now). Next time I'll (hopefully) complete this whole article loading thing and probably reaching the end of this assignment/project.  
+
+**06-11-2026:**
+
+I finished the logic for saving and loading the articles. Articles can now be created by the user, saved to the server, then loaded back on the client so that the user and other users is/are able to view the article. I do have a lot to do still. I need to somehow find a way to pass in the article information to the article-viewer.html to then make that page load in the necesarry article information for viewing. I also need to make the article creator much more advanced, since I need the user to be able to specify what things are headers and not. There's still a lot to do, so I need to get going. I'll set my deadline to 25 work hours, if I don't implement everything by then, it's over. Next time I'll first try to implement the proper article viewing, then after make the article creator more advanced.
+
+**07-11-2026 - 08-11-2026:** Worked on Hack the Box
+
+**09-11-2026:**
+
+Started implementing the functionality of being able to actually open the article cards from the articles created by the user on the client side. I've decided to just create two separate files for each article: the metadata, and a HTML that has all the information of the metadata in the HTML. Both get sent to the client, which was very hard to find out on how to implement this. I needed to use AI to come up with using array.map() to add the html to the same send. I obviously wrote the code myself and only asked AI on how to combine the two arrays. It still has errors, though, so I'll have to refine those next time. Shouldn't be too much of a hassle I think, but you never know. If everything goes as planned, I'll have around 3 hours to polish the article creator + 1 hour left after to polish stuff. Then this assignment will be finished!
+
+**10-11-2026:**
+
+Finished implementing the function to create, view the article card, and actually being able to open it in a window. I used a depricated function (document.write) to write the data into the window, since I didn't have a lot of time left. I'm not sure what the correct alternative to this function is, but I'll try to find and use it next time. I didn't learn much special, just that you can use both ["variableName"] and the usual .variablename to access variables, I didn't know the former. Next time I'll try to be fast with implementing the article creator requirements and fix the article cards.
+
+**11-11-2026:**
+
+I managed to add a nice 'body summary' input field within the article creation flow so that the article card only shows a summary of the article, not the whole body, which ruined the point of opening the article. I also replaced the depricated .write() when writing to the article viewer window. Polished some things about the looks of the cards as well. I did have a bit of a hard time adding the 'body summary' input field, mostly because it required me to add more code to json, fetching the element with the querySelector and other parts of it. I'm not sure how I'd be able to make it easier to add more elements, like input fields, to the article creation menu. Everything was a bit cluttered honestly. I might need to refactor it a little at the end (I'm giving myself permission to extend the deadline beyond 25 hours, but only for refactoring in that overtime, since it is a very important habbit.). Anyway, I have 3 hours left, preferably 2 to add all the final features, and 1 hour to polish everything and bugs. Hopefully I'll be able to add most of the functioning to the article creation (like being able to set specific text to be headers to then make the text below it be a section instead of it being one full connected piece of text when viewing the article).
+
+**12-11-2026:**
+
+I managed to implement the logic for making selected text headers, or well, recognizable as header when parsing it into a window. I definitely needed to basically write over the code from an article for this, since I would've never come up on how to do this myself, or well, it'd take a very long time. It work though, so that's nice. For some reason the window.open() has bugged out on me somehow, meaning I can't open the user created articles in a window anymore, meaning I couldn't test if my heading parser actually works or not. I have no idea what happened, the code runs correctly, printing the log that the window opened succesfully, but window.open() just literally doesn't do anything, it doesn't even open the window. I guess that's my next direct encounter for next time. I hope it'll be easy and fast to fix, cause I really do need the time; 2 hours left. I learned that, when accessing a directory that's a step (or multiple steps) behind the file is in, to access it you need to use "../" instead of pasting the entire root directory in there, which is what I did which is why it wasn't working. Genuinely useful knowledge to now know about!
+
+**16-11-2026:**
+
+I gotta be honest: I kinda cheated. I gave myself an extra hour, but only because I was very useless yesterday. I got the article header sorting implemented, but unfortunately AI had to do it for me, because I was doing it completely wrong. To be fair, the programming sector is changing heavily, because of AI, so I'm kind of supposed to use AI, sadly. I'm still kind of upset about that news; that AI is basically changing my dream job to be something else than I want it to be. I've decided to keep giong and learning, because knowing how technology works is handy nevertheless. I would've honestly never been able to implement the article header logic myself, since it works with regex and all that, which I HEAVILY need to get familar with, since I know nothing about it. Here's a helpful site that could help me learn regex later: https://regex101.com/?utm_source=chatgpt.com . Tomorrow is the last hour of work I can do. I'm not going to start with the next assignment up till next week, since I'll be gone in the weekend. Maybe because of that if I really want to, I could spend the extended deadline time to refactor stuff and review all the stuff I made. I just hate using AI, because I want to be able to do it myself and when I do use it, I feel like I'm a bad dev since I should be able to figure it out myself, with the help of docs like all devs did in the past. But I NEED to use AI, since that's literally becoming a requirement for the sector. I'm also not sure on how to continue with the assignments; do I keep doing them and complete ALL of them, or do I switch and learn other stuff, like C++? I think I'll just continue for now, but AI hasn't made things better, that's for certain.
+
+**18-11-2026:**
+
+I'm glad to say that the project is finished, done. I've spent the last hour I had before the deadline to polish stuff, which took up all the time and with that I think I've managed to polish everything to my liking. I'm fairly proud of the end design, whilst it is not a website that you'd see online (probably), it is nicely done for someone like me who isn't really artistic. With this done, I can either do the refactoring I talked about earlier tomorrow, or leave it as is and have the next two days off before next weeks comes around the corner, which is when I'll start with the next assignment.
+
+**19-11-2026:**
+
+I did the last thing for this project, which was refactoring the code I've written. I've changed all the variables to instead be a let or const, since that's the standard, clean code way to go about stuff in javascript. I also made some repeated code be in functions instead + did some other stuff. It wasn't much, since most code was fine as is. I also fixed the problem with the inputtrea within the create article page to resize when adding a header, which wasn't the case before. All in all, like I already said, I'm glad with how everything turned out. And with that said, the assignment finished.

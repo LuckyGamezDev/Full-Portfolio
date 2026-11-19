@@ -1,42 +1,52 @@
-var titleInputText;
-var titleRemainingMaxLengthText;
-var titleInvalidTag;
+let titleInputText;
+let titleRemainingMaxLengthText;
+let titleInvalidTag;
 
 const titleInputTextId = "#article-title #article-title-text";
 const titleRemainingMaxLengthTextId = "#article-title .max-length-previewer";
 const titleInvalidTagId = "#article-title .invalid-label";
 
-var bodySummaryInputText;
-var bodySummaryRemainingMaxLengthText;
-var bodySummaryInvalidTag;
+let bodySummaryInputText;
+let bodySummaryRemainingMaxLengthText;
+let bodySummaryInvalidTag;
 
 const bodySummaryInputTextId = "#article-body-summary #article-body-summary-text";
 const bodySummaryRemainingMaxLengthTextId = "#article-body-summary .max-length-previewer";
 const bodySummaryInputTextMinLength = 50;
 const bodySummaryInvalidTagId = "#article-body-summary .invalid-label";
 
-var bodyInputText;
-var bodyRemainingMaxLengthText;
-var bodyInvalidTag;
+let bodyInputText;
+let bodyRemainingMaxLengthText;
+let bodyInvalidTag;
 
 const bodyInputTextId = "#article-body #article-body-text";
 const bodyRemainingMaxLengthTextId = "#article-body .max-length-previewer";
-const minValidBodyLength = 1 //300;
+const minValidBodyLength = 300;
 const bodyInvalidTagId = "#article-body .invalid-label";
 
-var metadataInputText;
-var metadataRemainingMaxLengthText;
-var metadataInvalidTag;
+let metadataInputText;
+let metadataRemainingMaxLengthText;
+let metadataInvalidTag;
 
 const metadataInputTextId = "#article-metadata #article-metadata-text";
 const metadataRemainingMaxLengthTextId = "#article-metadata .max-length-previewer";
 const metadataInvalidTagId = "#article-metadata .invalid-label";
 
-var isTitleValid = false;
-var isBodySummaryValid = false;
-var isBodyValid = false;
-var isMetadataValid = false;
+let isTitleValid = {valid: false};
+let isBodySummaryValid = {valid: false};
+let isBodyValid = {valid: false};
+let isMetadataValid = {valid: false};
 
+
+function textInputCheckIfValidCallback(elementLength, isValidLength, isValidBool, invalidTagElement) {
+    if (elementLength >= isValidLength) {
+        isValidBool.valid = true;
+
+        invalidTagElement.style.visibility = "hidden";
+    } else {
+        isValidBool.valid = false;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     titleInputText = document.querySelector(titleInputTextId);
@@ -47,14 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     titleInputText.addEventListener("input", function() {
         displayTextLengthLeft(titleInputTextId, titleRemainingMaxLengthTextId, false);
-
-        if (titleInputText.value.length > 0) {
-            isTitleValid = true;
-
-            titleInvalidTag.style.visibility = "hidden";
-        } else {
-            isTitleValid = false;
-        }
+        textInputCheckIfValidCallback(titleInputText.value.length, 1, isTitleValid, titleInvalidTag);
     });
 
     displayTextLengthLeft(titleInputTextId, titleRemainingMaxLengthTextId, false);
@@ -67,14 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     bodySummaryInputText.addEventListener("input", function() {
         displayTextLengthLeft(bodySummaryInputTextId, bodySummaryRemainingMaxLengthTextId);
-
-        if (bodySummaryInputText.value.length >= bodySummaryInputTextMinLength) {
-            isBodySummaryValid = true;
-
-            bodySummaryInvalidTag.style.visibility = "hidden";
-        } else {
-            isBodySummaryValid = false;
-        }
+        textInputCheckIfValidCallback(bodySummaryInputText.value.length, bodySummaryInputTextMinLength, isBodySummaryValid, bodySummaryInvalidTag);
     });
 
     bodySummaryInputText.addEventListener("input", autoResizeTextArea, false);
@@ -90,14 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     bodyInputText.addEventListener("input", function() {
         displayTextLengthLeft(bodyInputTextId, bodyRemainingMaxLengthTextId);
-
-        if (bodyInputText.value.length >= minValidBodyLength) {
-            isBodyValid = true;
-
-            bodyInvalidTag.style.visibility = "hidden";
-        } else {
-            isBodyValid = false;
-        }
+        textInputCheckIfValidCallback(bodyInputText.value.length, minValidBodyLength, isBodyValid, bodyInvalidTag);
     });
 
     bodyInputText.addEventListener("input", autoResizeTextArea, false);
@@ -112,14 +101,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     metadataInputText.addEventListener("input", function() {
         displayTextLengthLeft(metadataInputTextId, metadataRemainingMaxLengthTextId);
-
-        if (metadataInputText.value.length > 0) {
-            isMetadataValid = true;
-
-            metadataInvalidTag.style.visibility = "hidden";
-        } else {
-            isMetadataValid = false;
-        }
+        textInputCheckIfValidCallback(metadataInputText.value.length, 1, isMetadataValid, metadataInvalidTag);
     })
 
     metadataInputText.addEventListener("input", autoResizeTextArea, false);
@@ -133,10 +115,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function displayTextLengthLeft(textBoxId, textLeftDisplayId, isTextField = true) {
     if (isTextField) {
-        var bodyInputText = document.querySelector(textBoxId);
-        var remainingMaxLengthText = document.querySelector(textLeftDisplayId);
+        const bodyInputText = document.querySelector(textBoxId);
+        const remainingMaxLengthText = document.querySelector(textLeftDisplayId);
 
-        var remainingLettersAmount = bodyInputText.maxLength - bodyInputText.textLength;
+        const remainingLettersAmount = bodyInputText.maxLength - bodyInputText.textLength;
 
         remainingMaxLengthText.innerHTML = "Remaining letters: " + remainingLettersAmount;
 
@@ -146,10 +128,10 @@ function displayTextLengthLeft(textBoxId, textLeftDisplayId, isTextField = true)
             remainingMaxLengthText.style.color = "black";
         }
     } else {
-        var bodyInputText = document.querySelector(textBoxId);
-        var remainingMaxLengthText = document.querySelector(textLeftDisplayId);
+        const bodyInputText = document.querySelector(textBoxId);
+        const remainingMaxLengthText = document.querySelector(textLeftDisplayId);
 
-        var remainingLettersAmount = bodyInputText.maxLength - bodyInputText.value.length;
+        const remainingLettersAmount = bodyInputText.maxLength - bodyInputText.value.length;
 
         remainingMaxLengthText.innerHTML = "Remaining letters: " + remainingLettersAmount;
 
@@ -178,7 +160,7 @@ function makeSelectionStyled(startTag, endTag) {
 
     // Replacing the selected text with the wanted formatted form
 
-    var formattedText;
+    let formattedText;
     if (endTag) {
         formattedText = startTag + selectedText + endTag;
     } else { 
@@ -196,7 +178,6 @@ function makeSelectionStyled(startTag, endTag) {
         textArea.value = textAreaText.substring(0, textAreaSelectionStart) + formattedText + textAreaText.substring(textAreaSelectionEnd);
     }    
 
-    //autoResizeTextArea();
 
     // Reset the cursor position
     textArea.selectionStart = textAreaSelectionStart;
@@ -205,11 +186,14 @@ function makeSelectionStyled(startTag, endTag) {
     // Bring back focus on the text area so that the user can continue typing
     textArea.focus();
 
+    // Trigger the input event to auto resize the field accordingly
+    bodyInput.dispatchEvent(new Event("input"))
+
     console.log("Styled text");
 }
 
 async function createArticle() {
-    if (isTitleValid && isBodySummaryValid && isBodyValid && isMetadataValid) {
+    if (isTitleValid.valid && isBodySummaryValid.valid && isBodyValid.valid && isMetadataValid.valid) {
 
         const articleTitle = titleInputText.value;
         const articleBodySummary = bodySummaryInputText.value;
@@ -246,16 +230,16 @@ async function createArticle() {
     } else {
             console.log("Cannot create article, please input something into the fields!")
 
-            if (!isTitleValid) {
+            if (!isTitleValid.valid) {
                 titleInvalidTag.style.visibility = "visible"
             }
-            if (!isBodySummaryValid) {
+            if (!isBodySummaryValid.valid) {
                 bodySummaryInvalidTag.style.visibility = "visible";
             }
-            if (!isBodyValid) {
+            if (!isBodyValid.valid) {
                 bodyInvalidTag.style.visibility = "visible";
             }
-            if (!isMetadataValid) {
+            if (!isMetadataValid.valid) {
                 metadataInvalidTag.style.visibility = "visible";
             }
     }

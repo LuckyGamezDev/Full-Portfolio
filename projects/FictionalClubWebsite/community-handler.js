@@ -12,7 +12,7 @@ async function initializeArticles() {
     let allArticlesArray;
 
     try {
-        const response = await fetch("http://localhost:3590/articles")
+        const response = await fetch("http://localhost:3590/articles");
 
         if (!response.ok) {
             throw new Error("A HTTP error occured whilst attempting to retrieve article data. Status: " + response.status);    
@@ -48,21 +48,21 @@ document.addEventListener("DOMContentLoaded", function() {
     initializeArticles();
 });
 
+function createElement(elementType, className, innerHTMLValue = null) {
+    let createdElement = document.createElement(elementType);
+    createdElement.className = className;
+    innerHTMLValue != null && (createElement.innerHTML = innerHTMLValue);
+
+    return createdElement;
+}
+
 function loadArticle(article) {
-    let articleDiv = document.createElement("div");
-    articleDiv.className = communityArticleDivClassName;
+    let articleDiv = createElement("div", communityArticleDivClassName);
+    let articleTitle = createElement("p", communityArticlesTitleClassName, article.title);
 
-    let articleTitle = document.createElement("p")
-    articleTitle.className = communityArticlesTitleClassName;
-    articleTitle.innerHTML = article.title;
+    let articleBodySummary = createElement("p", communityArticlesBodySummaryClassName, article.bodySummary);
 
-    let articleBodySummary = document.createElement("p")
-    articleBodySummary.className = communityArticlesBodySummaryClassName;
-    articleBodySummary.innerHTML = article.bodySummary;
-
-    let articleRedirButton = document.createElement("button");
-    articleRedirButton.className = communityArticlesRedirButtonClassName;
-    articleRedirButton.innerHTML = "To Article";
+    let articleRedirButton = createElement("button", communityArticlesRedirButtonClassName, "To Article");
     articleRedirButton.onclick = () => {
         openArticle(article);
     }

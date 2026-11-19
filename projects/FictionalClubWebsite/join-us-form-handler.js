@@ -1,12 +1,12 @@
-var firstNameField;
-var lastNameField;
-var emailField;
-var birthdateField;
+let firstNameField;
+let lastNameField;
+let emailField;
+let birthdateField;
 
-var firstnameFieldInvalidTag;
-var lastnameFieldInvalidTag;
-var emailFieldInvalidTag;
-var birthdateFieldInvalidTag;
+let firstnameFieldInvalidTag;
+let lastnameFieldInvalidTag;
+let emailFieldInvalidTag;
+let birthdateFieldInvalidTag;
 
 document.addEventListener('DOMContentLoaded', function() {
     firstNameField = document.querySelector(".submission #submission-form #first-name");
@@ -58,7 +58,8 @@ function onBirthdateChanged() {
 
     selectedDate = selectedDate.split('-');
 
-    if (2026 - selectedDate[0] < 16) { // Use 2026 (at least for now) since it is currently that year. Might add a current year check
+    const currentDate = new Date();
+    if (currentDate.getFullYear() - selectedDate[0] < 16) { // Use 2026 (at least for now) since it is currently that year. Might add a current year check
         console.log("invalid birthdate!")
         birthdateFieldInvalidTag.style.visibility = "visible";
     } else {

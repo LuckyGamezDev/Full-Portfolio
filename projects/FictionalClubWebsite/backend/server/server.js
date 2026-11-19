@@ -28,12 +28,12 @@ const server = http.createServer(async (req, res) => {
 
         
         var fileId = "";
-        for (let i = 0; i < 8; i++) {
+        const fileIdLength = 7
+        for (let i = 0; i < fileIdLength + 1; i++) {
             fileId += Math.floor(Math.random() * 10).toString();
         }
 
         req.on("end", () => {
-
             // Add the ID to the json file itself to be able to fetch it
             var jsonFileDict = JSON.parse(jsonFile);
             jsonFileDict["id"] = fileId;
@@ -69,7 +69,7 @@ const server = http.createServer(async (req, res) => {
     if (req.method === "GET" && req.url === "/articles") {
         console.log("Got get request");
 
-        var allArticleFilePathsArray = await readAllArticleFilePaths();
+        let allArticleFilePathsArray = await readAllArticleFilePaths();
 
         if (!allArticleFilePathsArray) {
             res.writeHead(204)
@@ -80,11 +80,8 @@ const server = http.createServer(async (req, res) => {
 
         console.log("First article path: " + allArticleFilePathsArray[0]);
 
-        var allArticleFileContentsArray = getAllDataFromDirectoryByFileNamesArray(allArticleFilePathsArray);
-        var allArticleFileContentsParsedArray = allArticleFileContentsArray.map((articleString) => {
-            console.log("Unparsed string: " + articleString);
-            console.log("Parsed string: " + JSON.parse(articleString));
-
+        let allArticleFileContentsArray = getAllDataFromDirectoryByFileNamesArray(allArticleFilePathsArray);
+        let allArticleFileContentsParsedArray = allArticleFileContentsArray.map((articleString) => {
             return JSON.parse(articleString);
         });
 
@@ -131,10 +128,10 @@ function getAllDataFromDirectoryByFileNamesArray(filePathsArray) {
     console.log("File paths array length: " + filePathsArray.length);
     console.log("File paths array content: " + filePathsArray[0]);
 
-    var allFileDataStringsArray = [];
+    let allFileDataStringsArray = [];
     try {
         for (let i = 0; i < filePathsArray.length; i++) {
-            var file = fs.readFileSync(filePathsArray[i], { encoding: "utf8" });
+            let file = fs.readFileSync(filePathsArray[i], { encoding: "utf8" });
 
             if (file) {
                 allFileDataStringsArray.push(file);
@@ -152,7 +149,7 @@ function getAllDataFromDirectoryByFileNamesArray(filePathsArray) {
 async function readAllArticleFilePaths() {
     console.log("Reading all the files...");
 
-    var allArticlesFullPathsArray;
+    let allArticlesFullPathsArray;
     try {
         let articlesArray = await fs.promises.readdir(projectRootDirectory + serverDataInnerDirectory + "articles/");
 
@@ -178,14 +175,14 @@ async function readAllArticleFilePaths() {
 }
 
 function createHTMLFromJson(jsonFile, fileId) {
-    var articleTitle = jsonFile["title"];
-    var articleBody = jsonFile["body"];
-    var articleAuthorName = jsonFile["metadata"];
-    var articlePublishDate = jsonFile["date"];
+    const articleTitle = jsonFile["title"];
+    const articleBody = jsonFile["body"];
+    const articleAuthorName = jsonFile["metadata"];
+    const articlePublishDate = jsonFile["date"];
 
     console.log("value of json file: " + jsonFile, jsonFile["title"], jsonFile["body"]);
 
-    var articleHTMLString = 
+    const articleHTMLString = 
     `
 <!DOCTYPE html>
 

@@ -268,3 +268,7 @@ I gotta be honest: I kinda cheated. I gave myself an extra hour, but only becaus
 **18-11-2026:**
 
 I'm glad to say that the project is finished, done. I've spent the last hour I had before the deadline to polish stuff, which took up all the time and with that I think I've managed to polish everything to my liking. I'm fairly proud of the end design, whilst it is not a website that you'd see online (probably), it is nicely done for someone like me who isn't really artistic. With this done, I can either do the refactoring I talked about earlier tomorrow, or leave it as is and have the next two days off before next weeks comes around the corner, which is when I'll start with the next assignment.
+
+**19-11-2026:**
+
+I did the last thing for this project, which was refactoring the code I've written. I've changed all the variables to instead be a let or const, since that's the standard, clean code way to go about stuff in javascript. I also made some repeated code be in functions instead + did some other stuff. It wasn't much, since most code was fine as is. I also fixed the problem with the inputtrea within the create article page to resize when adding a header, which wasn't the case before. All in all, like I already said, I'm glad with how everything turned out. And with that said, the assignment finished.
